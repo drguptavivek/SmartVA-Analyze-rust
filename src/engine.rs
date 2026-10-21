@@ -1824,7 +1824,9 @@ fn symptom_prep_in_memory(
             if !row.contains_key(read_h) {
                 continue;
             }
-            let cur_val = safe_float(row.get(read_h).map(|s| s.as_str()));
+            let Some(cur_val) = parse_py_float(row.get(read_h).map(|s| s.as_str())) else {
+                continue;
+            };
             for &(thresh_opt, write_h, write_val) in entries {
                 if thresh_opt.is_none_or(|t| cur_val > t) {
                     row.insert(write_h.to_string(), write_val.to_string());
@@ -3315,17 +3317,17 @@ fn run_output_prep(
                 let all_s = both_map
                     .get(cause)
                     .map(|&v| round_py(v, 3))
-                    .unwrap_or_else(|| "0".to_string());
+                    .unwrap_or_else(|| "0.0".to_string());
                 let male_s = csmf_map
                     .get("male")
                     .and_then(|m| m.get(cause))
                     .map(|&v| round_py(v, 3))
-                    .unwrap_or_else(|| "0".to_string());
+                    .unwrap_or_else(|| "0.0".to_string());
                 let female_s = csmf_map
                     .get("female")
                     .and_then(|m| m.get(cause))
                     .map(|&v| round_py(v, 3))
-                    .unwrap_or_else(|| "0".to_string());
+                    .unwrap_or_else(|| "0.0".to_string());
                 table.push(vec![
                     cause.clone(),
                     c_num,

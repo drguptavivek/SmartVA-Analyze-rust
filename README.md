@@ -182,16 +182,17 @@ print(result["individual_cause_of_death"][0])
 
 `smartva-rs` has been empirically validated against unmodified upstream Python `smartva.va_cli` (`v3.0.0`) across **20,813 Verbal Autopsy records** spanning all four questionnaire formats supported by SmartVA:
 
-1. **IHME PHMRC Gold Standard Dataset (`N = 12,530` VAs — `PHMRC Full Questionnaire`)**:
-   - **100.00% (`12,530 / 12,530`) Python-vs-Rust Cause Agreement**: `7,841 / 7,841` Adult, `2,064 / 2,064` Child, and `2,625 / 2,625` Neonate records match `smartva.va_cli` identically (`0` cell differences across intermediate symptom matrices `validated-adult.csv` [`2,673,099` cells] and `validated-child.csv` [`273,847` cells]).
-   - **Agreement Against PHMRC Hospital Physician Gold-Standard Diagnoses (`va46` / `va34` / `gs_text34`)** (matching published Tariff 2.0 benchmarks in Serina et al., *BMC Medicine* 2015; see [`evidence/tabulations/PHMRC_Gold_Standard_Summary.md`](./evidence/tabulations/PHMRC_Gold_Standard_Summary.md)):
+1. **IHME PHMRC Gold Standard Dataset (`N = 12,530` VAs — `PHMRC Full Questionnaire`, Two-Stage Validation)**:
+   - **100.00% Lossless Symptom Matrix Round-Trip**: `CommonPrep -> PreSymptomPrep -> SymptomPrep` on the reverse-mapped PHMRC datasets matches IHME's official `src/data/validated-adult.csv` (`2,673,099 / 2,673,099` cells), `src/data/validated-child.csv` (`273,847 / 273,847` cells), and `src/data/validated-neonate.csv` (`378,286 / 378,286` cells) with **`0` cell differences (`100.00%`) across all 3 modules**.
+   - **Stage 1 (Algorithm Validation — Unmodified Python `smartva.va_cli` vs. PHMRC Hospital Physician Gold Standard `va46` / `va34` / `gs_text34`)**, benchmarked against **Serina et al. (*BMC Medicine* 2015, 13:291)** (full per-cause tables in [`evidence/tabulations/PHMRC_Gold_Standard_Summary.md`](./evidence/tabulations/PHMRC_Gold_Standard_Summary.md)):
+   - **Stage 2 (Port Equivalence — Pure-Rust `smartva-rs` vs. Python `smartva.va_cli`)**: **`100.00%` (`12,530 / 12,530`)** exact agreement on individual causes of death (`cause34` & `icd10`) and **`100.00%` (`0` cell differences)** on population CSMF tables (`2-csmf/{adult,child,neonate}-csmf.csv` & `2-csmf/csmf.csv`):
 
-| PHMRC Module | Total Gold-Standard VAs ($N$) | Determined Predictions (`#` / `%`) | Undetermined (`#` / `%`) | Python vs. Rust Parity | Top-1 Agreement on Determined (`%`) | Top-3 Agreement on Determined (`%`) | Mean Sensitivity (Det.) | Mean Specificity (Det.) | Mean $CCC$ (Det.) | CSMF Accuracy |
+| PHMRC Module | Total Gold-Standard VAs ($N$) | Determined Predictions (`#` / `%`) | Undetermined (`#` / `%`) | Stage 1: Top-1 Det. (`%`) | Stage 1: Top-3 Det. (`%`) | Stage 1: Mean Sens. / Spec. / PPV (Det.) | Stage 1: Mean $CCC$ (Det.) [Serina 2015] | Stage 1: CSMF Accuracy [Serina 2015] | Stage 2: Ind. Cause Parity (`smartva-rs` vs. `va_cli`) | Stage 2: CSMF Table Diff (`2-csmf/*.csv`) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| **Adult (`34` Causes)** | `7,841` | `7,294` (`93.02%`) | `547` (`6.98%`) | **`100.00%`** (`7,841/7,841`) | **`50.62%`** (`3,692/7,294`) | **`67.23%`** (`4,904/7,294`) | `51.37%` | `98.43%` | **`49.89%`** | **`0.8443`** |
-| **Child (`21` Causes)** | `2,064` | `1,941` (`94.04%`) | `123` (`5.96%`) | **`100.00%`** (`2,064/2,064`) | **`49.41%`** (`959/1,941`) | **`64.55%`** (`1,253/1,941`) | `58.23%` | `97.42%` | **`56.14%`** | **`0.7937`** |
-| **Neonate (`6` Causes)** | `2,625` | `2,392` (`91.12%`) | `233` (`8.88%`) | **`100.00%`** (`2,625/2,625`) | **`70.19%`** (`1,679/2,392`) | **`80.31%`** (`1,921/2,392`) | `58.95%` | `94.00%` | **`50.74%`** | **`0.8470`** |
-| **Combined PHMRC** | **`12,530`** | **`11,627` (`92.79%`)** | **`903` (`7.21%`)** | **`100.00%` (`12,530/12,530`)** | **`54.44%` (`6,330/11,627`)** | **`69.48%` (`8,078/11,627`)** | — | — | — | — |
+| **Adult (`34` Causes)** | `7,841` | `7,294` (`93.02%`) | `547` (`6.98%`) | **`50.62%`** (`3,692/7,294`) | **`67.23%`** (`4,904/7,294`) | `51.37%` / `98.43%` / `50.21%` | **`49.89%`** [`50.5%`] | **`0.8443`** [`0.770`] | **`100.00%`** (`7,841/7,841`) | **`0` cell diffs** |
+| **Child (`21` Causes)** | `2,064` | `1,941` (`94.04%`) | `123` (`5.96%`) | **`49.41%`** (`959/1,941`) | **`64.55%`** (`1,253/1,941`) | `58.23%` / `97.42%` / `50.47%` | **`56.14%`** [`52.5%`] | **`0.7937`** [`0.783`] | **`100.00%`** (`2,064/2,064`) | **`0` cell diffs** |
+| **Neonate (`6` Causes)** | `2,625` | `2,429` (`92.53%`) | `196` (`7.47%`) | **`69.37%`** (`1,685/2,429`) | **`79.91%`** (`1,941/2,429`) | `58.66%` / `93.87%` / `57.47%` | **`50.39%`** [`48.0%`] | **`0.8331`** [`0.826`] | **`100.00%`** (`2,625/2,625`) | **`0` cell diffs** |
+| **Combined PHMRC** | **`12,530`** | **`11,664` (`93.09%`)** | **`866` (`6.91%`)** | **`54.32%` (`6,336/11,664`)** | **`69.43%` (`8,098/11,664`)** | — | — | — | **`100.00%` (`12,530/12,530`)** | **`0` cell diffs** |
 
 2. **15 Real-World WHO 2022 Cohorts (`N = 8,273` VAs — `WHO 2022 Questionnaire`)**:
    - **100.00% (`8,273 / 8,273`)** cause-of-death and ICD-10 agreement and **`0` cell differences** across all `345` generated output and intermediate CSV files (`23` CSV files × `15` cohorts).

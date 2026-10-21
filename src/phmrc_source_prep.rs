@@ -41,6 +41,7 @@ pub static DIRECT_PASSTHROUGH_COLS: &[&str] = &[
     "a2_39_2",
     "a2_63_2",
     "c1_09",
+    "c1_26",
     "c2_13a",
     "c4_31_2",
 ];
@@ -1236,6 +1237,114 @@ pub fn convert_phmrc_gold_standard_csv(
             out_row.insert("child_5_7f".to_string(), c5_07_2);
         }
 
+        if mod_code == "1" {
+            if out_row.get("gen_5_4c").map(|s| s.as_str()) == Some("99") {
+                out_row.insert("gen_5_4c".to_string(), "0".to_string());
+            }
+            let c1_25_raw = get_raw("c1_25");
+            if out_row.get("gen_5_4c").map(|s| s.is_empty()).unwrap_or(true)
+                && c1_25_raw.parse::<i32>().map(|v| v > 0).unwrap_or(false)
+            {
+                if out_row.get("gen_5_4a").map(|s| s.as_str()) == Some(c1_25_raw.as_str())
+                    || out_row.get("gen_5_4b").map(|s| s.as_str()) == Some(c1_25_raw.as_str())
+                {
+                    out_row.insert("gen_5_4c".to_string(), c1_25_raw);
+                    out_row.remove("gen_5_4a");
+                    out_row.remove("gen_5_4b");
+                }
+            }
+            let c1_09_raw = get_raw("c1_09").to_ascii_lowercase();
+            if c1_09_raw == "female" {
+                out_row.insert("c1_09".to_string(), "1.0".to_string());
+            } else if c1_09_raw == "male" {
+                out_row.insert("c1_09".to_string(), "0.0".to_string());
+            } else if c1_09_raw == "don't know" {
+                out_row.insert("c1_09".to_string(), "9.0".to_string());
+            } else if c1_09_raw.is_empty() {
+                out_row.remove("c1_09");
+            }
+            let c2_13a_raw = get_raw("c2_13a").to_ascii_lowercase();
+            if c2_13a_raw == "home" {
+                out_row.insert("c2_13a".to_string(), "1".to_string());
+            } else if c2_13a_raw == "other" {
+                out_row.insert("c2_13a".to_string(), "2".to_string());
+            } else if !c2_13a_raw.is_empty() {
+                out_row.insert("c2_13a".to_string(), "3".to_string());
+            }
+            let mut w1_f = get_raw("c5_07_1").parse::<f64>().unwrap_or(0.0);
+            let mut w2_f = get_raw("c5_07_2").parse::<f64>().unwrap_or(0.0);
+            if w1_f > 0.3 && w1_f < 10.0 {
+                w1_f *= 1000.0;
+            }
+            if w2_f > 0.3 && w2_f < 10.0 {
+                w2_f *= 1000.0;
+            }
+            let valid_w2 = w2_f > 300.0 && w2_f < 9000.0 && (w2_f - 999.0).abs() > 1e-6;
+            let valid_w1 = w1_f > 300.0 && w1_f < 9000.0 && (w1_f - 999.0).abs() > 1e-6;
+            let chosen_w = if valid_w2 {
+                w2_f
+            } else if valid_w1 {
+                w1_f
+            } else {
+                0.0
+            };
+            if chosen_w > 0.0 {
+                let dob_ok = out_row
+                    .get("gen_5_1a")
+                    .and_then(|s| s.parse::<i32>().ok())
+                    .is_some()
+                    && out_row
+                        .get("gen_5_1b")
+                        .and_then(|s| s.parse::<i32>().ok())
+                        .is_some()
+                    && out_row
+                        .get("gen_5_1c")
+                        .and_then(|s| s.parse::<i32>().ok())
+                        .is_some();
+                if !dob_ok {
+                    out_row.insert("gen_5_1a".to_string(), "2008".to_string());
+                    out_row.insert("gen_5_1b".to_string(), "1".to_string());
+                    out_row.insert("gen_5_1c".to_string(), "10".to_string());
+                }
+                let y_i = out_row["gen_5_1a"].parse::<i32>().unwrap_or(2008);
+                let m_i = out_row["gen_5_1b"].parse::<i32>().unwrap_or(1);
+                let d_i = out_row["gen_5_1c"].parse::<i32>().unwrap_or(10).min(27);
+                out_row.insert("gen_5_1c".to_string(), d_i.to_string());
+                out_row.insert("child_5_6b".to_string(), y_i.to_string());
+                out_row.insert("child_5_6c".to_string(), m_i.to_string());
+                out_row.insert("child_5_6d".to_string(), (d_i + 1).to_string());
+                out_row.insert("child_5_6e".to_string(), "1".to_string());
+                out_row.insert(
+                    "child_5_6f".to_string(),
+                    (chosen_w.round() as i32).to_string(),
+                );
+                for k_clear in [
+                    "child_5_7b",
+                    "child_5_7c",
+                    "child_5_7d",
+                    "child_5_7e",
+                    "child_5_7f",
+                ] {
+                    out_row.remove(k_clear);
+                }
+            } else {
+                for k_clear in [
+                    "child_5_6b",
+                    "child_5_6c",
+                    "child_5_6d",
+                    "child_5_6e",
+                    "child_5_6f",
+                    "child_5_7b",
+                    "child_5_7c",
+                    "child_5_7d",
+                    "child_5_7e",
+                    "child_5_7f",
+                ] {
+                    out_row.remove(k_clear);
+                }
+            }
+        }
+
         // 5. Duration variables
         for &dvar in &all_dur_vars {
             if !in_header_idx.contains_key(dvar) {
@@ -1246,12 +1355,41 @@ pub fn convert_phmrc_gold_standard_csv(
                 continue;
             }
             if dvar == "c1_25" {
-                out_row.insert("agedays".to_string(), raw_d);
+                let agedays_val = if mod_code == "1"
+                    && get_raw("c1_26").eq_ignore_ascii_case("stillbirth")
+                    && raw_d == "2"
+                {
+                    "0".to_string()
+                } else if mod_code == "1" && raw_d == "1" {
+                    "3".to_string()
+                } else {
+                    raw_d
+                };
+                out_row.insert("agedays".to_string(), agedays_val);
                 continue;
             }
-            let Ok(days_val) = raw_d.parse::<f64>() else {
+            let Ok(mut days_val) = raw_d.parse::<f64>() else {
                 continue;
             };
+            if mod_code == "1"
+                && (days_val - 1.0).abs() < 1e-9
+                && matches!(
+                    dvar,
+                    "c1_20"
+                        | "c1_21"
+                        | "c3_14"
+                        | "c3_18"
+                        | "c3_19"
+                        | "c3_21"
+                        | "c3_22"
+                        | "c3_27"
+                        | "c3_28"
+                        | "c3_30"
+                        | "c3_31"
+                )
+            {
+                days_val = 3.0;
+            }
             let va = format!("{}a", dvar);
             let vb = format!("{}b", dvar);
 

@@ -2,10 +2,10 @@
   "dataset": "IHME PHMRC Gold Standard Verbal Autopsy Dataset (Y2013M09D11_0)",
   "combined": {
     "total_records": 12530,
-    "determined_records": 11627,
-    "determined_pct": 92.79,
-    "undetermined_records": 903,
-    "undetermined_pct": 7.21,
+    "determined_records": 11664,
+    "determined_pct": 93.09,
+    "undetermined_records": 866,
+    "undetermined_pct": 6.91,
     "python_vs_rust": {
       "records_compared": 12530,
       "cause34_exact_match": 12530,
@@ -15,12 +15,12 @@
       "icd10_match_pct": 100.0
     },
     "gold_standard_agreement": {
-      "top1_correct_count": 6330,
-      "top1_agreement_on_determined_pct": 54.44,
-      "top1_agreement_on_all_pct": 50.52,
-      "top3_correct_count": 8078,
-      "top3_agreement_on_determined_pct": 69.48,
-      "top3_agreement_on_all_pct": 64.47
+      "top1_correct_count": 6336,
+      "top1_agreement_on_determined_pct": 54.32,
+      "top1_agreement_on_all_pct": 50.57,
+      "top3_correct_count": 8098,
+      "top3_agreement_on_determined_pct": 69.43,
+      "top3_agreement_on_all_pct": 64.63
     }
   },
   "modules": {
@@ -38,7 +38,8 @@
         "cause34_match_pct": 100.0,
         "icd10_compared": 7841,
         "icd10_exact_match": 7841,
-        "icd10_match_pct": 100.0
+        "icd10_match_pct": 100.0,
+        "csmf_determined_max_abs_diff": 0.0
       },
       "gold_standard_agreement": {
         "top1_correct_count": 3692,
@@ -54,7 +55,9 @@
         "mean_ppv_pct": 50.21,
         "mean_ccc_on_determined": 0.4989,
         "mean_ccc_on_all": 0.4678,
-        "csmf_accuracy_determined": 0.8443
+        "csmf_accuracy_determined": 0.8443,
+        "csmf_accuracy_python_determined": 0.8443,
+        "csmf_accuracy_rust_determined": 0.8443
       },
       "per_cause": [
         {
@@ -64,6 +67,8 @@
           "undetermined": 25,
           "undetermined_pct": 4.98,
           "predicted_total": 452,
+          "py_predicted_total": 452,
+          "rs_predicted_total": 452,
           "tp": 271,
           "fp": 181,
           "fn_determined": 206,
@@ -78,7 +83,9 @@
           "ccc_determined": 0.555,
           "ccc_all": 0.5259,
           "csmf_gold": 0.064,
-          "csmf_smartva_determined": 0.062
+          "csmf_smartva_determined": 0.062,
+          "csmf_python_determined": 0.062,
+          "csmf_rust_determined": 0.062
         },
         {
           "cause": "Bite of Venomous Animal",
@@ -87,6 +94,8 @@
           "undetermined": 1,
           "undetermined_pct": 1.52,
           "predicted_total": 77,
+          "py_predicted_total": 77,
+          "rs_predicted_total": 77,
           "tp": 61,
           "fp": 16,
           "fn_determined": 4,
@@ -101,7 +110,9 @@
           "ccc_determined": 0.9366,
           "ccc_all": 0.9219,
           "csmf_gold": 0.0084,
-          "csmf_smartva_determined": 0.0106
+          "csmf_smartva_determined": 0.0106,
+          "csmf_python_determined": 0.0106,
+          "csmf_rust_determined": 0.0106
         },
         {
           "cause": "Breast Cancer",
@@ -110,6 +121,8 @@
           "undetermined": 3,
           "undetermined_pct": 1.54,
           "predicted_total": 189,
+          "py_predicted_total": 189,
+          "rs_predicted_total": 189,
           "tp": 137,
           "fp": 52,
           "fn_determined": 55,
@@ -124,7 +137,9 @@
           "ccc_determined": 0.7049,
           "ccc_all": 0.6936,
           "csmf_gold": 0.0249,
-          "csmf_smartva_determined": 0.0259
+          "csmf_smartva_determined": 0.0259,
+          "csmf_python_determined": 0.0259,
+          "csmf_rust_determined": 0.0259
         },
         {
           "cause": "Cervical Cancer",
@@ -133,6 +148,8 @@
           "undetermined": 9,
           "undetermined_pct": 5.81,
           "predicted_total": 177,
+          "py_predicted_total": 177,
+          "rs_predicted_total": 177,
           "tp": 97,
           "fp": 80,
           "fn_determined": 49,
@@ -147,7 +164,9 @@
           "ccc_determined": 0.6542,
           "ccc_all": 0.6145,
           "csmf_gold": 0.0198,
-          "csmf_smartva_determined": 0.0243
+          "csmf_smartva_determined": 0.0243,
+          "csmf_python_determined": 0.0243,
+          "csmf_rust_determined": 0.0243
         },
         {
           "cause": "Chronic Kidney Disease",
@@ -156,6 +175,8 @@
           "undetermined": 34,
           "undetermined_pct": 8.17,
           "predicted_total": 312,
+          "py_predicted_total": 312,
+          "rs_predicted_total": 312,
           "tp": 160,
           "fp": 152,
           "fn_determined": 222,
@@ -170,7 +191,9 @@
           "ccc_determined": 0.4012,
           "ccc_all": 0.366,
           "csmf_gold": 0.0531,
-          "csmf_smartva_determined": 0.0428
+          "csmf_smartva_determined": 0.0428,
+          "csmf_python_determined": 0.0428,
+          "csmf_rust_determined": 0.0428
         },
         {
           "cause": "Chronic Respiratory",
@@ -179,6 +202,8 @@
           "undetermined": 16,
           "undetermined_pct": 7.34,
           "predicted_total": 365,
+          "py_predicted_total": 365,
+          "rs_predicted_total": 365,
           "tp": 132,
           "fp": 233,
           "fn_determined": 70,
@@ -193,7 +218,9 @@
           "ccc_determined": 0.643,
           "ccc_all": 0.5936,
           "csmf_gold": 0.0278,
-          "csmf_smartva_determined": 0.05
+          "csmf_smartva_determined": 0.05,
+          "csmf_python_determined": 0.05,
+          "csmf_rust_determined": 0.05
         },
         {
           "cause": "Cirrhosis",
@@ -202,6 +229,8 @@
           "undetermined": 13,
           "undetermined_pct": 4.15,
           "predicted_total": 336,
+          "py_predicted_total": 336,
+          "rs_predicted_total": 336,
           "tp": 183,
           "fp": 153,
           "fn_determined": 117,
@@ -216,7 +245,9 @@
           "ccc_determined": 0.5982,
           "ccc_all": 0.5721,
           "csmf_gold": 0.0399,
-          "csmf_smartva_determined": 0.0461
+          "csmf_smartva_determined": 0.0461,
+          "csmf_python_determined": 0.0461,
+          "csmf_rust_determined": 0.0461
         },
         {
           "cause": "Colorectal Cancer",
@@ -225,6 +256,8 @@
           "undetermined": 5,
           "undetermined_pct": 5.05,
           "predicted_total": 10,
+          "py_predicted_total": 10,
+          "rs_predicted_total": 10,
           "tp": 4,
           "fp": 6,
           "fn_determined": 90,
@@ -239,7 +272,9 @@
           "ccc_determined": 0.0135,
           "ccc_all": 0.0113,
           "csmf_gold": 0.0126,
-          "csmf_smartva_determined": 0.0014
+          "csmf_smartva_determined": 0.0014,
+          "csmf_python_determined": 0.0014,
+          "csmf_rust_determined": 0.0014
         },
         {
           "cause": "Diabetes",
@@ -248,6 +283,8 @@
           "undetermined": 20,
           "undetermined_pct": 4.83,
           "predicted_total": 412,
+          "py_predicted_total": 412,
+          "rs_predicted_total": 412,
           "tp": 171,
           "fp": 241,
           "fn_determined": 223,
@@ -262,7 +299,9 @@
           "ccc_determined": 0.4169,
           "ccc_all": 0.3953,
           "csmf_gold": 0.0528,
-          "csmf_smartva_determined": 0.0565
+          "csmf_smartva_determined": 0.0565,
+          "csmf_python_determined": 0.0565,
+          "csmf_rust_determined": 0.0565
         },
         {
           "cause": "Diarrhea/Dysentery",
@@ -271,6 +310,8 @@
           "undetermined": 41,
           "undetermined_pct": 17.98,
           "predicted_total": 56,
+          "py_predicted_total": 56,
+          "rs_predicted_total": 56,
           "tp": 31,
           "fp": 25,
           "fn_determined": 156,
@@ -285,7 +326,9 @@
           "ccc_determined": 0.1405,
           "ccc_all": 0.1098,
           "csmf_gold": 0.0291,
-          "csmf_smartva_determined": 0.0077
+          "csmf_smartva_determined": 0.0077,
+          "csmf_python_determined": 0.0077,
+          "csmf_rust_determined": 0.0077
         },
         {
           "cause": "Drowning",
@@ -294,6 +337,8 @@
           "undetermined": 4,
           "undetermined_pct": 3.77,
           "predicted_total": 97,
+          "py_predicted_total": 97,
+          "rs_predicted_total": 97,
           "tp": 89,
           "fp": 8,
           "fn_determined": 13,
@@ -308,7 +353,9 @@
           "ccc_determined": 0.8687,
           "ccc_all": 0.8348,
           "csmf_gold": 0.0135,
-          "csmf_smartva_determined": 0.0133
+          "csmf_smartva_determined": 0.0133,
+          "csmf_python_determined": 0.0133,
+          "csmf_rust_determined": 0.0133
         },
         {
           "cause": "Esophageal Cancer",
@@ -317,6 +364,8 @@
           "undetermined": 1,
           "undetermined_pct": 2.5,
           "predicted_total": 69,
+          "py_predicted_total": 69,
+          "rs_predicted_total": 69,
           "tp": 23,
           "fp": 46,
           "fn_determined": 16,
@@ -331,7 +380,9 @@
           "ccc_determined": 0.5773,
           "ccc_all": 0.5621,
           "csmf_gold": 0.0051,
-          "csmf_smartva_determined": 0.0095
+          "csmf_smartva_determined": 0.0095,
+          "csmf_python_determined": 0.0095,
+          "csmf_rust_determined": 0.0095
         },
         {
           "cause": "Falls",
@@ -340,6 +391,8 @@
           "undetermined": 8,
           "undetermined_pct": 4.62,
           "predicted_total": 288,
+          "py_predicted_total": 288,
+          "rs_predicted_total": 288,
           "tp": 106,
           "fp": 182,
           "fn_determined": 59,
@@ -354,7 +407,9 @@
           "ccc_determined": 0.6316,
           "ccc_all": 0.601,
           "csmf_gold": 0.0221,
-          "csmf_smartva_determined": 0.0395
+          "csmf_smartva_determined": 0.0395,
+          "csmf_python_determined": 0.0395,
+          "csmf_rust_determined": 0.0395
         },
         {
           "cause": "Fires",
@@ -363,6 +418,8 @@
           "undetermined": 3,
           "undetermined_pct": 2.46,
           "predicted_total": 151,
+          "py_predicted_total": 151,
+          "rs_predicted_total": 151,
           "tp": 88,
           "fp": 63,
           "fn_determined": 31,
@@ -377,7 +434,9 @@
           "ccc_determined": 0.7316,
           "ccc_all": 0.7129,
           "csmf_gold": 0.0156,
-          "csmf_smartva_determined": 0.0207
+          "csmf_smartva_determined": 0.0207,
+          "csmf_python_determined": 0.0207,
+          "csmf_rust_determined": 0.0207
         },
         {
           "cause": "Homicide",
@@ -386,6 +445,8 @@
           "undetermined": 20,
           "undetermined_pct": 11.98,
           "predicted_total": 142,
+          "py_predicted_total": 142,
+          "rs_predicted_total": 142,
           "tp": 101,
           "fp": 41,
           "fn_determined": 46,
@@ -400,7 +461,9 @@
           "ccc_determined": 0.6776,
           "ccc_all": 0.5928,
           "csmf_gold": 0.0213,
-          "csmf_smartva_determined": 0.0195
+          "csmf_smartva_determined": 0.0195,
+          "csmf_python_determined": 0.0195,
+          "csmf_rust_determined": 0.0195
         },
         {
           "cause": "Ischemic Heart Disease",
@@ -409,6 +472,8 @@
           "undetermined": 38,
           "undetermined_pct": 6.12,
           "predicted_total": 584,
+          "py_predicted_total": 584,
+          "rs_predicted_total": 584,
           "tp": 317,
           "fp": 267,
           "fn_determined": 266,
@@ -423,7 +488,9 @@
           "ccc_determined": 0.5299,
           "ccc_all": 0.4956,
           "csmf_gold": 0.0792,
-          "csmf_smartva_determined": 0.0801
+          "csmf_smartva_determined": 0.0801,
+          "csmf_python_determined": 0.0801,
+          "csmf_rust_determined": 0.0801
         },
         {
           "cause": "Leukemia/Lymphomas",
@@ -432,6 +499,8 @@
           "undetermined": 11,
           "undetermined_pct": 7.05,
           "predicted_total": 178,
+          "py_predicted_total": 178,
+          "rs_predicted_total": 178,
           "tp": 76,
           "fp": 102,
           "fn_determined": 69,
@@ -446,7 +515,9 @@
           "ccc_determined": 0.5097,
           "ccc_all": 0.4716,
           "csmf_gold": 0.0199,
-          "csmf_smartva_determined": 0.0244
+          "csmf_smartva_determined": 0.0244,
+          "csmf_python_determined": 0.0244,
+          "csmf_rust_determined": 0.0244
         },
         {
           "cause": "Lung Cancer",
@@ -455,6 +526,8 @@
           "undetermined": 2,
           "undetermined_pct": 1.89,
           "predicted_total": 105,
+          "py_predicted_total": 105,
+          "rs_predicted_total": 105,
           "tp": 41,
           "fp": 64,
           "fn_determined": 63,
@@ -469,7 +542,9 @@
           "ccc_determined": 0.3759,
           "ccc_all": 0.3682,
           "csmf_gold": 0.0135,
-          "csmf_smartva_determined": 0.0144
+          "csmf_smartva_determined": 0.0144,
+          "csmf_python_determined": 0.0144,
+          "csmf_rust_determined": 0.0144
         },
         {
           "cause": "Malaria",
@@ -478,6 +553,8 @@
           "undetermined": 20,
           "undetermined_pct": 20.0,
           "predicted_total": 62,
+          "py_predicted_total": 62,
+          "rs_predicted_total": 62,
           "tp": 25,
           "fp": 37,
           "fn_determined": 55,
@@ -492,7 +569,9 @@
           "ccc_determined": 0.2917,
           "ccc_all": 0.2273,
           "csmf_gold": 0.0128,
-          "csmf_smartva_determined": 0.0085
+          "csmf_smartva_determined": 0.0085,
+          "csmf_python_determined": 0.0085,
+          "csmf_rust_determined": 0.0085
         },
         {
           "cause": "Maternal",
@@ -501,6 +580,8 @@
           "undetermined": 25,
           "undetermined_pct": 5.34,
           "predicted_total": 419,
+          "py_predicted_total": 419,
+          "rs_predicted_total": 419,
           "tp": 362,
           "fp": 57,
           "fn_determined": 81,
@@ -515,7 +596,9 @@
           "ccc_determined": 0.8116,
           "ccc_all": 0.7666,
           "csmf_gold": 0.0597,
-          "csmf_smartva_determined": 0.0574
+          "csmf_smartva_determined": 0.0574,
+          "csmf_python_determined": 0.0574,
+          "csmf_rust_determined": 0.0574
         },
         {
           "cause": "Other Cancers",
@@ -524,6 +607,8 @@
           "undetermined": 9,
           "undetermined_pct": 3.88,
           "predicted_total": 52,
+          "py_predicted_total": 52,
+          "rs_predicted_total": 52,
           "tp": 35,
           "fp": 25,
           "fn_determined": 188,
@@ -538,7 +623,9 @@
           "ccc_determined": 0.1314,
           "ccc_all": 0.1251,
           "csmf_gold": 0.0296,
-          "csmf_smartva_determined": 0.0071
+          "csmf_smartva_determined": 0.0071,
+          "csmf_python_determined": 0.0071,
+          "csmf_rust_determined": 0.0071
         },
         {
           "cause": "Other Cardiovascular Diseases",
@@ -547,6 +634,8 @@
           "undetermined": 15,
           "undetermined_pct": 7.69,
           "predicted_total": 19,
+          "py_predicted_total": 19,
+          "rs_predicted_total": 19,
           "tp": 2,
           "fp": 17,
           "fn_determined": 178,
@@ -561,7 +650,9 @@
           "ccc_determined": -0.0189,
           "ccc_all": -0.0197,
           "csmf_gold": 0.0249,
-          "csmf_smartva_determined": 0.0026
+          "csmf_smartva_determined": 0.0026,
+          "csmf_python_determined": 0.0026,
+          "csmf_rust_determined": 0.0026
         },
         {
           "cause": "Other Infectious Diseases",
@@ -570,6 +661,8 @@
           "undetermined": 23,
           "undetermined_pct": 8.75,
           "predicted_total": 199,
+          "py_predicted_total": 199,
+          "rs_predicted_total": 199,
           "tp": 48,
           "fp": 151,
           "fn_determined": 192,
@@ -584,7 +677,9 @@
           "ccc_determined": 0.1758,
           "ccc_all": 0.1577,
           "csmf_gold": 0.0335,
-          "csmf_smartva_determined": 0.0273
+          "csmf_smartva_determined": 0.0273,
+          "csmf_python_determined": 0.0273,
+          "csmf_rust_determined": 0.0273
         },
         {
           "cause": "Other Injuries",
@@ -593,6 +688,8 @@
           "undetermined": 11,
           "undetermined_pct": 10.68,
           "predicted_total": 145,
+          "py_predicted_total": 145,
+          "rs_predicted_total": 145,
           "tp": 66,
           "fp": 79,
           "fn_determined": 26,
@@ -607,7 +704,9 @@
           "ccc_determined": 0.7088,
           "ccc_all": 0.6299,
           "csmf_gold": 0.0131,
-          "csmf_smartva_determined": 0.0199
+          "csmf_smartva_determined": 0.0199,
+          "csmf_python_determined": 0.0199,
+          "csmf_rust_determined": 0.0199
         },
         {
           "cause": "Other Non-communicable Diseases",
@@ -616,6 +715,8 @@
           "undetermined": 62,
           "undetermined_pct": 14.94,
           "predicted_total": 495,
+          "py_predicted_total": 495,
+          "rs_predicted_total": 495,
           "tp": 117,
           "fp": 370,
           "fn_determined": 236,
@@ -630,7 +731,9 @@
           "ccc_determined": 0.3112,
           "ccc_all": 0.2602,
           "csmf_gold": 0.0529,
-          "csmf_smartva_determined": 0.0679
+          "csmf_smartva_determined": 0.0679,
+          "csmf_python_determined": 0.0679,
+          "csmf_rust_determined": 0.0679
         },
         {
           "cause": "Pneumonia",
@@ -639,6 +742,8 @@
           "undetermined": 50,
           "undetermined_pct": 9.26,
           "predicted_total": 202,
+          "py_predicted_total": 202,
+          "rs_predicted_total": 202,
           "tp": 106,
           "fp": 96,
           "fn_determined": 384,
@@ -653,7 +758,9 @@
           "ccc_determined": 0.1926,
           "ccc_all": 0.1719,
           "csmf_gold": 0.0689,
-          "csmf_smartva_determined": 0.0277
+          "csmf_smartva_determined": 0.0277,
+          "csmf_python_determined": 0.0277,
+          "csmf_rust_determined": 0.0277
         },
         {
           "cause": "Poisonings",
@@ -662,6 +769,8 @@
           "undetermined": 13,
           "undetermined_pct": 15.12,
           "predicted_total": 69,
+          "py_predicted_total": 69,
+          "rs_predicted_total": 69,
           "tp": 44,
           "fp": 25,
           "fn_determined": 29,
@@ -676,7 +785,9 @@
           "ccc_determined": 0.5907,
           "ccc_all": 0.4968,
           "csmf_gold": 0.011,
-          "csmf_smartva_determined": 0.0095
+          "csmf_smartva_determined": 0.0095,
+          "csmf_python_determined": 0.0095,
+          "csmf_rust_determined": 0.0095
         },
         {
           "cause": "Prostate Cancer",
@@ -685,6 +796,8 @@
           "undetermined": 1,
           "undetermined_pct": 2.08,
           "predicted_total": 103,
+          "py_predicted_total": 103,
+          "rs_predicted_total": 103,
           "tp": 29,
           "fp": 74,
           "fn_determined": 18,
@@ -699,7 +812,9 @@
           "ccc_determined": 0.6054,
           "ccc_all": 0.5922,
           "csmf_gold": 0.0061,
-          "csmf_smartva_determined": 0.0141
+          "csmf_smartva_determined": 0.0141,
+          "csmf_python_determined": 0.0141,
+          "csmf_rust_determined": 0.0141
         },
         {
           "cause": "Road Traffic",
@@ -708,6 +823,8 @@
           "undetermined": 3,
           "undetermined_pct": 1.49,
           "predicted_total": 254,
+          "py_predicted_total": 254,
+          "rs_predicted_total": 254,
           "tp": 166,
           "fp": 88,
           "fn_determined": 33,
@@ -722,7 +839,9 @@
           "ccc_determined": 0.8291,
           "ccc_all": 0.8164,
           "csmf_gold": 0.0258,
-          "csmf_smartva_determined": 0.0348
+          "csmf_smartva_determined": 0.0348,
+          "csmf_python_determined": 0.0348,
+          "csmf_rust_determined": 0.0348
         },
         {
           "cause": "Stomach Cancer",
@@ -731,6 +850,8 @@
           "undetermined": 1,
           "undetermined_pct": 1.61,
           "predicted_total": 97,
+          "py_predicted_total": 97,
+          "rs_predicted_total": 97,
           "tp": 24,
           "fp": 73,
           "fn_determined": 37,
@@ -745,7 +866,9 @@
           "ccc_determined": 0.3751,
           "ccc_all": 0.3685,
           "csmf_gold": 0.0079,
-          "csmf_smartva_determined": 0.0133
+          "csmf_smartva_determined": 0.0133,
+          "csmf_python_determined": 0.0133,
+          "csmf_rust_determined": 0.0133
         },
         {
           "cause": "Stroke",
@@ -754,6 +877,8 @@
           "undetermined": 36,
           "undetermined_pct": 5.71,
           "predicted_total": 829,
+          "py_predicted_total": 829,
+          "rs_predicted_total": 829,
           "tp": 404,
           "fp": 425,
           "fn_determined": 190,
@@ -768,7 +893,9 @@
           "ccc_determined": 0.6704,
           "ccc_all": 0.6304,
           "csmf_gold": 0.0803,
-          "csmf_smartva_determined": 0.1137
+          "csmf_smartva_determined": 0.1137,
+          "csmf_python_determined": 0.1137,
+          "csmf_rust_determined": 0.1137
         },
         {
           "cause": "Suicide",
@@ -777,6 +904,8 @@
           "undetermined": 8,
           "undetermined_pct": 6.45,
           "predicted_total": 59,
+          "py_predicted_total": 59,
+          "rs_predicted_total": 59,
           "tp": 38,
           "fp": 21,
           "fn_determined": 78,
@@ -791,7 +920,9 @@
           "ccc_determined": 0.3072,
           "ccc_all": 0.2854,
           "csmf_gold": 0.0158,
-          "csmf_smartva_determined": 0.0081
+          "csmf_smartva_determined": 0.0081,
+          "csmf_python_determined": 0.0081,
+          "csmf_rust_determined": 0.0081
         },
         {
           "cause": "TB",
@@ -800,6 +931,8 @@
           "undetermined": 16,
           "undetermined_pct": 5.8,
           "predicted_total": 290,
+          "py_predicted_total": 290,
+          "rs_predicted_total": 290,
           "tp": 138,
           "fp": 152,
           "fn_determined": 122,
@@ -814,7 +947,9 @@
           "ccc_determined": 0.5166,
           "ccc_all": 0.4848,
           "csmf_gold": 0.0352,
-          "csmf_smartva_determined": 0.0398
+          "csmf_smartva_determined": 0.0398,
+          "csmf_python_determined": 0.0398,
+          "csmf_rust_determined": 0.0398
         }
       ]
     },
@@ -832,7 +967,8 @@
         "cause34_match_pct": 100.0,
         "icd10_compared": 2004,
         "icd10_exact_match": 2004,
-        "icd10_match_pct": 100.0
+        "icd10_match_pct": 100.0,
+        "csmf_determined_max_abs_diff": 0.0
       },
       "gold_standard_agreement": {
         "top1_correct_count": 959,
@@ -848,7 +984,9 @@
         "mean_ppv_pct": 50.47,
         "mean_ccc_on_determined": 0.5614,
         "mean_ccc_on_all": 0.5369,
-        "csmf_accuracy_determined": 0.7937
+        "csmf_accuracy_determined": 0.7937,
+        "csmf_accuracy_python_determined": 0.7937,
+        "csmf_accuracy_rust_determined": 0.7937
       },
       "per_cause": [
         {
@@ -858,6 +996,8 @@
           "undetermined": 1,
           "undetermined_pct": 5.0,
           "predicted_total": 113,
+          "py_predicted_total": 113,
+          "rs_predicted_total": 113,
           "tp": 14,
           "fp": 99,
           "fn_determined": 5,
@@ -872,7 +1012,9 @@
           "ccc_determined": 0.7237,
           "ccc_all": 0.685,
           "csmf_gold": 0.0097,
-          "csmf_smartva_determined": 0.0582
+          "csmf_smartva_determined": 0.0582,
+          "csmf_python_determined": 0.0582,
+          "csmf_rust_determined": 0.0582
         },
         {
           "cause": "Bite of Venomous Animal",
@@ -881,6 +1023,8 @@
           "undetermined": 0,
           "undetermined_pct": 0.0,
           "predicted_total": 56,
+          "py_predicted_total": 56,
+          "rs_predicted_total": 56,
           "tp": 50,
           "fp": 6,
           "fn_determined": 4,
@@ -895,7 +1039,9 @@
           "ccc_determined": 0.9222,
           "ccc_all": 0.9222,
           "csmf_gold": 0.0262,
-          "csmf_smartva_determined": 0.0289
+          "csmf_smartva_determined": 0.0289,
+          "csmf_python_determined": 0.0289,
+          "csmf_rust_determined": 0.0289
         },
         {
           "cause": "Childhood Cancer",
@@ -904,6 +1050,8 @@
           "undetermined": 1,
           "undetermined_pct": 3.57,
           "predicted_total": 56,
+          "py_predicted_total": 56,
+          "rs_predicted_total": 56,
           "tp": 14,
           "fp": 42,
           "fn_determined": 13,
@@ -918,7 +1066,9 @@
           "ccc_determined": 0.4944,
           "ccc_all": 0.475,
           "csmf_gold": 0.0136,
-          "csmf_smartva_determined": 0.0289
+          "csmf_smartva_determined": 0.0289,
+          "csmf_python_determined": 0.0289,
+          "csmf_rust_determined": 0.0289
         },
         {
           "cause": "Childhood Cardiovascular Diseases",
@@ -927,6 +1077,8 @@
           "undetermined": 11,
           "undetermined_pct": 14.47,
           "predicted_total": 23,
+          "py_predicted_total": 23,
+          "rs_predicted_total": 23,
           "tp": 8,
           "fp": 15,
           "fn_determined": 57,
@@ -941,7 +1093,9 @@
           "ccc_determined": 0.0792,
           "ccc_all": 0.0605,
           "csmf_gold": 0.0368,
-          "csmf_smartva_determined": 0.0118
+          "csmf_smartva_determined": 0.0118,
+          "csmf_python_determined": 0.0118,
+          "csmf_rust_determined": 0.0118
         },
         {
           "cause": "Congenital malformation",
@@ -950,6 +1104,8 @@
           "undetermined": 0,
           "undetermined_pct": 0.0,
           "predicted_total": 1,
+          "py_predicted_total": 1,
+          "rs_predicted_total": 1,
           "tp": 0,
           "fp": 1,
           "fn_determined": 0,
@@ -964,7 +1120,9 @@
           "ccc_determined": 0.0,
           "ccc_all": 0.0,
           "csmf_gold": 0.0,
-          "csmf_smartva_determined": 0.0005
+          "csmf_smartva_determined": 0.0005,
+          "csmf_python_determined": 0.0005,
+          "csmf_rust_determined": 0.0005
         },
         {
           "cause": "Diarrhea/Dysentery",
@@ -973,6 +1131,8 @@
           "undetermined": 11,
           "undetermined_pct": 4.3,
           "predicted_total": 236,
+          "py_predicted_total": 236,
+          "rs_predicted_total": 236,
           "tp": 141,
           "fp": 95,
           "fn_determined": 104,
@@ -987,7 +1147,9 @@
           "ccc_determined": 0.5543,
           "ccc_all": 0.5283,
           "csmf_gold": 0.124,
-          "csmf_smartva_determined": 0.1216
+          "csmf_smartva_determined": 0.1216,
+          "csmf_python_determined": 0.1216,
+          "csmf_rust_determined": 0.1216
         },
         {
           "cause": "Digestive Diseases",
@@ -996,6 +1158,8 @@
           "undetermined": 3,
           "undetermined_pct": 6.25,
           "predicted_total": 61,
+          "py_predicted_total": 61,
+          "rs_predicted_total": 61,
           "tp": 18,
           "fp": 43,
           "fn_determined": 27,
@@ -1010,7 +1174,9 @@
           "ccc_determined": 0.37,
           "ccc_all": 0.3438,
           "csmf_gold": 0.0233,
-          "csmf_smartva_determined": 0.0314
+          "csmf_smartva_determined": 0.0314,
+          "csmf_python_determined": 0.0314,
+          "csmf_rust_determined": 0.0314
         },
         {
           "cause": "Drowning",
@@ -1019,6 +1185,8 @@
           "undetermined": 1,
           "undetermined_pct": 1.2,
           "predicted_total": 79,
+          "py_predicted_total": 79,
+          "rs_predicted_total": 79,
           "tp": 76,
           "fp": 3,
           "fn_determined": 6,
@@ -1033,7 +1201,9 @@
           "ccc_determined": 0.9232,
           "ccc_all": 0.9114,
           "csmf_gold": 0.0402,
-          "csmf_smartva_determined": 0.0407
+          "csmf_smartva_determined": 0.0407,
+          "csmf_python_determined": 0.0407,
+          "csmf_rust_determined": 0.0407
         },
         {
           "cause": "Encephalitis",
@@ -1042,6 +1212,8 @@
           "undetermined": 0,
           "undetermined_pct": 0.0,
           "predicted_total": 65,
+          "py_predicted_total": 65,
+          "rs_predicted_total": 65,
           "tp": 21,
           "fp": 44,
           "fn_determined": 20,
@@ -1056,7 +1228,9 @@
           "ccc_determined": 0.4878,
           "ccc_all": 0.4878,
           "csmf_gold": 0.0199,
-          "csmf_smartva_determined": 0.0335
+          "csmf_smartva_determined": 0.0335,
+          "csmf_python_determined": 0.0335,
+          "csmf_rust_determined": 0.0335
         },
         {
           "cause": "Falls",
@@ -1065,6 +1239,8 @@
           "undetermined": 3,
           "undetermined_pct": 6.12,
           "predicted_total": 68,
+          "py_predicted_total": 68,
+          "rs_predicted_total": 68,
           "tp": 31,
           "fp": 37,
           "fn_determined": 15,
@@ -1079,7 +1255,9 @@
           "ccc_determined": 0.6576,
           "ccc_all": 0.6143,
           "csmf_gold": 0.0237,
-          "csmf_smartva_determined": 0.035
+          "csmf_smartva_determined": 0.035,
+          "csmf_python_determined": 0.035,
+          "csmf_rust_determined": 0.035
         },
         {
           "cause": "Fires",
@@ -1088,6 +1266,8 @@
           "undetermined": 1,
           "undetermined_pct": 1.47,
           "predicted_total": 55,
+          "py_predicted_total": 55,
+          "rs_predicted_total": 55,
           "tp": 49,
           "fp": 6,
           "fn_determined": 18,
@@ -1102,7 +1282,9 @@
           "ccc_determined": 0.7179,
           "ccc_all": 0.7066,
           "csmf_gold": 0.0329,
-          "csmf_smartva_determined": 0.0283
+          "csmf_smartva_determined": 0.0283,
+          "csmf_python_determined": 0.0283,
+          "csmf_rust_determined": 0.0283
         },
         {
           "cause": "Hemorrhagic fever",
@@ -1111,6 +1293,8 @@
           "undetermined": 0,
           "undetermined_pct": 0.0,
           "predicted_total": 69,
+          "py_predicted_total": 69,
+          "rs_predicted_total": 69,
           "tp": 33,
           "fp": 36,
           "fn_determined": 18,
@@ -1125,7 +1309,9 @@
           "ccc_determined": 0.6294,
           "ccc_all": 0.6294,
           "csmf_gold": 0.0247,
-          "csmf_smartva_determined": 0.0355
+          "csmf_smartva_determined": 0.0355,
+          "csmf_python_determined": 0.0355,
+          "csmf_rust_determined": 0.0355
         },
         {
           "cause": "Homicide",
@@ -1134,6 +1320,8 @@
           "undetermined": 0,
           "undetermined_pct": 0.0,
           "predicted_total": 51,
+          "py_predicted_total": 51,
+          "rs_predicted_total": 51,
           "tp": 43,
           "fp": 8,
           "fn_determined": 9,
@@ -1148,7 +1336,9 @@
           "ccc_determined": 0.8183,
           "ccc_all": 0.8183,
           "csmf_gold": 0.0252,
-          "csmf_smartva_determined": 0.0263
+          "csmf_smartva_determined": 0.0263,
+          "csmf_python_determined": 0.0263,
+          "csmf_rust_determined": 0.0263
         },
         {
           "cause": "Malaria",
@@ -1157,6 +1347,8 @@
           "undetermined": 22,
           "undetermined_pct": 18.97,
           "predicted_total": 98,
+          "py_predicted_total": 98,
+          "rs_predicted_total": 98,
           "tp": 37,
           "fp": 61,
           "fn_determined": 57,
@@ -1171,7 +1363,9 @@
           "ccc_determined": 0.3633,
           "ccc_all": 0.2849,
           "csmf_gold": 0.0562,
-          "csmf_smartva_determined": 0.0505
+          "csmf_smartva_determined": 0.0505,
+          "csmf_python_determined": 0.0505,
+          "csmf_rust_determined": 0.0505
         },
         {
           "cause": "Measles",
@@ -1180,6 +1374,8 @@
           "undetermined": 0,
           "undetermined_pct": 0.0,
           "predicted_total": 84,
+          "py_predicted_total": 84,
+          "rs_predicted_total": 84,
           "tp": 19,
           "fp": 65,
           "fn_determined": 4,
@@ -1194,7 +1390,9 @@
           "ccc_determined": 0.8174,
           "ccc_all": 0.8174,
           "csmf_gold": 0.0111,
-          "csmf_smartva_determined": 0.0433
+          "csmf_smartva_determined": 0.0433,
+          "csmf_python_determined": 0.0433,
+          "csmf_rust_determined": 0.0433
         },
         {
           "cause": "Meningitis",
@@ -1203,6 +1401,8 @@
           "undetermined": 4,
           "undetermined_pct": 6.9,
           "predicted_total": 132,
+          "py_predicted_total": 132,
+          "rs_predicted_total": 132,
           "tp": 22,
           "fp": 110,
           "fn_determined": 32,
@@ -1217,7 +1417,9 @@
           "ccc_determined": 0.3778,
           "ccc_all": 0.3483,
           "csmf_gold": 0.0281,
-          "csmf_smartva_determined": 0.068
+          "csmf_smartva_determined": 0.068,
+          "csmf_python_determined": 0.068,
+          "csmf_rust_determined": 0.068
         },
         {
           "cause": "Other Defined Causes of Child Deaths",
@@ -1226,6 +1428,8 @@
           "undetermined": 17,
           "undetermined_pct": 8.76,
           "predicted_total": 99,
+          "py_predicted_total": 99,
+          "rs_predicted_total": 99,
           "tp": 53,
           "fp": 46,
           "fn_determined": 124,
@@ -1240,7 +1444,9 @@
           "ccc_determined": 0.2644,
           "ccc_all": 0.2369,
           "csmf_gold": 0.094,
-          "csmf_smartva_determined": 0.051
+          "csmf_smartva_determined": 0.051,
+          "csmf_python_determined": 0.051,
+          "csmf_rust_determined": 0.051
         },
         {
           "cause": "Other Infectious Diseases",
@@ -1249,6 +1455,8 @@
           "undetermined": 4,
           "undetermined_pct": 5.97,
           "predicted_total": 64,
+          "py_predicted_total": 64,
+          "rs_predicted_total": 64,
           "tp": 20,
           "fp": 44,
           "fn_determined": 43,
@@ -1263,7 +1471,9 @@
           "ccc_determined": 0.2833,
           "ccc_all": 0.2634,
           "csmf_gold": 0.0325,
-          "csmf_smartva_determined": 0.033
+          "csmf_smartva_determined": 0.033,
+          "csmf_python_determined": 0.033,
+          "csmf_rust_determined": 0.033
         },
         {
           "cause": "Pneumonia",
@@ -1272,6 +1482,8 @@
           "undetermined": 26,
           "undetermined_pct": 4.89,
           "predicted_total": 260,
+          "py_predicted_total": 260,
+          "rs_predicted_total": 260,
           "tp": 178,
           "fp": 82,
           "fn_determined": 328,
@@ -1286,7 +1498,9 @@
           "ccc_determined": 0.3194,
           "ccc_all": 0.3013,
           "csmf_gold": 0.2578,
-          "csmf_smartva_determined": 0.134
+          "csmf_smartva_determined": 0.134,
+          "csmf_python_determined": 0.134,
+          "csmf_rust_determined": 0.134
         },
         {
           "cause": "Poisonings",
@@ -1295,6 +1509,8 @@
           "undetermined": 2,
           "undetermined_pct": 11.11,
           "predicted_total": 19,
+          "py_predicted_total": 19,
+          "rs_predicted_total": 19,
           "tp": 13,
           "fp": 6,
           "fn_determined": 3,
@@ -1309,7 +1525,9 @@
           "ccc_determined": 0.8031,
           "ccc_all": 0.7083,
           "csmf_gold": 0.0087,
-          "csmf_smartva_determined": 0.0098
+          "csmf_smartva_determined": 0.0098,
+          "csmf_python_determined": 0.0098,
+          "csmf_rust_determined": 0.0098
         },
         {
           "cause": "Preterm Delivery",
@@ -1318,6 +1536,8 @@
           "undetermined": 0,
           "undetermined_pct": 0.0,
           "predicted_total": 1,
+          "py_predicted_total": 1,
+          "rs_predicted_total": 1,
           "tp": 0,
           "fp": 1,
           "fn_determined": 0,
@@ -1332,7 +1552,9 @@
           "ccc_determined": 0.0,
           "ccc_all": 0.0,
           "csmf_gold": 0.0,
-          "csmf_smartva_determined": 0.0005
+          "csmf_smartva_determined": 0.0005,
+          "csmf_python_determined": 0.0005,
+          "csmf_rust_determined": 0.0005
         },
         {
           "cause": "Road Traffic",
@@ -1341,6 +1563,8 @@
           "undetermined": 2,
           "undetermined_pct": 2.17,
           "predicted_total": 91,
+          "py_predicted_total": 91,
+          "rs_predicted_total": 91,
           "tp": 86,
           "fp": 5,
           "fn_determined": 4,
@@ -1355,7 +1579,9 @@
           "ccc_determined": 0.9533,
           "ccc_all": 0.9315,
           "csmf_gold": 0.0446,
-          "csmf_smartva_determined": 0.0469
+          "csmf_smartva_determined": 0.0469,
+          "csmf_python_determined": 0.0469,
+          "csmf_rust_determined": 0.0469
         },
         {
           "cause": "Sepsis",
@@ -1364,6 +1590,8 @@
           "undetermined": 14,
           "undetermined_pct": 10.14,
           "predicted_total": 160,
+          "py_predicted_total": 160,
+          "rs_predicted_total": 160,
           "tp": 33,
           "fp": 127,
           "fn_determined": 91,
@@ -1378,7 +1606,9 @@
           "ccc_determined": 0.2294,
           "ccc_all": 0.2011,
           "csmf_gold": 0.0669,
-          "csmf_smartva_determined": 0.0824
+          "csmf_smartva_determined": 0.0824,
+          "csmf_python_determined": 0.0824,
+          "csmf_rust_determined": 0.0824
         }
       ]
     },
@@ -1386,195 +1616,981 @@
       "module": "neonate",
       "num_causes": 6,
       "total_records": 2625,
-      "determined_records": 2392,
-      "determined_pct": 91.12,
-      "undetermined_records": 233,
-      "undetermined_pct": 8.88,
+      "determined_records": 2429,
+      "determined_pct": 92.53,
+      "undetermined_records": 196,
+      "undetermined_pct": 7.47,
       "python_vs_rust": {
         "records_compared": 2625,
         "cause34_exact_match": 2625,
         "cause34_match_pct": 100.0,
         "icd10_compared": 2625,
         "icd10_exact_match": 2625,
-        "icd10_match_pct": 100.0
+        "icd10_match_pct": 100.0,
+        "csmf_determined_max_abs_diff": 0.0
       },
       "gold_standard_agreement": {
-        "top1_correct_count": 1679,
-        "top1_agreement_on_determined_pct": 70.19,
-        "top1_agreement_on_all_pct": 63.96,
-        "top3_correct_count": 1921,
-        "top3_agreement_on_determined_pct": 80.31,
-        "top3_agreement_on_all_pct": 73.18,
-        "mean_sensitivity_determined_pct": 58.95,
-        "mean_sensitivity_all_pct": 53.12,
-        "mean_specificity_determined_pct": 94.0,
-        "mean_specificity_all_pct": 94.55,
-        "mean_ppv_pct": 57.58,
-        "mean_ccc_on_determined": 0.5074,
-        "mean_ccc_on_all": 0.4375,
-        "csmf_accuracy_determined": 0.847
+        "top1_correct_count": 1685,
+        "top1_agreement_on_determined_pct": 69.37,
+        "top1_agreement_on_all_pct": 64.19,
+        "top3_correct_count": 1941,
+        "top3_agreement_on_determined_pct": 79.91,
+        "top3_agreement_on_all_pct": 73.94,
+        "mean_sensitivity_determined_pct": 58.66,
+        "mean_sensitivity_all_pct": 54.47,
+        "mean_specificity_determined_pct": 93.87,
+        "mean_specificity_all_pct": 94.34,
+        "mean_ppv_pct": 57.47,
+        "mean_ccc_on_determined": 0.5039,
+        "mean_ccc_on_all": 0.4536,
+        "csmf_accuracy_determined": 0.8331,
+        "csmf_accuracy_python_determined": 0.8331,
+        "csmf_accuracy_rust_determined": 0.8331
       },
       "per_cause": [
         {
           "cause": "Birth asphyxia",
           "gs_total": 462,
-          "determined": 364,
-          "undetermined": 98,
-          "undetermined_pct": 21.21,
-          "predicted_total": 298,
-          "tp": 168,
-          "fp": 130,
-          "fn_determined": 196,
-          "tn_determined": 1898,
-          "sensitivity_determined_pct": 46.15,
-          "sensitivity_all_pct": 36.36,
-          "specificity_determined_pct": 93.59,
-          "specificity_all_pct": 93.99,
-          "ppv_pct": 56.38,
-          "top3_correct": 185,
-          "top3_agreement_determined_pct": 50.82,
-          "ccc_determined": 0.3538,
-          "ccc_all": 0.2364,
+          "determined": 372,
+          "undetermined": 90,
+          "undetermined_pct": 19.48,
+          "predicted_total": 285,
+          "py_predicted_total": 285,
+          "rs_predicted_total": 285,
+          "tp": 164,
+          "fp": 121,
+          "fn_determined": 208,
+          "tn_determined": 1936,
+          "sensitivity_determined_pct": 44.09,
+          "sensitivity_all_pct": 35.5,
+          "specificity_determined_pct": 94.12,
+          "specificity_all_pct": 94.41,
+          "ppv_pct": 57.54,
+          "top3_correct": 184,
+          "top3_agreement_determined_pct": 49.46,
+          "ccc_determined": 0.329,
+          "ccc_all": 0.226,
           "csmf_gold": 0.176,
-          "csmf_smartva_determined": 0.1246
+          "csmf_smartva_determined": 0.1173,
+          "csmf_python_determined": 0.1173,
+          "csmf_rust_determined": 0.1173
         },
         {
           "cause": "Congenital malformation",
           "gs_total": 249,
-          "determined": 214,
-          "undetermined": 35,
-          "undetermined_pct": 14.06,
-          "predicted_total": 139,
-          "tp": 92,
+          "determined": 217,
+          "undetermined": 32,
+          "undetermined_pct": 12.85,
+          "predicted_total": 141,
+          "py_predicted_total": 141,
+          "rs_predicted_total": 141,
+          "tp": 94,
           "fp": 47,
-          "fn_determined": 122,
-          "tn_determined": 2131,
-          "sensitivity_determined_pct": 42.99,
-          "sensitivity_all_pct": 36.95,
-          "specificity_determined_pct": 97.84,
+          "fn_determined": 123,
+          "tn_determined": 2165,
+          "sensitivity_determined_pct": 43.32,
+          "sensitivity_all_pct": 37.75,
+          "specificity_determined_pct": 97.88,
           "specificity_all_pct": 98.02,
-          "ppv_pct": 66.19,
-          "top3_correct": 112,
-          "top3_agreement_determined_pct": 52.34,
-          "ccc_determined": 0.3159,
-          "ccc_all": 0.2434,
+          "ppv_pct": 66.67,
+          "top3_correct": 113,
+          "top3_agreement_determined_pct": 52.07,
+          "ccc_determined": 0.3198,
+          "ccc_all": 0.253,
           "csmf_gold": 0.0949,
-          "csmf_smartva_determined": 0.0581
+          "csmf_smartva_determined": 0.058,
+          "csmf_python_determined": 0.058,
+          "csmf_rust_determined": 0.058
         },
         {
           "cause": "Neonatal Meningitis/Sepsis",
           "gs_total": 166,
-          "determined": 148,
-          "undetermined": 18,
-          "undetermined_pct": 10.84,
-          "predicted_total": 263,
-          "tp": 104,
-          "fp": 159,
-          "fn_determined": 44,
-          "tn_determined": 2085,
-          "sensitivity_determined_pct": 70.27,
-          "sensitivity_all_pct": 62.65,
-          "specificity_determined_pct": 92.91,
-          "specificity_all_pct": 93.53,
-          "ppv_pct": 39.54,
-          "top3_correct": 123,
-          "top3_agreement_determined_pct": 83.11,
-          "ccc_determined": 0.6432,
-          "ccc_all": 0.5518,
+          "determined": 158,
+          "undetermined": 8,
+          "undetermined_pct": 4.82,
+          "predicted_total": 316,
+          "py_predicted_total": 316,
+          "rs_predicted_total": 316,
+          "tp": 117,
+          "fp": 199,
+          "fn_determined": 41,
+          "tn_determined": 2072,
+          "sensitivity_determined_pct": 74.05,
+          "sensitivity_all_pct": 70.48,
+          "specificity_determined_pct": 91.24,
+          "specificity_all_pct": 91.91,
+          "ppv_pct": 37.03,
+          "top3_correct": 137,
+          "top3_agreement_determined_pct": 86.71,
+          "ccc_determined": 0.6886,
+          "ccc_all": 0.6458,
           "csmf_gold": 0.0632,
-          "csmf_smartva_determined": 0.1099
+          "csmf_smartva_determined": 0.1301,
+          "csmf_python_determined": 0.1301,
+          "csmf_rust_determined": 0.1301
         },
         {
           "cause": "Neonatal Pneumonia",
           "gs_total": 83,
-          "determined": 73,
-          "undetermined": 10,
-          "undetermined_pct": 12.05,
-          "predicted_total": 203,
-          "tp": 30,
-          "fp": 173,
-          "fn_determined": 43,
-          "tn_determined": 2146,
-          "sensitivity_determined_pct": 41.1,
-          "sensitivity_all_pct": 36.14,
-          "specificity_determined_pct": 92.54,
-          "specificity_all_pct": 93.19,
-          "ppv_pct": 14.78,
-          "top3_correct": 49,
-          "top3_agreement_determined_pct": 67.12,
-          "ccc_determined": 0.2932,
-          "ccc_all": 0.2337,
+          "determined": 79,
+          "undetermined": 4,
+          "undetermined_pct": 4.82,
+          "predicted_total": 208,
+          "py_predicted_total": 208,
+          "rs_predicted_total": 208,
+          "tp": 31,
+          "fp": 177,
+          "fn_determined": 48,
+          "tn_determined": 2173,
+          "sensitivity_determined_pct": 39.24,
+          "sensitivity_all_pct": 37.35,
+          "specificity_determined_pct": 92.47,
+          "specificity_all_pct": 93.04,
+          "ppv_pct": 14.9,
+          "top3_correct": 53,
+          "top3_agreement_determined_pct": 67.09,
+          "ccc_determined": 0.2709,
+          "ccc_all": 0.2482,
           "csmf_gold": 0.0316,
-          "csmf_smartva_determined": 0.0849
-        },
-        {
-          "cause": "Pneumonia",
-          "gs_total": 0,
-          "determined": 0,
-          "undetermined": 0,
-          "undetermined_pct": 0.0,
-          "predicted_total": 2,
-          "tp": 0,
-          "fp": 2,
-          "fn_determined": 0,
-          "tn_determined": 2390,
-          "sensitivity_determined_pct": 0.0,
-          "sensitivity_all_pct": 0.0,
-          "specificity_determined_pct": 99.92,
-          "specificity_all_pct": 99.92,
-          "ppv_pct": 0.0,
-          "top3_correct": 0,
-          "top3_agreement_determined_pct": 0.0,
-          "ccc_determined": 0.0,
-          "ccc_all": 0.0,
-          "csmf_gold": 0.0,
-          "csmf_smartva_determined": 0.0008
+          "csmf_smartva_determined": 0.0856,
+          "csmf_python_determined": 0.0856,
+          "csmf_rust_determined": 0.0856
         },
         {
           "cause": "Preterm Delivery",
           "gs_total": 660,
-          "determined": 616,
-          "undetermined": 44,
-          "undetermined_pct": 6.67,
-          "predicted_total": 458,
-          "tp": 361,
-          "fp": 97,
-          "fn_determined": 255,
-          "tn_determined": 1679,
-          "sensitivity_determined_pct": 58.6,
-          "sensitivity_all_pct": 54.7,
-          "specificity_determined_pct": 94.54,
-          "specificity_all_pct": 95.06,
-          "ppv_pct": 78.82,
-          "top3_correct": 528,
-          "top3_agreement_determined_pct": 85.71,
-          "ccc_determined": 0.5032,
-          "ccc_all": 0.4564,
+          "determined": 625,
+          "undetermined": 35,
+          "undetermined_pct": 5.3,
+          "predicted_total": 450,
+          "py_predicted_total": 450,
+          "rs_predicted_total": 450,
+          "tp": 355,
+          "fp": 95,
+          "fn_determined": 270,
+          "tn_determined": 1709,
+          "sensitivity_determined_pct": 56.8,
+          "sensitivity_all_pct": 53.79,
+          "specificity_determined_pct": 94.73,
+          "specificity_all_pct": 95.17,
+          "ppv_pct": 78.89,
+          "top3_correct": 530,
+          "top3_agreement_determined_pct": 84.8,
+          "ccc_determined": 0.4816,
+          "ccc_all": 0.4455,
           "csmf_gold": 0.2514,
-          "csmf_smartva_determined": 0.1915
+          "csmf_smartva_determined": 0.1853,
+          "csmf_python_determined": 0.1853,
+          "csmf_rust_determined": 0.1853
         },
         {
           "cause": "Stillbirth",
           "gs_total": 1005,
-          "determined": 977,
-          "undetermined": 28,
-          "undetermined_pct": 2.79,
+          "determined": 978,
+          "undetermined": 27,
+          "undetermined_pct": 2.69,
           "predicted_total": 1029,
+          "py_predicted_total": 1029,
+          "rs_predicted_total": 1029,
           "tp": 924,
           "fp": 105,
-          "fn_determined": 53,
-          "tn_determined": 1310,
-          "sensitivity_determined_pct": 94.58,
+          "fn_determined": 54,
+          "tn_determined": 1346,
+          "sensitivity_determined_pct": 94.48,
           "sensitivity_all_pct": 91.94,
-          "specificity_determined_pct": 92.58,
+          "specificity_determined_pct": 92.76,
           "specificity_all_pct": 93.52,
           "ppv_pct": 89.8,
           "top3_correct": 924,
-          "top3_agreement_determined_pct": 94.58,
-          "ccc_determined": 0.9349,
+          "top3_agreement_determined_pct": 94.48,
+          "ccc_determined": 0.9337,
           "ccc_all": 0.9033,
           "csmf_gold": 0.3829,
-          "csmf_smartva_determined": 0.4302
+          "csmf_smartva_determined": 0.4236,
+          "csmf_python_determined": 0.4236,
+          "csmf_rust_determined": 0.4236
+        }
+      ]
+    }
+  },
+  "csmf_equivalence": {
+    "adult_csmf": {
+      "causes_compared": 34,
+      "causes_exact_match": 34,
+      "max_abs_diff": 0.0,
+      "exact": true,
+      "rows": [
+        {
+          "cause34": "AIDS",
+          "cause_list_num": "1",
+          "icd10": "B24",
+          "py_all": "0.058",
+          "rs_all": "0.058",
+          "py_male": "0.055",
+          "rs_male": "0.055",
+          "py_female": "0.06",
+          "rs_female": "0.06",
+          "exact_match": true
+        },
+        {
+          "cause34": "Bite of Venomous Animal",
+          "cause_list_num": "3",
+          "icd10": "X27",
+          "py_all": "0.01",
+          "rs_all": "0.01",
+          "py_male": "0.01",
+          "rs_male": "0.01",
+          "py_female": "0.009",
+          "rs_female": "0.009",
+          "exact_match": true
+        },
+        {
+          "cause34": "Breast Cancer",
+          "cause_list_num": "4",
+          "icd10": "C50",
+          "py_all": "0.024",
+          "rs_all": "0.024",
+          "py_male": "0.0",
+          "rs_male": "0.0",
+          "py_female": "0.052",
+          "rs_female": "0.052",
+          "exact_match": true
+        },
+        {
+          "cause34": "Cervical Cancer",
+          "cause_list_num": "5",
+          "icd10": "C53",
+          "py_all": "0.023",
+          "rs_all": "0.023",
+          "py_male": "0.0",
+          "rs_male": "0.0",
+          "py_female": "0.049",
+          "rs_female": "0.049",
+          "exact_match": true
+        },
+        {
+          "cause34": "Chronic Kidney Disease",
+          "cause_list_num": "29",
+          "icd10": "N18",
+          "py_all": "0.04",
+          "rs_all": "0.04",
+          "py_male": "0.039",
+          "rs_male": "0.039",
+          "py_female": "0.04",
+          "rs_female": "0.04",
+          "exact_match": true
+        },
+        {
+          "cause34": "Chronic Respiratory",
+          "cause_list_num": "35",
+          "icd10": "J44",
+          "py_all": "0.047",
+          "rs_all": "0.047",
+          "py_male": "0.055",
+          "rs_male": "0.055",
+          "py_female": "0.037",
+          "rs_female": "0.037",
+          "exact_match": true
+        },
+        {
+          "cause34": "Cirrhosis",
+          "cause_list_num": "6",
+          "icd10": "K74",
+          "py_all": "0.043",
+          "rs_all": "0.043",
+          "py_male": "0.06",
+          "rs_male": "0.06",
+          "py_female": "0.023",
+          "rs_female": "0.023",
+          "exact_match": true
+        },
+        {
+          "cause34": "Colorectal Cancer",
+          "cause_list_num": "7",
+          "icd10": "C18",
+          "py_all": "0.001",
+          "rs_all": "0.001",
+          "py_male": "0.001",
+          "rs_male": "0.001",
+          "py_female": "0.001",
+          "rs_female": "0.001",
+          "exact_match": true
+        },
+        {
+          "cause34": "Diabetes",
+          "cause_list_num": "9",
+          "icd10": "E14",
+          "py_all": "0.053",
+          "rs_all": "0.053",
+          "py_male": "0.052",
+          "rs_male": "0.052",
+          "py_female": "0.053",
+          "rs_female": "0.053",
+          "exact_match": true
+        },
+        {
+          "cause34": "Diarrhea/Dysentery",
+          "cause_list_num": "10",
+          "icd10": "A09",
+          "py_all": "0.007",
+          "rs_all": "0.007",
+          "py_male": "0.007",
+          "rs_male": "0.007",
+          "py_female": "0.007",
+          "rs_female": "0.007",
+          "exact_match": true
+        },
+        {
+          "cause34": "Drowning",
+          "cause_list_num": "11",
+          "icd10": "W74",
+          "py_all": "0.012",
+          "rs_all": "0.012",
+          "py_male": "0.018",
+          "rs_male": "0.018",
+          "py_female": "0.006",
+          "rs_female": "0.006",
+          "exact_match": true
+        },
+        {
+          "cause34": "Esophageal Cancer",
+          "cause_list_num": "13",
+          "icd10": "C15",
+          "py_all": "0.009",
+          "rs_all": "0.009",
+          "py_male": "0.011",
+          "rs_male": "0.011",
+          "py_female": "0.007",
+          "rs_female": "0.007",
+          "exact_match": true
+        },
+        {
+          "cause34": "Falls",
+          "cause_list_num": "14",
+          "icd10": "W19",
+          "py_all": "0.037",
+          "rs_all": "0.037",
+          "py_male": "0.047",
+          "rs_male": "0.047",
+          "py_female": "0.024",
+          "rs_female": "0.024",
+          "exact_match": true
+        },
+        {
+          "cause34": "Fires",
+          "cause_list_num": "15",
+          "icd10": "X09",
+          "py_all": "0.019",
+          "rs_all": "0.019",
+          "py_male": "0.014",
+          "rs_male": "0.014",
+          "py_female": "0.025",
+          "rs_female": "0.025",
+          "exact_match": true
+        },
+        {
+          "cause34": "Homicide",
+          "cause_list_num": "16",
+          "icd10": "Y09",
+          "py_all": "0.018",
+          "rs_all": "0.018",
+          "py_male": "0.028",
+          "rs_male": "0.028",
+          "py_female": "0.007",
+          "rs_female": "0.007",
+          "exact_match": true
+        },
+        {
+          "cause34": "Ischemic Heart Disease",
+          "cause_list_num": "36",
+          "icd10": "I24",
+          "py_all": "0.074",
+          "rs_all": "0.074",
+          "py_male": "0.074",
+          "rs_male": "0.074",
+          "py_female": "0.075",
+          "rs_female": "0.075",
+          "exact_match": true
+        },
+        {
+          "cause34": "Leukemia/Lymphomas",
+          "cause_list_num": "18",
+          "icd10": "C96",
+          "py_all": "0.023",
+          "rs_all": "0.023",
+          "py_male": "0.019",
+          "rs_male": "0.019",
+          "py_female": "0.027",
+          "rs_female": "0.027",
+          "exact_match": true
+        },
+        {
+          "cause34": "Lung Cancer",
+          "cause_list_num": "19",
+          "icd10": "C34",
+          "py_all": "0.013",
+          "rs_all": "0.013",
+          "py_male": "0.016",
+          "rs_male": "0.016",
+          "py_female": "0.01",
+          "rs_female": "0.01",
+          "exact_match": true
+        },
+        {
+          "cause34": "Malaria",
+          "cause_list_num": "20",
+          "icd10": "B54",
+          "py_all": "0.008",
+          "rs_all": "0.008",
+          "py_male": "0.008",
+          "rs_male": "0.008",
+          "py_female": "0.008",
+          "rs_female": "0.008",
+          "exact_match": true
+        },
+        {
+          "cause34": "Maternal",
+          "cause_list_num": "21",
+          "icd10": "O95",
+          "py_all": "0.053",
+          "rs_all": "0.053",
+          "py_male": "0.0",
+          "rs_male": "0.0",
+          "py_female": "0.116",
+          "rs_female": "0.116",
+          "exact_match": true
+        },
+        {
+          "cause34": "Other Cancers",
+          "cause_list_num": "37",
+          "icd10": "C76",
+          "py_all": "0.007",
+          "rs_all": "0.007",
+          "py_male": "0.005",
+          "rs_male": "0.005",
+          "py_female": "0.008",
+          "rs_female": "0.008",
+          "exact_match": true
+        },
+        {
+          "cause34": "Other Cardiovascular Diseases",
+          "cause_list_num": "22",
+          "icd10": "I99",
+          "py_all": "0.002",
+          "rs_all": "0.002",
+          "py_male": "0.001",
+          "rs_male": "0.001",
+          "py_female": "0.004",
+          "rs_female": "0.004",
+          "exact_match": true
+        },
+        {
+          "cause34": "Other Infectious Diseases",
+          "cause_list_num": "23",
+          "icd10": "B99",
+          "py_all": "0.025",
+          "rs_all": "0.025",
+          "py_male": "0.029",
+          "rs_male": "0.029",
+          "py_female": "0.022",
+          "rs_female": "0.022",
+          "exact_match": true
+        },
+        {
+          "cause34": "Other Injuries",
+          "cause_list_num": "24",
+          "icd10": "X58",
+          "py_all": "0.018",
+          "rs_all": "0.018",
+          "py_male": "0.025",
+          "rs_male": "0.025",
+          "py_female": "0.011",
+          "rs_female": "0.011",
+          "exact_match": true
+        },
+        {
+          "cause34": "Other Non-communicable Diseases",
+          "cause_list_num": "25",
+          "icd10": "UU1",
+          "py_all": "0.063",
+          "rs_all": "0.063",
+          "py_male": "0.071",
+          "rs_male": "0.071",
+          "py_female": "0.055",
+          "rs_female": "0.055",
+          "exact_match": true
+        },
+        {
+          "cause34": "Pneumonia",
+          "cause_list_num": "26",
+          "icd10": "J22",
+          "py_all": "0.026",
+          "rs_all": "0.026",
+          "py_male": "0.025",
+          "rs_male": "0.025",
+          "py_female": "0.027",
+          "rs_female": "0.027",
+          "exact_match": true
+        },
+        {
+          "cause34": "Poisonings",
+          "cause_list_num": "27",
+          "icd10": "X49",
+          "py_all": "0.009",
+          "rs_all": "0.009",
+          "py_male": "0.01",
+          "rs_male": "0.01",
+          "py_female": "0.008",
+          "rs_female": "0.008",
+          "exact_match": true
+        },
+        {
+          "cause34": "Prostate Cancer",
+          "cause_list_num": "28",
+          "icd10": "C61",
+          "py_all": "0.013",
+          "rs_all": "0.013",
+          "py_male": "0.024",
+          "rs_male": "0.024",
+          "py_female": "0.0",
+          "rs_female": "0.0",
+          "exact_match": true
+        },
+        {
+          "cause34": "Road Traffic",
+          "cause_list_num": "30",
+          "icd10": "V89",
+          "py_all": "0.032",
+          "rs_all": "0.032",
+          "py_male": "0.049",
+          "rs_male": "0.049",
+          "py_female": "0.013",
+          "rs_female": "0.013",
+          "exact_match": true
+        },
+        {
+          "cause34": "Stomach Cancer",
+          "cause_list_num": "31",
+          "icd10": "C16",
+          "py_all": "0.012",
+          "rs_all": "0.012",
+          "py_male": "0.012",
+          "rs_male": "0.012",
+          "py_female": "0.013",
+          "rs_female": "0.013",
+          "exact_match": true
+        },
+        {
+          "cause34": "Stroke",
+          "cause_list_num": "32",
+          "icd10": "I64",
+          "py_all": "0.106",
+          "rs_all": "0.106",
+          "py_male": "0.106",
+          "rs_male": "0.106",
+          "py_female": "0.105",
+          "rs_female": "0.105",
+          "exact_match": true
+        },
+        {
+          "cause34": "Suicide",
+          "cause_list_num": "33",
+          "icd10": "X84",
+          "py_all": "0.008",
+          "rs_all": "0.008",
+          "py_male": "0.009",
+          "rs_male": "0.009",
+          "py_female": "0.006",
+          "rs_female": "0.006",
+          "exact_match": true
+        },
+        {
+          "cause34": "TB",
+          "cause_list_num": "34",
+          "icd10": "A16",
+          "py_all": "0.037",
+          "rs_all": "0.037",
+          "py_male": "0.046",
+          "rs_male": "0.046",
+          "py_female": "0.026",
+          "rs_female": "0.026",
+          "exact_match": true
+        },
+        {
+          "cause34": "Undetermined",
+          "cause_list_num": "",
+          "icd10": "R99",
+          "py_all": "0.07",
+          "rs_all": "0.07",
+          "py_male": "0.073",
+          "rs_male": "0.073",
+          "py_female": "0.065",
+          "rs_female": "0.065",
+          "exact_match": true
+        }
+      ]
+    },
+    "child_csmf": {
+      "causes_compared": 22,
+      "causes_exact_match": 22,
+      "max_abs_diff": 0.0,
+      "exact": true,
+      "rows": [
+        {
+          "cause34": "AIDS",
+          "cause_list_num": "1",
+          "icd10": "B24",
+          "py_all": "0.057",
+          "rs_all": "0.057",
+          "py_male": "0.057",
+          "rs_male": "0.057",
+          "py_female": "0.057",
+          "rs_female": "0.057",
+          "exact_match": true
+        },
+        {
+          "cause34": "Bite of Venomous Animal",
+          "cause_list_num": "2",
+          "icd10": "X27",
+          "py_all": "0.028",
+          "rs_all": "0.028",
+          "py_male": "0.028",
+          "rs_male": "0.028",
+          "py_female": "0.028",
+          "rs_female": "0.028",
+          "exact_match": true
+        },
+        {
+          "cause34": "Childhood Cancer",
+          "cause_list_num": "12",
+          "icd10": "C76",
+          "py_all": "0.026",
+          "rs_all": "0.026",
+          "py_male": "0.024",
+          "rs_male": "0.024",
+          "py_female": "0.029",
+          "rs_female": "0.029",
+          "exact_match": true
+        },
+        {
+          "cause34": "Childhood Cardiovascular Diseases",
+          "cause_list_num": "13",
+          "icd10": "I99",
+          "py_all": "0.011",
+          "rs_all": "0.011",
+          "py_male": "0.015",
+          "rs_male": "0.015",
+          "py_female": "0.007",
+          "rs_female": "0.007",
+          "exact_match": true
+        },
+        {
+          "cause34": "Diarrhea/Dysentery",
+          "cause_list_num": "3",
+          "icd10": "A09",
+          "py_all": "0.116",
+          "rs_all": "0.116",
+          "py_male": "0.117",
+          "rs_male": "0.117",
+          "py_female": "0.111",
+          "rs_female": "0.111",
+          "exact_match": true
+        },
+        {
+          "cause34": "Digestive Diseases",
+          "cause_list_num": "15",
+          "icd10": "K92",
+          "py_all": "0.029",
+          "rs_all": "0.029",
+          "py_male": "0.032",
+          "rs_male": "0.032",
+          "py_female": "0.024",
+          "rs_female": "0.024",
+          "exact_match": true
+        },
+        {
+          "cause34": "Drowning",
+          "cause_list_num": "4",
+          "icd10": "W74",
+          "py_all": "0.04",
+          "rs_all": "0.04",
+          "py_male": "0.048",
+          "rs_male": "0.048",
+          "py_female": "0.029",
+          "rs_female": "0.029",
+          "exact_match": true
+        },
+        {
+          "cause34": "Encephalitis",
+          "cause_list_num": "5",
+          "icd10": "G04",
+          "py_all": "0.03",
+          "rs_all": "0.03",
+          "py_male": "0.029",
+          "rs_male": "0.029",
+          "py_female": "0.031",
+          "rs_female": "0.031",
+          "exact_match": true
+        },
+        {
+          "cause34": "Falls",
+          "cause_list_num": "6",
+          "icd10": "W19",
+          "py_all": "0.034",
+          "rs_all": "0.034",
+          "py_male": "0.04",
+          "rs_male": "0.04",
+          "py_female": "0.026",
+          "rs_female": "0.026",
+          "exact_match": true
+        },
+        {
+          "cause34": "Fires",
+          "cause_list_num": "7",
+          "icd10": "X09",
+          "py_all": "0.028",
+          "rs_all": "0.028",
+          "py_male": "0.025",
+          "rs_male": "0.025",
+          "py_female": "0.031",
+          "rs_female": "0.031",
+          "exact_match": true
+        },
+        {
+          "cause34": "Hemorrhagic fever",
+          "cause_list_num": "8",
+          "icd10": "A99",
+          "py_all": "0.035",
+          "rs_all": "0.035",
+          "py_male": "0.031",
+          "rs_male": "0.031",
+          "py_female": "0.039",
+          "rs_female": "0.039",
+          "exact_match": true
+        },
+        {
+          "cause34": "Homicide",
+          "cause_list_num": "21",
+          "icd10": "Y09",
+          "py_all": "0.025",
+          "rs_all": "0.025",
+          "py_male": "0.026",
+          "rs_male": "0.026",
+          "py_female": "0.024",
+          "rs_female": "0.024",
+          "exact_match": true
+        },
+        {
+          "cause34": "Malaria",
+          "cause_list_num": "9",
+          "icd10": "B54",
+          "py_all": "0.049",
+          "rs_all": "0.049",
+          "py_male": "0.045",
+          "rs_male": "0.045",
+          "py_female": "0.052",
+          "rs_female": "0.052",
+          "exact_match": true
+        },
+        {
+          "cause34": "Measles",
+          "cause_list_num": "10",
+          "icd10": "B05",
+          "py_all": "0.038",
+          "rs_all": "0.038",
+          "py_male": "0.039",
+          "rs_male": "0.039",
+          "py_female": "0.036",
+          "rs_female": "0.036",
+          "exact_match": true
+        },
+        {
+          "cause34": "Meningitis",
+          "cause_list_num": "11",
+          "icd10": "G03",
+          "py_all": "0.065",
+          "rs_all": "0.065",
+          "py_male": "0.069",
+          "rs_male": "0.069",
+          "py_female": "0.06",
+          "rs_female": "0.06",
+          "exact_match": true
+        },
+        {
+          "cause34": "Other Defined Causes of Child Deaths",
+          "cause_list_num": "14",
+          "icd10": "UU2",
+          "py_all": "0.048",
+          "rs_all": "0.048",
+          "py_male": "0.057",
+          "rs_male": "0.057",
+          "py_female": "0.038",
+          "rs_female": "0.038",
+          "exact_match": true
+        },
+        {
+          "cause34": "Other Infectious Diseases",
+          "cause_list_num": "16",
+          "icd10": "B99",
+          "py_all": "0.03",
+          "rs_all": "0.03",
+          "py_male": "0.027",
+          "rs_male": "0.027",
+          "py_female": "0.033",
+          "rs_female": "0.033",
+          "exact_match": true
+        },
+        {
+          "cause34": "Pneumonia",
+          "cause_list_num": "17",
+          "icd10": "J22",
+          "py_all": "0.126",
+          "rs_all": "0.126",
+          "py_male": "0.103",
+          "rs_male": "0.103",
+          "py_female": "0.154",
+          "rs_female": "0.154",
+          "exact_match": true
+        },
+        {
+          "cause34": "Poisonings",
+          "cause_list_num": "18",
+          "icd10": "X49",
+          "py_all": "0.01",
+          "rs_all": "0.01",
+          "py_male": "0.006",
+          "rs_male": "0.006",
+          "py_female": "0.013",
+          "rs_female": "0.013",
+          "exact_match": true
+        },
+        {
+          "cause34": "Road Traffic",
+          "cause_list_num": "19",
+          "icd10": "V89",
+          "py_all": "0.045",
+          "rs_all": "0.045",
+          "py_male": "0.046",
+          "rs_male": "0.046",
+          "py_female": "0.044",
+          "rs_female": "0.044",
+          "exact_match": true
+        },
+        {
+          "cause34": "Sepsis",
+          "cause_list_num": "20",
+          "icd10": "A41",
+          "py_all": "0.075",
+          "rs_all": "0.075",
+          "py_male": "0.079",
+          "rs_male": "0.079",
+          "py_female": "0.07",
+          "rs_female": "0.07",
+          "exact_match": true
+        },
+        {
+          "cause34": "Undetermined",
+          "cause_list_num": "",
+          "icd10": "R99",
+          "py_all": "0.06",
+          "rs_all": "0.06",
+          "py_male": "0.058",
+          "rs_male": "0.058",
+          "py_female": "0.063",
+          "rs_female": "0.063",
+          "exact_match": true
+        }
+      ]
+    },
+    "neonate_csmf": {
+      "causes_compared": 7,
+      "causes_exact_match": 7,
+      "max_abs_diff": 0.0,
+      "exact": true,
+      "rows": [
+        {
+          "cause34": "Birth asphyxia",
+          "cause_list_num": "1",
+          "icd10": "P21",
+          "py_all": "0.109",
+          "rs_all": "0.109",
+          "py_male": "0.111",
+          "rs_male": "0.111",
+          "py_female": "0.106",
+          "rs_female": "0.106",
+          "exact_match": true
+        },
+        {
+          "cause34": "Congenital malformation",
+          "cause_list_num": "2",
+          "icd10": "Q89",
+          "py_all": "0.054",
+          "rs_all": "0.054",
+          "py_male": "0.059",
+          "rs_male": "0.059",
+          "py_female": "0.046",
+          "rs_female": "0.046",
+          "exact_match": true
+        },
+        {
+          "cause34": "Neonatal Meningitis/Sepsis",
+          "cause_list_num": "3",
+          "icd10": "P36",
+          "py_all": "0.12",
+          "rs_all": "0.12",
+          "py_male": "0.116",
+          "rs_male": "0.116",
+          "py_female": "0.125",
+          "rs_female": "0.125",
+          "exact_match": true
+        },
+        {
+          "cause34": "Neonatal Pneumonia",
+          "cause_list_num": "4",
+          "icd10": "P23",
+          "py_all": "0.079",
+          "rs_all": "0.079",
+          "py_male": "0.08",
+          "rs_male": "0.08",
+          "py_female": "0.079",
+          "rs_female": "0.079",
+          "exact_match": true
+        },
+        {
+          "cause34": "Preterm Delivery",
+          "cause_list_num": "5",
+          "icd10": "P07",
+          "py_all": "0.171",
+          "rs_all": "0.171",
+          "py_male": "0.177",
+          "rs_male": "0.177",
+          "py_female": "0.163",
+          "rs_female": "0.163",
+          "exact_match": true
+        },
+        {
+          "cause34": "Stillbirth",
+          "cause_list_num": "6",
+          "icd10": "P95",
+          "py_all": "0.392",
+          "rs_all": "0.392",
+          "py_male": "0.383",
+          "rs_male": "0.383",
+          "py_female": "0.403",
+          "rs_female": "0.403",
+          "exact_match": true
+        },
+        {
+          "cause34": "Undetermined",
+          "cause_list_num": "",
+          "icd10": "R99",
+          "py_all": "0.075",
+          "rs_all": "0.075",
+          "py_male": "0.073",
+          "rs_male": "0.073",
+          "py_female": "0.077",
+          "rs_female": "0.077",
+          "exact_match": true
         }
       ]
     }
@@ -1631,16 +2647,10 @@
       }
     },
     "neonate_full_2625": {
-      "1-individual-cause-of-death/child-predictions.csv": {
-        "exact": true,
-        "rows": 5,
-        "total_cells": 114,
-        "cell_diffs": 0
-      },
       "1-individual-cause-of-death/neonate-predictions.csv": {
         "exact": true,
-        "rows": 2620,
-        "total_cells": 49799,
+        "rows": 2625,
+        "total_cells": 49894,
         "cell_diffs": 0
       },
       "2-csmf/adult-csmf.csv": {
@@ -1651,8 +2661,8 @@
       },
       "2-csmf/child-csmf.csv": {
         "exact": true,
-        "rows": 2,
-        "total_cells": 18,
+        "rows": 0,
+        "total_cells": 6,
         "cell_diffs": 0
       },
       "2-csmf/neonate-csmf.csv": {
@@ -1663,20 +2673,14 @@
       },
       "2-csmf/csmf.csv": {
         "exact": true,
-        "rows": 8,
-        "total_cells": 45,
-        "cell_diffs": 0
-      },
-      "4-monitoring-and-quality/intermediate-files/child-symptom.csv": {
-        "exact": true,
-        "rows": 5,
-        "total_cells": 642,
+        "rows": 7,
+        "total_cells": 40,
         "cell_diffs": 0
       },
       "4-monitoring-and-quality/intermediate-files/neonate-symptom.csv": {
         "exact": true,
-        "rows": 2620,
-        "total_cells": 421981,
+        "rows": 2625,
+        "total_cells": 422786,
         "cell_diffs": 0
       }
     },

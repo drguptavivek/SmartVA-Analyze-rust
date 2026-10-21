@@ -4,31 +4,36 @@
 > **100.00% Mathematical & CSV Equivalence Verified Across All 4 SmartVA Questionnaire Families (`20,813 / 20,813` VAs)**
 > - **Engine**: `smartva-rust v0.2.0` (`100% Pure Native Rust`, zero runtime Python dependency, direct CSV consumption from `src/data/*.csv` and `src/data/*.rs`).
 > - **Questionnaires Validated**:
->   1. **IHME PHMRC Gold Standard Verbal Autopsy Dataset (`PHMRC Full Questionnaire`, `N = 12,530` VAs)**: `7,841` Adult, `2,064` Child, and `2,625` Neonate VAs across 6 clinical sites (`AP`, `Bohol`, `Dar`, `Mexico`, `Pemba`, `UP`). **`12,530 / 12,530` (`100.00%`)** Python-vs-Rust cause-of-death agreement; **`0` cell differences** across IHME's official `validated-adult.csv` (`2,673,099` cells) and `validated-child.csv` (`273,847` cells). Full per-cause Sensitivity, Specificity, PPV, Chance-Corrected Concordance ($CCC$), and CSMF Accuracy against hospital physician gold-standard diagnoses are documented in [`evidence/tabulations/PHMRC_Gold_Standard_Summary.md`](./evidence/tabulations/PHMRC_Gold_Standard_Summary.md) and [`evidence/metrics/phmrc_gold_standard_validation.json`](./evidence/metrics/phmrc_gold_standard_validation.json).
+>   1. **IHME PHMRC Gold Standard Verbal Autopsy Dataset (`PHMRC Full Questionnaire`, `N = 12,530` VAs)**: `7,841` Adult, `2,064` Child, and `2,625` Neonate VAs across 6 clinical sites (`AP`, `Bohol`, `Dar`, `Mexico`, `Pemba`, `UP`). **`12,530 / 12,530` (`100.00%`)** Python-vs-Rust individual cause-of-death & ICD-10 agreement, **`0` cell differences** across population CSMF tables (`2-csmf/{adult,child,neonate}-csmf.csv` & `2-csmf/csmf.csv`), and **`0` cell differences (`100.00%` exact match)** across IHME's official `validated-adult.csv` (`2,673,099` cells), `validated-child.csv` (`273,847` cells), and `validated-neonate.csv` (`378,286` cells). Full Stage 1 (Python `smartva.va_cli` vs. Physician Gold Standard benchmarked against Serina et al., *BMC Medicine* 2015) and Stage 2 (Rust `smartva-rs` vs. Python `smartva.va_cli`) metrics are documented in [`evidence/tabulations/PHMRC_Gold_Standard_Summary.md`](./evidence/tabulations/PHMRC_Gold_Standard_Summary.md) and [`evidence/metrics/phmrc_gold_standard_validation.json`](./evidence/metrics/phmrc_gold_standard_validation.json).
 >   2. **WHO 2022 Verbal Autopsy Questionnaire (`N = 8,273` VAs across 15 real-world cohorts `Cohort-01` .. `Cohort-15`)**: **`8,273 / 8,273` (`100.00%`)** cause-of-death & ICD-10 agreement and **`0` cell differences** across all 23 output and intermediate CSV files $\times$ 15 cohorts (`345` CSV files total).
 >   3. **PHMRC Shortened (`PHMRC_short_example.csv`) & WHO 2016 v1.5.1 (`WHO_2016_1_5_1_example.csv`) & PHMRC Full (`example_1.csv`)**: **`100.00%`** Python-vs-Rust parity.
 > - **Aggregate Cohort Tabulations Included**: [`evidence/tabulations/PHMRC_Gold_Standard_Summary.md`](./evidence/tabulations/PHMRC_Gold_Standard_Summary.md) and [`evidence/tabulations/Cohort-01..15/`](./evidence/tabulations/) contain all population/aggregate tabulations. Raw PHMRC CSVs and individual-level clinical records are excluded from Git.
 > - **Cohort Figures Generated (`3-graphs-and-tables/*.png`)**: **`121 / 121` (`100.00%`)** side-by-side in [`evidence/charts/Cohort-01..15/{python,rust}/`](./evidence/charts/).
 
-## 0. PHMRC Gold Standard Validation Summary (`N = 12,530` Clinically Validated VAs)
+## 0. PHMRC Gold Standard Two-Stage Validation Summary (`N = 12,530` Clinically Validated VAs)
 
-Using the lossless reverse-mappers [`evidence/phmrc_source_prep.py`](./evidence/phmrc_source_prep.py) (Python) and [`src/phmrc_source_prep.rs`](./src/phmrc_source_prep.rs) (`phmrc-source-prep` Rust CLI), all three GHDx PHMRC Gold Standard datasets (`IHME_PHMRC_VA_DATA_{ADULT,CHILD,NEONATE}_Y2013M09D11_0.csv`) were converted into ODK PHMRC Full Instrument CSVs and scored by both **unmodified upstream Python `smartva.va_cli`** and **Pure-Rust `smartva-rs`**.
+Using the lossless reverse-mappers [`evidence/phmrc_source_prep.py`](./evidence/phmrc_source_prep.py) (Python) and [`src/phmrc_source_prep.rs`](./src/phmrc_source_prep.rs) (`phmrc-source-prep` Rust CLI), all three GHDx PHMRC Gold Standard datasets (`IHME_PHMRC_VA_DATA_{ADULT,CHILD,NEONATE}_Y2013M09D11_0.csv`) were converted into ODK PHMRC Full Instrument CSVs (`100.00%` `0`-cell-diff symptom matrix round-trip against `validated-adult.csv`, `validated-child.csv`, and `validated-neonate.csv`) and evaluated in two stages:
+
+- **Stage 1 (Algorithm Validation)**: Unmodified upstream Python `smartva.va_cli` vs. PHMRC Hospital Physician Gold Standard (`va46` / `va34` / `gs_text34`), benchmarked against **Serina et al. (*BMC Medicine* 2015, 13:291)**.
+- **Stage 2 (Port Equivalence)**: Pure-Rust `smartva-rs` vs. Python `smartva.va_cli` on both individual causes of death (`1-individual-cause-of-death/*-predictions.csv`) and population CSMF tables (`2-csmf/{adult,child,neonate}-csmf.csv` and `2-csmf/csmf.csv`).
 
 | Metric | Adult (`34` Causes) | Child (`21` Causes) | Neonate (`6` Causes) | Combined PHMRC (`12,530` VAs) |
 |---|---:|---:|---:|---:|
 | **Total Gold-Standard Records ($N$)** | `7,841` | `2,064` | `2,625` | **`12,530`** |
-| **Determined Predictions (`#` / `%`)** | `7,294` (`93.02%`) | `1,941` (`94.04%`) | `2,392` (`91.12%`) | **`11,627` (`92.79%`)** |
-| **Undetermined / No Specific Cause (`#` / `%`)** | `547` (`6.98%`) | `123` (`5.96%`) | `233` (`8.88%`) | **`903` (`7.21%`)** |
-| **Python `smartva.va_cli` vs. Rust `smartva-rs` Agreement** | `7,841 / 7,841` (**`100.00%`**) | `2,064 / 2,064` (**`100.00%`**) | `2,625 / 2,625` (**`100.00%`**) | **`12,530 / 12,530` (`100.00%`)** |
-| **Top-1 Agreement vs. Physician Gold Standard (on Determined)** | `3,692 / 7,294` (**`50.62%`**) | `959 / 1,941` (**`49.41%`**) | `1,679 / 2,392` (**`70.19%`**) | **`6,330 / 11,627` (`54.44%`)** |
-| **Top-1 Agreement vs. Physician Gold Standard (on All $N$)** | `3,692 / 7,841` (`47.09%`) | `959 / 2,064` (`46.46%`) | `1,679 / 2,625` (`63.96%`) | **`6,330 / 12,530` (`50.52%`)** |
-| **Top-3 Agreement vs. Physician Gold Standard (on Determined)** | `4,904 / 7,294` (**`67.23%`**) | `1,253 / 1,941` (**`64.55%`**) | `1,921 / 2,392` (**`80.31%`**) | **`8,078 / 11,627` (`69.48%`)** |
-| **Mean Cause Sensitivity (on Determined)** | `51.37%` | `58.23%` | `58.95%` | — |
-| **Mean Cause Specificity (on Determined)** | `98.43%` | `97.42%` | `94.00%` | — |
-| **Mean Positive Predictive Value (PPV)** | `50.21%` | `50.47%` | `57.58%` | — |
-| **Mean Chance-Corrected Concordance ($CCC$, Determined)** | **`49.89%`** | **`56.14%`** | **`50.74%`** | — |
-| **Mean Chance-Corrected Concordance ($CCC$, All $N$)** | `46.78%` | `53.69%` | `43.75%` | — |
-| **CSMF Accuracy (vs. Gold-Standard CSMF)** | **`0.8443`** | **`0.7937`** | **`0.8470`** | — |
+| **Stage 1: Determined Predictions (`#` / `%`)** | `7,294` (`93.02%`) | `1,941` (`94.04%`) | `2,429` (`92.53%`) | **`11,664` (`93.09%`)** |
+| **Stage 1: Undetermined / No Specific Cause (`#` / `%`)** | `547` (`6.98%`) | `123` (`5.96%`) | `196` (`7.47%`) | **`866` (`6.91%`)** |
+| **Stage 1: Top-1 Agreement vs. Physician Gold Standard (on Determined)** | `3,692 / 7,294` (**`50.62%`**) | `959 / 1,941` (**`49.41%`**) | `1,685 / 2,429` (**`69.37%`**) | **`6,336 / 11,664` (`54.32%`)** |
+| **Stage 1: Top-1 Agreement vs. Physician Gold Standard (on All $N$)** | `3,692 / 7,841` (`47.09%`) | `959 / 2,064` (`46.46%`) | `1,685 / 2,625` (`64.19%`) | **`6,336 / 12,530` (`50.57%`)** |
+| **Stage 1: Top-3 Agreement vs. Physician Gold Standard (on Determined)** | `4,904 / 7,294` (**`67.23%`**) | `1,253 / 1,941` (**`64.55%`**) | `1,941 / 2,429` (**`79.91%`**) | **`8,098 / 11,664` (`69.43%`)** |
+| **Stage 1: Mean Cause Sensitivity (on Determined)** | `51.37%` | `58.23%` | `58.66%` | — |
+| **Stage 1: Mean Cause Specificity (on Determined)** | `98.43%` | `97.42%` | `93.87%` | — |
+| **Stage 1: Mean Positive Predictive Value (PPV)** | `50.21%` | `50.47%` | `57.47%` | — |
+| **Stage 1: Mean Chance-Corrected Concordance ($CCC$, Determined) [Serina 2015]** | **`49.89%`** [`50.5%`] | **`56.14%`** [`52.5%`] | **`50.39%`** [`48.0%`] | — |
+| **Stage 1: Mean Chance-Corrected Concordance ($CCC$, All $N$) [Serina 2015]** | `46.78%` [`37.8%`] | `53.69%` [`44.2%`] | `45.36%` [`42.4%`] | — |
+| **Stage 1: CSMF Accuracy (vs. Gold-Standard CSMF) [Serina 2015]** | **`0.8443`** [`0.770`] | **`0.7937`** [`0.783`] | **`0.8331`** [`0.826`] | — |
+| **Stage 2: Individual `cause34` & `icd10` Agreement (`smartva-rs` vs. `va_cli`)** | `7,841 / 7,841` (**`100.00%`**) | `2,064 / 2,064` (**`100.00%`**) | `2,625 / 2,625` (**`100.00%`**) | **`12,530 / 12,530` (`100.00%`)** |
+| **Stage 2: Population CSMF Table Diff (`2-csmf/*.csv`: `all`, `male`, `female`)** | **`0` cell diffs (`0.0000`)** | **`0` cell diffs (`0.0000`)** | **`0` cell diffs (`0.0000`)** | **`0` cell diffs (`0.0000`)** |
+| **Stage 2: Intermediate Symptom Matrix Diff (`*-symptom.csv`)** | **`0` cell diffs** | **`0` cell diffs** | **`0` cell diffs** | **`0` cell diffs** |
 | **Runtime (`smartva.va_cli` Python)** | `89.17s` | `15.42s` | `13.62s` | **`118.21s`** |
 | **Runtime (`smartva-rs` Pure Rust)** | **`4.48s`** (`19.9x`) | **`0.68s`** (`22.7x`) | **`0.77s`** (`17.7x`) | **`5.93s` (`19.9x`)** |
 

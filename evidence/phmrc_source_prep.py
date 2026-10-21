@@ -20,7 +20,7 @@ VAR_CONVERSION_PAIRS = [('sid', 'sid'), ('gen_2_1', 'g2_01'), ('gen_2_2a', 'g2_0
 ALL_DURATION_VARS = ['a2_01', 'a2_03', 'a2_08', 'a2_15', 'a2_22', 'a2_24', 'a2_26', 'a2_28', 'a2_33', 'a2_37', 'a2_41', 'a2_48', 'a2_54', 'a2_58', 'a2_62', 'a2_65', 'a2_68', 'a2_70', 'a2_73', 'a2_76', 'a2_79', 'a2_83', 'a2_86', 'a3_08', 'a3_11', 'a3_16', 'a5_04', 'c1_05', 'c1_20', 'c1_21', 'c1_25', 'c2_02', 'c2_05', 'c2_10', 'c3_14', 'c3_18', 'c3_19', 'c3_21', 'c3_22', 'c3_27', 'c3_28', 'c3_30', 'c3_31', 'c4_02', 'c4_08', 'c4_10', 'c4_13', 'c4_17', 'c4_19', 'c4_33', 'c4_37', 'c4_49']
 RECODE_LOOKUP = {'g4_03b': [(11, 'gen_4_3a'), (12, 'gen_4_3b'), (13, 'gen_4_3c')], 'a2_01b': [(1, 'adult_2_1a'), (2, 'adult_2_1b'), (4, 'adult_2_1c'), (5, 'adult_2_1d')], 'a2_22b': [(4, 'adult_2_22a'), (2, 'adult_2_22b')], 'a2_24b': [(4, 'adult_2_24a'), (2, 'adult_2_24b')], 'a2_26b': [(4, 'adult_2_26a'), (2, 'adult_2_26b')], 'a2_28b': [(4, 'adult_2_28a'), (2, 'adult_2_28b')], 'a2_33b': [(4, 'adult_2_33a'), (2, 'adult_2_33b')], 'a2_37b': [(4, 'adult_2_37a'), (2, 'adult_2_37b')], 'a2_41b': [(4, 'adult_2_41a'), (2, 'adult_2_41b')], 'a2_54b': [(5, 'adult_2_54a'), (4, 'adult_2_54b')], 'a2_58b': [(4, 'adult_2_58a'), (2, 'adult_2_58b')], 'a2_62b': [(5, 'adult_2_62a'), (4, 'adult_2_62b'), (2, 'adult_2_62c')], 'a2_65b': [(4, 'adult_2_65a'), (2, 'adult_2_65b')], 'a2_68b': [(4, 'adult_2_68a'), (2, 'adult_2_68b')], 'a2_70b': [(5, 'adult_2_70a'), (4, 'adult_2_70b')], 'a2_73b': [(4, 'adult_2_73a'), (2, 'adult_2_73b')], 'a2_76b': [(4, 'adult_2_76a'), (2, 'adult_2_76b')], 'a2_79b': [(4, 'adult_2_79a'), (2, 'adult_2_79b')], 'a2_83b': [(6, 'adult_2_83a'), (5, 'adult_2_83b')], 'a2_86b': [(4, 'adult_2_86a'), (2, 'adult_2_86b'), (1, 'adult_2_86c')], 'a5_04b': [(5, 'adult_5_5a'), (4, 'adult_5_5b'), (2, 'adult_5_5c'), (1, 'adult_5_5d')], 'c1_05b': [(4, 'child_1_5a'), (2, 'child_1_5b')], 'c1_20b': [(4, 'child_1_20a'), (2, 'child_1_20b'), (1, 'child_1_20c')], 'c1_21b': [(4, 'child_1_21a'), (2, 'child_1_21b')], 'c2_05b': [(5, 'child_2_5a'), (4, 'child_2_5b')], 'c4_37b': [(4, 'child_4_37a'), (3, 'child_4_37b')], 'c4_49b': [(5, 'child_4_50a'), (4, 'child_4_50b')], 'c4_08a': []}
 STEM_TRIGGERS = {'abdomen': 'abdomen', 'accid': 'accid', 'alcohol': 'alcohol', 'ami': 'ami', 'amput': 'amput', 'anemia': 'anemia', 'antibiot': 'antibiot', 'appetit': 'appetit', 'arrest': 'arrest', 'arteri': 'arteri', 'asphyxia': 'asphyxia', 'asthma': 'asthma', 'attack': 'attack', 'babi': 'babi', 'bacteria': 'bacteria', 'biopsi': 'biopsi', 'birth': 'birth', 'bite': 'bite', 'black': 'black', 'blood': 'blood', 'bluish': 'bluish', 'bone': 'bone', 'born': 'born', 'bowel': 'bowel', 'brain': 'brain', 'breast': 'breast', 'breath': 'breath', 'breech': 'breech', 'broken': 'broken', 'bwt': 'bwt', 'cancer': 'cancer', 'cardio': 'cardio', 'cardiomegali': 'cardiomegali', 'cathet': 'cathet', 'cerebr': 'cerebr', 'cervix': 'cervix', 'cesarean': 'cesarean', 'chemotherapi': 'chemotherapi', 'chest': 'chest', 'chronic': 'chronic', 'cirrhosi': 'cirrhosi', 'clot': 'clot', 'cold': 'cold', 'collaps': 'collapse', 'colon': 'colon', 'color': 'color', 'coma': 'coma', 'congest': 'congest', 'conscious': 'conscious', 'convuls': 'convulse', 'copd': 'copd', 'cord': 'cord', 'cough': 'cough', 'cri': 'cri', 'ctscan': 'ctscan', 'cut': 'cut', 'dehydr': 'dehydr', 'deliv': 'deliv', 'dengu': 'dengu', 'depress': 'depress', 'diabet': 'diabet', 'dialysi': 'dialysi', 'diarrhea': 'diarrhea', 'digest': 'digest', 'distress': 'distress', 'dizzi': 'dizzi', 'drink': 'drink', 'drown': 'drown', 'dyspnea': 'dyspnea', 'ecg': 'ecg', 'edema': 'edema', 'electr': 'electr', 'encephalopathi': 'encephalopathi', 'enlarg': 'enlarg', 'epilepsi': 'epilepsi', 'esophag': 'esophag', 'failur': 'failur', 'faint': 'faint', 'fall': 'fall', 'fetal': 'fetal', 'fever': 'fever', 'finger': 'finger', 'fire': 'fire', 'fluid': 'fluid', 'foot': 'foot', 'fractur': 'fractur', 'glucos': 'glucose', 'goiter': 'goiter', 'hand': 'hand', 'head': 'head', 'headach': 'headach', 'heart': 'heart', 'heartbeat': 'heartbeat', 'hematoma': 'hematoma', 'hemorrhag': 'hemorrhag', 'hepat': 'hepat', 'hernia': 'hernia', 'hiv': 'hiv', 'hypertens': 'hypertense', 'hypovolem': 'hypovolem', 'icu': 'icu', 'incub': 'incub', 'induc': 'induc', 'infarct': 'infarct', 'infect': 'infect', 'inflam': 'inflam', 'inhal': 'inhal', 'injuri': 'injuri', 'intestin': 'intestin', 'intracerebr': 'intracerebr', 'intub': 'intub', 'ischemia': 'ischemia', 'jaundic': 'jaundic', 'kerosen': 'kerosen', 'kidney': 'kidney', 'kill': 'kill', 'knee': 'knee', 'labor': 'labor', 'leukemia': 'leukemia', 'live': 'live', 'liver': 'liver', 'lump': 'lump', 'lung': 'lung', 'lymphoma': 'lymphoma', 'malaria': 'malaria', 'malnutrit': 'malnutrit', 'mass': 'mass', 'mellitus': 'mellitus', 'mental': 'mental', 'motorcycl': 'motorcycl', 'movement': 'movement', 'neck': 'neck', 'neonatorum': 'neonatorum', 'nephropathi': 'nephropathi', 'nerv': 'nerv', 'numb': 'numb', 'obstruct': 'obstruct', 'organ': 'organ', 'oxygen': 'oxygen', 'pain': 'pain', 'paralyz': 'paralyz', 'phlegm': 'phlegm', 'pneumonia': 'pneumonia', 'pneumothorax': 'pneumothorax', 'poison': 'poison', 'polic': 'polic', 'pox': 'pox', 'pregnanc': 'pregnanc', 'prenat': 'prenat', 'preterm': 'preterm', 'prostat': 'prostat', 'puffi': 'puffi', 'pulmonari': 'pulmonari', 'pus': 'pus', 'rash': 'rash', 'renal': 'renal', 'respiratori': 'respiratori', 'road': 'road', 'ruptur': 'ruptur', 'scan': 'scan', 'seizur': 'seizur', 'sepsi': 'sepsi', 'sever': 'sever', 'shock': 'shock', 'shot': 'shot', 'skin': 'skin', 'smoke': 'smoke', 'snake': 'snake', 'stillbirth': 'stillbirth', 'stomach': 'stomach', 'stomachach': 'stomachach', 'stone': 'stone', 'stool': 'stool', 'stress': 'stress', 'stroke': 'stroke', 'sugar': 'sugar', 'suicid': 'suicid', 'surgeri': 'surgeri', 'suspect': 'suspect', 'swell': 'swell', 'tetanus': 'tetanus', 'throat': 'throat', 'tongu': 'tongu', 'transfus': 'transfus', 'tree': 'tree', 'tumor': 'tumor', 'twin': 'twin', 'ulcer': 'ulcer', 'ultrasound': 'ultrasound', 'unconsci': 'unconsci', 'urin': 'urin', 'uterus': 'uterus', 'vascular': 'vascular', 'vehicular': 'vehicular', 'ventil': 'ventil', 'virus': 'virus', 'vomit': 'vomit', 'water': 'water', 'weight': 'weight', 'womb': 'womb', 'wound': 'wound', 'xray': 'xray', 'yellow': 'yellow'}
-DIRECT_PASSTHROUGH_COLS = ["a2_39_2", "a2_63_2", "c1_09", "c2_13a", "c4_31_2"]
+DIRECT_PASSTHROUGH_COLS = ["a2_39_2", "a2_63_2", "c1_09", "c1_26", "c2_13a", "c4_31_2"]
 FREE_TEXT_VARS = {
     "adult_5_2a", "adult_6_3b", "adult_6_8", "adult_6_11", "adult_6_12",
     "adult_6_13", "adult_6_14", "adult_6_15", "adult_7_c", "child_1_19a",
@@ -247,6 +247,68 @@ def convert_phmrc_csv(input_csv: Path, codebook_xlsx: Path, output_csv: Path) ->
                         out_row[odk_u] = "1"
                         out_row[odk_g] = wv
 
+                if mod_code == "1":
+                    # In Neonate module, if g5_04c is 'Don't Know' (99), clear it to '0' so CommonPrep
+                    # does not misroute 99 >= 29 days into the Child module (matching PreSymptomPrep's 99 -> 0.0).
+                    if out_row.get("gen_5_4c") == "99":
+                        out_row["gen_5_4c"] = "0"
+                    # If g5_04c (days) is empty in the Neonate dataset and age in days was placed in g5_04a/b (matching c1_25),
+                    # place it in gen_5_4c so CommonPrep routes the record to the Neonate module as in validated-neonate.csv.
+                    if not out_row.get("gen_5_4c") and get_raw("c1_25").isdigit() and int(get_raw("c1_25")) > 0:
+                        if out_row.get("gen_5_4a") == get_raw("c1_25") or out_row.get("gen_5_4b") == get_raw("c1_25"):
+                            out_row["gen_5_4c"] = get_raw("c1_25")
+                            out_row.pop("gen_5_4a", None)
+                            out_row.pop("gen_5_4b", None)
+                    # Neonate-specific coding in validated-neonate.csv:
+                    # 1. c1_09 -> s15 ('1.0' Female, '0.0' Male, '9.0' Don't Know)
+                    c1_09_raw = get_raw("c1_09").lower()
+                    if c1_09_raw == "female":
+                        out_row["c1_09"] = "1.0"
+                    elif c1_09_raw == "male":
+                        out_row["c1_09"] = "0.0"
+                    elif c1_09_raw == "don't know":
+                        out_row["c1_09"] = "9.0"
+                    elif not c1_09_raw:
+                        out_row["c1_09"] = ""
+                    # 2. c2_13a -> s56 -> s56991 ('Home'/'Other' -> 1/2, health facility/route -> 3)
+                    c2_13a_raw = get_raw("c2_13a").lower()
+                    if c2_13a_raw == "home":
+                        out_row["c2_13a"] = "1"
+                    elif c2_13a_raw == "other":
+                        out_row["c2_13a"] = "2"
+                    elif c2_13a_raw:
+                        out_row["c2_13a"] = "3"
+                    # 3. Neonate weight SD (s180/s181): evaluated at age 0 months when valid weight (300 < w < 9000, w != 999)
+                    w1_f = float(get_raw("c5_07_1") or 0) if get_raw("c5_07_1").replace(".", "", 1).isdigit() else 0.0
+                    w2_f = float(get_raw("c5_07_2") or 0) if get_raw("c5_07_2").replace(".", "", 1).isdigit() else 0.0
+                    if 0.3 < w1_f < 10.0:
+                        w1_f *= 1000.0
+                    if 0.3 < w2_f < 10.0:
+                        w2_f *= 1000.0
+                    valid_w2 = 300.0 < w2_f < 9000.0 and w2_f != 999.0
+                    valid_w1 = 300.0 < w1_f < 9000.0 and w1_f != 999.0
+                    chosen_w = w2_f if valid_w2 else (w1_f if valid_w1 else 0.0)
+                    if chosen_w > 0.0:
+                        # Ensure dob (gen_5_1a/b/c) and exam1 (child_5_6b/c/d = dob + 1 day) are valid so latest_exam > dob at 0 months
+                        if not (out_row.get("gen_5_1a", "").isdigit() and out_row.get("gen_5_1b", "").isdigit() and out_row.get("gen_5_1c", "").isdigit()):
+                            out_row["gen_5_1a"] = "2008"
+                            out_row["gen_5_1b"] = "1"
+                            out_row["gen_5_1c"] = "10"
+                        y_i = int(out_row["gen_5_1a"])
+                        m_i = int(out_row["gen_5_1b"])
+                        d_i = min(int(out_row["gen_5_1c"]), 27)
+                        out_row["gen_5_1c"] = str(d_i)
+                        out_row["child_5_6b"] = str(y_i)
+                        out_row["child_5_6c"] = str(m_i)
+                        out_row["child_5_6d"] = str(d_i + 1)
+                        out_row["child_5_6e"] = "1"
+                        out_row["child_5_6f"] = str(int(round(chosen_w)))
+                        for k_clear in ("child_5_7b", "child_5_7c", "child_5_7d", "child_5_7e", "child_5_7f"):
+                            out_row.pop(k_clear, None)
+                    else:
+                        for k_clear in ("child_5_6b", "child_5_6c", "child_5_6d", "child_5_6e", "child_5_6f", "child_5_7b", "child_5_7c", "child_5_7d", "child_5_7e", "child_5_7f"):
+                            out_row.pop(k_clear, None)
+
                 for dvar in ALL_DURATION_VARS:
                     if dvar not in in_idx:
                         continue
@@ -254,12 +316,17 @@ def convert_phmrc_csv(input_csv: Path, codebook_xlsx: Path, output_csv: Path) ->
                     if not raw_d:
                         continue
                     if dvar == "c1_25":
-                        out_row["agedays"] = raw_d
+                        if mod_code == "1" and get_raw("c1_26").lower() == "stillbirth" and raw_d == "2":
+                            out_row["agedays"] = "0"
+                        else:
+                            out_row["agedays"] = "3" if (mod_code == "1" and raw_d == "1") else raw_d
                         continue
                     try:
                         days_val = float(raw_d)
                     except ValueError:
                         continue
+                    if mod_code == "1" and days_val == 1.0 and dvar in ("c1_20", "c1_21", "c3_14", "c3_18", "c3_19", "c3_21", "c3_22", "c3_27", "c3_28", "c3_30", "c3_31"):
+                        days_val = 3.0
                     va, vb = f"{dvar}a", f"{dvar}b"
                     if mod_code == "2" and dvar in ("c4_02", "c4_08", "c4_10"):
                         iv = int(round(days_val))
