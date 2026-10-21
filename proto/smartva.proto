@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package smartva;
+
+// Individual Verbal Autopsy record combining `1-individual-cause-of-death/individual-cause-of-death.csv`
+// and `4-monitoring-and-quality/intermediate-files/{module}-likelihoods.csv`.
+message SmartVaPrediction {
+  string sid = 1;
+  string module = 2;
+  string national_id = 3;
+  string name = 4;
+  string name2 = 5;
+  string surname = 6;
+  string surname2 = 7;
+  string geography1 = 8;
+  string geography2 = 9;
+  string geography3 = 10;
+  string geography4 = 11;
+  string geography5 = 12;
+  string cause34 = 13;
+  string cause_list_number = 14;
+  string icd10 = 15;
+  optional double age = 16;
+  optional int32 sex = 17;
+  string birth_date = 18;
+  string death_date = 19;
+  string interview_date = 20;
+  string cause1 = 21;
+  string likelihood1 = 22;
+  string key_symptom1 = 23;
+  string cause2 = 24;
+  string likelihood2 = 25;
+  string key_symptom2 = 26;
+  string cause3 = 27;
+  string likelihood3 = 28;
+  string key_symptom3 = 29;
+  string all_symptoms = 30;
+}
+
+// Single row in an in-memory SmartVA CSV table.
+message SmartVaCsvRow {
+  repeated string cells = 1;
+}
+
+// Standard SmartVA CSV output generated in memory (`headers` = `rows[0]`, `rows` = `rows[1..]`).
+message SmartVaCsvTable {
+  string name = 1;
+  repeated string headers = 2;
+  repeated SmartVaCsvRow rows = 3;
+}
+
+// Complete SmartVA-Analyze result in Protocol Buffers v3 wire format.
+// Standard mode (`extended == false`) populates fields 1..4 (individual-level CSV tables only).
+// Extended mode (`extended == true`) additionally populates cohort CSMF maps, cohort CSV tables, and report_text.
+message SmartVaResult {
+  uint64 total_vas = 1;
+  repeated SmartVaPrediction predictions = 2;
+  repeated SmartVaCsvTable csv_outputs = 3;
+  repeated string warnings = 4;
+  map<string, double> csmf_all = 5;
+  map<string, double> csmf_adult = 6;
+  map<string, double> csmf_child = 7;
+  map<string, double> csmf_neonate = 8;
+  string report_text = 9;
+}

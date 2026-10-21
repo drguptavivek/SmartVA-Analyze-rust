@@ -1,0 +1,75 @@
+symptom,description,Birth asphyxia,Congenital malformation,Preterm Delivery,Stillbirth,Undetermined
+s107,Yellow skin,0.0%,0.0%,0.0%,0.0%,0.0%
+s109,Appeared to be healthy and then just die suddenly,0.0%,0.0%,0.0%,0.0%,0.0%
+s11991,Not born in a hospital,0.0%,0.0%,0.0%,0.0%,0.0%
+s13,Small or very small at birth,0.0%,50.0%,75.0%,20.0%,0.0%
+s14,Birth weight at least 2500 grams,66.7%,0.0%,0.0%,40.0%,0.0%
+s16,Baby was born dead,33.3%,0.0%,0.0%,100.0%,0.0%
+s17,Baby did cry,0.0%,50.0%,100.0%,0.0%,100.0%
+s18,Baby did move,66.7%,100.0%,100.0%,0.0%,100.0%
+s188,Mother has been tested for HIV,0.0%,0.0%,0.0%,0.0%,0.0%
+s19,Baby did breathe,66.7%,100.0%,100.0%,0.0%,100.0%
+s190,Mother has been told she had AIDS by a health worker,0.0%,0.0%,0.0%,0.0%,0.0%
+s21,Bruises or signs of injury on body at birth,0.0%,0.0%,0.0%,20.0%,0.0%
+s22,Body (skin and tissue) pulpy,0.0%,0.0%,0.0%,60.0%,0.0%
+s24,Abnormalities: Head size very small at time of birth,0.0%,0.0%,0.0%,0.0%,0.0%
+s25,Abnormalities: Head size very large at time of birth,0.0%,0.0%,0.0%,0.0%,0.0%
+s26,Abnormalities: Mass defect on the back of head or spine,0.0%,0.0%,0.0%,0.0%,0.0%
+s27,Abnormalities: Other,0.0%,0.0%,0.0%,0.0%,0.0%
+s28,At least 2 days old when the fatal illness started,0.0%,0.0%,0.0%,0.0%,0.0%
+s29,Illness lasted at least 3 days,0.0%,0.0%,0.0%,0.0%,0.0%
+s30991,Didn't die in a hospital,0.0%,0.0%,0.0%,0.0%,0.0%
+s31,Age greater than 3 days,0.0%,0.0%,100.0%,0.0%,100.0%
+s32,Mark the baby's age at the time of death.,33.3%,50.0%,100.0%,0.0%,100.0%
+s33,Complications: Mother had convulsions,0.0%,0.0%,0.0%,0.0%,0.0%
+s34,Complications: Mother had hypertension,0.0%,0.0%,0.0%,40.0%,0.0%
+s35,Complications: Mother had anemia,0.0%,0.0%,0.0%,0.0%,0.0%
+s36,Complications: Mother had diabetes,0.0%,0.0%,0.0%,20.0%,0.0%
+s37,Complications: Child delivered non-headfirst,33.3%,50.0%,0.0%,0.0%,0.0%
+s38,Complications: Cord delivered first,33.3%,0.0%,0.0%,0.0%,0.0%
+s39,Complications: Cord around child's neck,0.0%,0.0%,0.0%,0.0%,0.0%
+s40,Complications: Excessive bleeding,0.0%,0.0%,50.0%,0.0%,0.0%
+s41,Complications: Fever during labor,0.0%,0.0%,50.0%,0.0%,0.0%
+s42,Complications: No complications,0.0%,0.0%,0.0%,0.0%,0.0%
+s43,Complications: Don't know,0.0%,0.0%,0.0%,0.0%,0.0%
+s45,Pregnancy was at least 8.5 months,0.0%,0.0%,0.0%,0.0%,0.0%
+s47,Moved in the last few days before the birth,33.3%,0.0%,25.0%,80.0%,0.0%
+s48,The mother last felt the baby move at least 3 hours before birth,0.0%,0.0%,0.0%,0.0%,0.0%
+s4991,Age quartile: Under 1 day old,66.7%,50.0%,0.0%,100.0%,0.0%
+s4993,Age quartile: 1 to 2 days,33.3%,50.0%,0.0%,0.0%,0.0%
+s4994,Age quartile: 2+ days old,0.0%,0.0%,100.0%,0.0%,100.0%
+s5,Part of multiple birth,0.0%,0.0%,0.0%,0.0%,0.0%
+s55991,Mother had insufficient vaccination,0.0%,0.0%,0.0%,0.0%,0.0%
+s58991,Delivery: vaginal with forceps,0.0%,0.0%,0.0%,0.0%,0.0%
+s58992,Delivery: vaginal without forceps,0.0%,0.0%,0.0%,0.0%,0.0%
+s58993,Delivery: vaginal don't know,0.0%,0.0%,0.0%,0.0%,0.0%
+s58994,Delivery: c-section,0.0%,0.0%,0.0%,0.0%,0.0%
+s6,2nd or later in birth order,0.0%,0.0%,0.0%,0.0%,0.0%
+s61,Physically abnormal at time of delivery,0.0%,100.0%,0.0%,0.0%,0.0%
+s62,Abnormalities: Head size very small at time of birth,0.0%,0.0%,0.0%,0.0%,0.0%
+s63,Abnormalities: Head size very large at time of birth,0.0%,0.0%,0.0%,0.0%,0.0%
+s64,Abnormalities: Mass defect on the back of head or spine,0.0%,0.0%,0.0%,0.0%,0.0%
+s65,Breathed immediately after birth,33.3%,100.0%,100.0%,0.0%,100.0%
+s66,Difficulty breathing,66.7%,50.0%,100.0%,0.0%,100.0%
+s67,Something was done to try to help the baby breathe at birth,66.7%,50.0%,25.0%,0.0%,0.0%
+s68,Cried immediately after birth,0.0%,0.0%,100.0%,0.0%,100.0%
+s69991,Didn't cry immediately after birth,0.0%,0.0%,75.0%,0.0%,0.0%
+s70,Stopped being able to cry,0.0%,50.0%,75.0%,0.0%,0.0%
+s71991,Stopped crying at least one day before death,0.0%,0.0%,0.0%,0.0%,0.0%
+s73,Suckled in a normal way at some point,0.0%,0.0%,0.0%,0.0%,100.0%
+s78,Difficulty breathing,66.7%,50.0%,100.0%,0.0%,100.0%
+s80,Difficulty breathing for at least 2 days,33.3%,0.0%,50.0%,0.0%,100.0%
+s81,Fast breathing,33.3%,0.0%,0.0%,0.0%,100.0%
+s83,Fast breathing for at least 2 days,33.3%,0.0%,0.0%,0.0%,100.0%
+s8991,Mother died before delivery,0.0%,0.0%,0.0%,0.0%,0.0%
+s8992,Mother died after delivery,0.0%,0.0%,0.0%,0.0%,0.0%
+s9,Mother died at least 2 days after delivery,0.0%,0.0%,0.0%,0.0%,0.0%
+s90,Cold to touch,33.3%,0.0%,0.0%,0.0%,0.0%
+s93,Became lethargic after a period of normal activity,0.0%,0.0%,0.0%,0.0%,0.0%
+s999911,Open Response Word: distress,33.3%,0.0%,50.0%,0.0%,100.0%
+s999918,Open Response Word: incub,0.0%,100.0%,50.0%,0.0%,0.0%
+s999923,Open Response Word: lung,0.0%,0.0%,0.0%,0.0%,0.0%
+s999927,Open Response Word: pneumonia,0.0%,0.0%,0.0%,0.0%,0.0%
+s99993,Open Response Word: asphyxia,100.0%,0.0%,0.0%,0.0%,0.0%
+s999930,Open Response Word: preterm,0.0%,0.0%,75.0%,0.0%,0.0%
+s999931,Open Response Word: respiratori,0.0%,0.0%,0.0%,0.0%,0.0%

@@ -1,0 +1,43 @@
+cause34,icd10,age group,count,male (count),female (count)
+Road Traffic,V89,20-24 yr,1,1,0
+Ischemic Heart Disease,I24,35-39 yr,1,1,0
+Stroke,I64,35-39 yr,1,1,0
+Undetermined,R99,35-39 yr,1,0,1
+Falls,W19,40-44 yr,1,0,1
+Ischemic Heart Disease,I24,40-44 yr,1,0,1
+Chronic Kidney Disease,N18,45-49 yr,1,1,0
+Ischemic Heart Disease,I24,45-49 yr,1,1,0
+Suicide,X84,45-49 yr,1,1,0
+Cirrhosis,K74,50-54 yr,1,1,0
+Diabetes,E14,50-54 yr,1,1,0
+Leukemia/Lymphomas,C96,50-54 yr,1,0,1
+Stroke,I64,50-54 yr,1,1,0
+Undetermined,R99,50-54 yr,1,0,1
+Cirrhosis,K74,55-59 yr,2,2,0
+Ischemic Heart Disease,I24,55-59 yr,1,1,0
+Stroke,I64,55-59 yr,1,1,0
+Chronic Respiratory,J44,60-64 yr,2,2,0
+Ischemic Heart Disease,I24,60-64 yr,4,0,4
+Lung Cancer,C34,60-64 yr,1,0,1
+TB,A16,60-64 yr,1,1,0
+Undetermined,R99,60-64 yr,1,0,1
+Chronic Respiratory,J44,65-69 yr,1,1,0
+Diabetes,E14,65-69 yr,1,0,1
+Diarrhea/Dysentery,A09,65-69 yr,2,0,2
+Stroke,I64,65-69 yr,1,0,1
+Undetermined,R99,65-69 yr,3,2,1
+Chronic Kidney Disease,N18,70-74 yr,1,1,0
+Diabetes,E14,70-74 yr,1,1,0
+Diarrhea/Dysentery,A09,70-74 yr,2,1,1
+Ischemic Heart Disease,I24,70-74 yr,2,0,2
+Stroke,I64,70-74 yr,2,1,1
+Chronic Respiratory,J44,75-79 yr,1,0,1
+Diabetes,E14,75-79 yr,2,1,1
+Diarrhea/Dysentery,A09,75-79 yr,1,0,1
+Falls,W19,75-79 yr,1,1,0
+Stroke,I64,75-79 yr,1,1,0
+Undetermined,R99,75-79 yr,1,0,1
+Chronic Respiratory,J44,80-84 yr,1,1,0
+Diabetes,E14,80-84 yr,1,1,0
+Diarrhea/Dysentery,A09,85+ yr,4,3,1
+Undetermined,R99,85+ yr,3,2,1

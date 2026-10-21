@@ -1,0 +1,7 @@
+cause34,cause list #,icd10,all,male,female
+Birth asphyxia,1,P21,0.265,0.286,0.192
+Congenital malformation,2,Q89,0.008,0.0,0.037
+Neonatal Meningitis/Sepsis,3,P36,0.119,0.143,0.035
+Neonatal Pneumonia,4,P23,0.117,0.143,0.029
+Preterm Delivery,5,P07,0.377,0.286,0.697
+Stillbirth,6,P95,0.113,0.143,0.01

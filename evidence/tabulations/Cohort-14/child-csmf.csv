@@ -1,0 +1,22 @@
+cause34,cause list #,icd10,all,male,female
+AIDS,1,B24,0.008,0.005,0.01
+Bite of Venomous Animal,2,X27,0.001,0.001,0.001
+Childhood Cancer,12,C76,0.011,0.008,0.013
+Childhood Cardiovascular Diseases,13,I99,0.012,0.009,0.015
+Diarrhea/Dysentery,3,A09,0.154,0.299,0.027
+Digestive Diseases,15,K92,0.006,0.006,0.006
+Drowning,4,W74,0.002,0.002,0.003
+Encephalitis,5,G04,0.008,0.006,0.01
+Falls,6,W19,0.07,0.003,0.129
+Fires,7,X09,0.001,0.001,0.002
+Hemorrhagic fever,8,A99,0.004,0.003,0.005
+Homicide,21,Y09,0.0,0.0,0.0
+Malaria,9,B54,0.019,0.014,0.024
+Measles,10,B05,0.003,0.003,0.004
+Meningitis,11,G03,0.146,0.009,0.266
+Other Defined Causes of Child Deaths,14,UU2,0.025,0.014,0.034
+Other Infectious Diseases,16,B99,0.022,0.02,0.023
+Pneumonia,17,J22,0.35,0.438,0.273
+Poisonings,18,X49,0.008,0.006,0.011
+Road Traffic,19,V89,0.07,0.146,0.003
+Sepsis,20,A41,0.079,0.009,0.141

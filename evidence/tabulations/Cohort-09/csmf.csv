@@ -1,0 +1,34 @@
+cause34,icd10,all,male,female
+AIDS,B24,0.004,0.002,0.007
+Bite of Venomous Animal,X27,0.0,0.0,0.0
+Breast Cancer,C50,0.001,0.0,0.002
+Cervical Cancer,C53,0.001,0.0,0.002
+Chronic Kidney Disease,N18,0.04,0.065,0.009
+Chronic Respiratory,J44,0.1,0.133,0.057
+Cirrhosis,K74,0.055,0.094,0.006
+Colorectal Cancer,C18,0.004,0.003,0.006
+Diabetes,E14,0.108,0.126,0.085
+Diarrhea/Dysentery,A09,0.164,0.129,0.208
+Drowning,W74,0.002,0.002,0.003
+Esophageal Cancer,C15,0.002,0.001,0.002
+Falls,W19,0.037,0.032,0.042
+Fires,X09,0.002,0.001,0.003
+Homicide,Y09,0.003,0.002,0.004
+Ischemic Heart Disease,I24,0.185,0.104,0.289
+Leukemia/Lymphomas,C96,0.02,0.002,0.043
+Lung Cancer,C34,0.019,0.002,0.041
+Malaria,B54,0.011,0.008,0.015
+Maternal,O95,0.001,0.0,0.002
+Other Cancers,C76,0.005,0.003,0.006
+Other Cardiovascular Diseases,I99,0.005,0.004,0.008
+Other Infectious Diseases,B99,0.005,0.004,0.008
+Other Injuries,X58,0.006,0.004,0.008
+Other Non-communicable Diseases,UU1,0.012,0.009,0.017
+Pneumonia,J22,0.009,0.007,0.013
+Poisonings,X49,0.005,0.004,0.007
+Prostate Cancer,C61,0.001,0.002,0.0
+Road Traffic,V89,0.02,0.032,0.004
+Stomach Cancer,C16,0.001,0.001,0.001
+Stroke,I64,0.13,0.16,0.092
+Suicide,X84,0.019,0.031,0.003
+TB,A16,0.022,0.034,0.008

@@ -1,0 +1,64 @@
+module,cause34,age,sex,counts
+adult,Ischemic Heart Disease,20-29 years,Male,1
+adult,Suicide,20-29 years,Male,2
+adult,Undetermined,20-29 years,Male,1
+adult,Ischemic Heart Disease,20-29 years,Female,1
+adult,Undetermined,20-29 years,Female,1
+adult,Ischemic Heart Disease,30-39 years,Male,1
+adult,Leukemia/Lymphomas,30-39 years,Male,1
+adult,Suicide,30-39 years,Male,2
+adult,TB,30-39 years,Male,2
+adult,Undetermined,30-39 years,Male,3
+adult,Diabetes,30-39 years,Female,1
+adult,Ischemic Heart Disease,30-39 years,Female,1
+adult,Diabetes,40-49 years,Male,1
+adult,Drowning,40-49 years,Male,1
+adult,Ischemic Heart Disease,40-49 years,Male,1
+adult,Stomach Cancer,40-49 years,Male,1
+adult,Stroke,40-49 years,Male,2
+adult,TB,40-49 years,Male,2
+adult,Undetermined,40-49 years,Male,7
+adult,Breast Cancer,40-49 years,Female,2
+adult,Lung Cancer,40-49 years,Female,2
+adult,Stomach Cancer,40-49 years,Female,1
+adult,Undetermined,40-49 years,Female,2
+adult,Chronic Respiratory,50-59 years,Male,3
+adult,Cirrhosis,50-59 years,Male,1
+adult,Ischemic Heart Disease,50-59 years,Male,3
+adult,Diabetes,50-59 years,Female,1
+adult,TB,50-59 years,Female,1
+adult,Cirrhosis,60-69 years,Male,1
+adult,Ischemic Heart Disease,60-69 years,Male,4
+adult,Prostate Cancer,60-69 years,Male,2
+adult,Undetermined,60-69 years,Male,1
+adult,Chronic Respiratory,60-69 years,Female,1
+adult,Diabetes,60-69 years,Female,2
+adult,Ischemic Heart Disease,60-69 years,Female,5
+adult,TB,60-69 years,Female,1
+adult,Undetermined,60-69 years,Female,3
+adult,Chronic Kidney Disease,70-79 years,Male,1
+adult,Chronic Respiratory,70-79 years,Male,2
+adult,Esophageal Cancer,70-79 years,Male,1
+adult,Ischemic Heart Disease,70-79 years,Male,2
+adult,Lung Cancer,70-79 years,Male,1
+adult,Pneumonia,70-79 years,Male,1
+adult,Prostate Cancer,70-79 years,Male,1
+adult,Stroke,70-79 years,Male,3
+adult,Undetermined,70-79 years,Male,1
+adult,Chronic Respiratory,70-79 years,Female,2
+adult,Diabetes,70-79 years,Female,4
+adult,Ischemic Heart Disease,70-79 years,Female,1
+adult,Lung Cancer,70-79 years,Female,1
+adult,Stroke,70-79 years,Female,2
+adult,Undetermined,70-79 years,Female,3
+adult,Chronic Respiratory,80+,Male,1
+adult,Cirrhosis,80+,Male,1
+adult,Ischemic Heart Disease,80+,Male,1
+adult,Prostate Cancer,80+,Male,1
+adult,TB,80+,Male,1
+adult,Undetermined,80+,Male,5
+adult,Breast Cancer,80+,Female,1
+adult,Diabetes,80+,Female,2
+adult,Diarrhea/Dysentery,80+,Female,1
+adult,Pneumonia,80+,Female,1
+adult,Undetermined,80+,Female,7

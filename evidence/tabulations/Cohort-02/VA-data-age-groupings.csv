@@ -1,0 +1,236 @@
+cause34,icd10,age group,count,male (count),female (count)
+Birth asphyxia,P21, <1 yr,1,0,1
+Diarrhea/Dysentery,A09, <1 yr,1,0,1
+Measles,B05, <1 yr,1,1,0
+Meningitis,G03, <1 yr,1,1,0
+Pneumonia,J22, <1 yr,1,0,1
+Sepsis,A41, <1 yr,2,0,2
+Undetermined,R99, <1 yr,2,2,0
+Road Traffic,V89,1-4 yr,1,1,0
+Undetermined,R99,1-4 yr,5,4,1
+Falls,W19,10-14 yr,1,1,0
+Poisonings,X49,10-14 yr,1,1,0
+Road Traffic,V89,10-14 yr,1,1,0
+Undetermined,R99,10-14 yr,2,1,1
+Breast Cancer,C50,15-19 yr,1,0,1
+Cirrhosis,K74,15-19 yr,1,0,1
+Diarrhea/Dysentery,A09,15-19 yr,1,1,0
+Drowning,W74,15-19 yr,2,2,0
+Homicide,Y09,15-19 yr,1,1,0
+Ischemic Heart Disease,I24,15-19 yr,2,1,1
+Other Non-communicable Diseases,UU1,15-19 yr,1,1,0
+Poisonings,X49,15-19 yr,2,1,1
+Prostate Cancer,C61,15-19 yr,1,1,0
+Road Traffic,V89,15-19 yr,2,1,1
+Suicide,X84,15-19 yr,1,0,1
+Undetermined,R99,15-19 yr,6,4,2
+Drowning,W74,20-24 yr,1,1,0
+Falls,W19,20-24 yr,2,1,1
+Ischemic Heart Disease,I24,20-24 yr,1,1,0
+Maternal,O95,20-24 yr,3,0,3
+Poisonings,X49,20-24 yr,1,1,0
+Road Traffic,V89,20-24 yr,7,6,1
+Suicide,X84,20-24 yr,3,2,1
+Undetermined,R99,20-24 yr,8,7,1
+Diabetes,E14,25-29 yr,1,1,0
+Drowning,W74,25-29 yr,1,1,0
+Homicide,Y09,25-29 yr,1,1,0
+Ischemic Heart Disease,I24,25-29 yr,4,4,0
+Maternal,O95,25-29 yr,2,0,2
+Poisonings,X49,25-29 yr,2,2,0
+Prostate Cancer,C61,25-29 yr,1,1,0
+Road Traffic,V89,25-29 yr,7,7,0
+Suicide,X84,25-29 yr,6,5,1
+TB,A16,25-29 yr,2,2,0
+Undetermined,R99,25-29 yr,12,9,3
+Cirrhosis,K74,30-34 yr,1,1,0
+Diarrhea/Dysentery,A09,30-34 yr,1,0,1
+Falls,W19,30-34 yr,3,3,0
+Fires,X09,30-34 yr,1,1,0
+Ischemic Heart Disease,I24,30-34 yr,6,4,2
+Other Injuries,X58,30-34 yr,2,2,0
+Poisonings,X49,30-34 yr,1,1,0
+Road Traffic,V89,30-34 yr,10,9,1
+Suicide,X84,30-34 yr,3,2,1
+TB,A16,30-34 yr,1,1,0
+Undetermined,R99,30-34 yr,16,10,6
+Bite of Venomous Animal,X27,35-39 yr,1,1,0
+Cervical Cancer,C53,35-39 yr,1,0,1
+Chronic Kidney Disease,N18,35-39 yr,1,1,0
+Cirrhosis,K74,35-39 yr,4,2,2
+Diabetes,E14,35-39 yr,1,1,0
+Drowning,W74,35-39 yr,1,1,0
+Esophageal Cancer,C15,35-39 yr,1,1,0
+Ischemic Heart Disease,I24,35-39 yr,8,6,2
+Maternal,O95,35-39 yr,2,0,2
+Other Non-communicable Diseases,UU1,35-39 yr,2,2,0
+Poisonings,X49,35-39 yr,1,1,0
+Road Traffic,V89,35-39 yr,13,11,2
+Suicide,X84,35-39 yr,3,1,2
+TB,A16,35-39 yr,2,2,0
+Undetermined,R99,35-39 yr,21,16,5
+AIDS,B24,40-44 yr,1,1,0
+Bite of Venomous Animal,X27,40-44 yr,2,1,1
+Breast Cancer,C50,40-44 yr,2,0,2
+Cervical Cancer,C53,40-44 yr,1,0,1
+Chronic Kidney Disease,N18,40-44 yr,3,2,1
+Cirrhosis,K74,40-44 yr,2,2,0
+Diabetes,E14,40-44 yr,2,0,2
+Diarrhea/Dysentery,A09,40-44 yr,1,1,0
+Drowning,W74,40-44 yr,1,1,0
+Esophageal Cancer,C15,40-44 yr,1,1,0
+Fires,X09,40-44 yr,1,1,0
+Ischemic Heart Disease,I24,40-44 yr,7,5,2
+Leukemia/Lymphomas,C96,40-44 yr,3,3,0
+Lung Cancer,C34,40-44 yr,1,1,0
+Maternal,O95,40-44 yr,2,0,2
+Other Injuries,X58,40-44 yr,1,1,0
+Other Non-communicable Diseases,UU1,40-44 yr,1,1,0
+Poisonings,X49,40-44 yr,1,0,1
+Prostate Cancer,C61,40-44 yr,5,5,0
+Road Traffic,V89,40-44 yr,11,11,0
+Stroke,I64,40-44 yr,1,1,0
+Suicide,X84,40-44 yr,3,2,1
+TB,A16,40-44 yr,5,2,3
+Undetermined,R99,40-44 yr,24,14,10
+Bite of Venomous Animal,X27,45-49 yr,3,1,2
+Cervical Cancer,C53,45-49 yr,1,0,1
+Chronic Kidney Disease,N18,45-49 yr,1,1,0
+Cirrhosis,K74,45-49 yr,1,1,0
+Colorectal Cancer,C18,45-49 yr,1,0,1
+Diabetes,E14,45-49 yr,8,4,4
+Esophageal Cancer,C15,45-49 yr,3,3,0
+Falls,W19,45-49 yr,1,1,0
+Ischemic Heart Disease,I24,45-49 yr,4,4,0
+Leukemia/Lymphomas,C96,45-49 yr,3,2,1
+Maternal,O95,45-49 yr,3,0,3
+Pneumonia,J22,45-49 yr,1,1,0
+Poisonings,X49,45-49 yr,1,1,0
+Prostate Cancer,C61,45-49 yr,2,2,0
+Road Traffic,V89,45-49 yr,13,10,3
+Suicide,X84,45-49 yr,1,1,0
+TB,A16,45-49 yr,3,2,1
+Undetermined,R99,45-49 yr,20,13,7
+Drowning,W74,5-9 yr,1,1,0
+Falls,W19,5-9 yr,1,1,0
+Undetermined,R99,5-9 yr,1,0,1
+Bite of Venomous Animal,X27,50-54 yr,1,0,1
+Cervical Cancer,C53,50-54 yr,1,0,1
+Chronic Kidney Disease,N18,50-54 yr,1,0,1
+Chronic Respiratory,J44,50-54 yr,3,1,2
+Cirrhosis,K74,50-54 yr,2,1,1
+Diabetes,E14,50-54 yr,4,3,1
+Drowning,W74,50-54 yr,1,1,0
+Esophageal Cancer,C15,50-54 yr,2,1,1
+Falls,W19,50-54 yr,2,1,1
+Ischemic Heart Disease,I24,50-54 yr,21,18,3
+Leukemia/Lymphomas,C96,50-54 yr,1,0,1
+Lung Cancer,C34,50-54 yr,2,2,0
+Poisonings,X49,50-54 yr,1,1,0
+Prostate Cancer,C61,50-54 yr,2,2,0
+Road Traffic,V89,50-54 yr,12,9,3
+Stomach Cancer,C16,50-54 yr,1,1,0
+Stroke,I64,50-54 yr,1,0,1
+Suicide,X84,50-54 yr,6,3,3
+TB,A16,50-54 yr,7,7,0
+Undetermined,R99,50-54 yr,25,17,8
+Bite of Venomous Animal,X27,55-59 yr,1,1,0
+Breast Cancer,C50,55-59 yr,1,0,1
+Colorectal Cancer,C18,55-59 yr,3,2,1
+Diabetes,E14,55-59 yr,6,3,3
+Drowning,W74,55-59 yr,1,1,0
+Falls,W19,55-59 yr,1,1,0
+Homicide,Y09,55-59 yr,1,1,0
+Ischemic Heart Disease,I24,55-59 yr,12,10,2
+Other Non-communicable Diseases,UU1,55-59 yr,1,1,0
+Prostate Cancer,C61,55-59 yr,1,1,0
+Road Traffic,V89,55-59 yr,5,5,0
+Stroke,I64,55-59 yr,3,3,0
+Suicide,X84,55-59 yr,2,2,0
+TB,A16,55-59 yr,6,4,2
+Undetermined,R99,55-59 yr,34,17,17
+Breast Cancer,C50,60-64 yr,1,0,1
+Cervical Cancer,C53,60-64 yr,1,0,1
+Chronic Kidney Disease,N18,60-64 yr,1,0,1
+Chronic Respiratory,J44,60-64 yr,3,2,1
+Cirrhosis,K74,60-64 yr,2,2,0
+Diabetes,E14,60-64 yr,12,8,4
+Diarrhea/Dysentery,A09,60-64 yr,1,0,1
+Drowning,W74,60-64 yr,1,1,0
+Esophageal Cancer,C15,60-64 yr,2,1,1
+Falls,W19,60-64 yr,4,3,1
+Fires,X09,60-64 yr,2,1,1
+Ischemic Heart Disease,I24,60-64 yr,17,13,4
+Prostate Cancer,C61,60-64 yr,6,6,0
+Road Traffic,V89,60-64 yr,5,4,1
+Stomach Cancer,C16,60-64 yr,1,1,0
+Suicide,X84,60-64 yr,3,2,1
+TB,A16,60-64 yr,5,3,2
+Undetermined,R99,60-64 yr,46,25,21
+Cirrhosis,K74,65-69 yr,2,2,0
+Diabetes,E14,65-69 yr,5,3,2
+Diarrhea/Dysentery,A09,65-69 yr,2,1,1
+Drowning,W74,65-69 yr,1,1,0
+Falls,W19,65-69 yr,1,1,0
+Ischemic Heart Disease,I24,65-69 yr,10,9,1
+Pneumonia,J22,65-69 yr,1,1,0
+Prostate Cancer,C61,65-69 yr,5,5,0
+Road Traffic,V89,65-69 yr,4,3,1
+Stroke,I64,65-69 yr,3,3,0
+TB,A16,65-69 yr,4,3,1
+Undetermined,R99,65-69 yr,23,12,11
+Breast Cancer,C50,70-74 yr,1,0,1
+Cervical Cancer,C53,70-74 yr,1,0,1
+Chronic Respiratory,J44,70-74 yr,4,3,1
+Cirrhosis,K74,70-74 yr,1,1,0
+Diabetes,E14,70-74 yr,9,2,7
+Diarrhea/Dysentery,A09,70-74 yr,3,2,1
+Esophageal Cancer,C15,70-74 yr,1,0,1
+Ischemic Heart Disease,I24,70-74 yr,18,12,6
+Leukemia/Lymphomas,C96,70-74 yr,1,0,1
+Other Injuries,X58,70-74 yr,1,0,1
+Other Non-communicable Diseases,UU1,70-74 yr,1,1,0
+Pneumonia,J22,70-74 yr,1,1,0
+Prostate Cancer,C61,70-74 yr,2,2,0
+Road Traffic,V89,70-74 yr,1,0,1
+Stomach Cancer,C16,70-74 yr,1,1,0
+Stroke,I64,70-74 yr,9,7,2
+Suicide,X84,70-74 yr,1,1,0
+TB,A16,70-74 yr,2,1,1
+Undetermined,R99,70-74 yr,42,25,17
+Cervical Cancer,C53,75-79 yr,1,0,1
+Chronic Respiratory,J44,75-79 yr,3,2,1
+Cirrhosis,K74,75-79 yr,1,1,0
+Diabetes,E14,75-79 yr,7,3,4
+Diarrhea/Dysentery,A09,75-79 yr,2,0,2
+Esophageal Cancer,C15,75-79 yr,1,1,0
+Ischemic Heart Disease,I24,75-79 yr,2,2,0
+Prostate Cancer,C61,75-79 yr,1,1,0
+Road Traffic,V89,75-79 yr,1,1,0
+Stroke,I64,75-79 yr,7,7,0
+TB,A16,75-79 yr,1,1,0
+Undetermined,R99,75-79 yr,20,10,10
+Bite of Venomous Animal,X27,80-84 yr,1,1,0
+Cervical Cancer,C53,80-84 yr,1,0,1
+Chronic Respiratory,J44,80-84 yr,3,2,1
+Diabetes,E14,80-84 yr,4,1,3
+Diarrhea/Dysentery,A09,80-84 yr,3,0,3
+Falls,W19,80-84 yr,1,0,1
+Ischemic Heart Disease,I24,80-84 yr,3,2,1
+Pneumonia,J22,80-84 yr,1,0,1
+Road Traffic,V89,80-84 yr,1,1,0
+Stroke,I64,80-84 yr,2,2,0
+TB,A16,80-84 yr,1,1,0
+Undetermined,R99,80-84 yr,27,17,10
+Chronic Respiratory,J44,85+ yr,4,3,1
+Diabetes,E14,85+ yr,10,3,7
+Diarrhea/Dysentery,A09,85+ yr,9,5,4
+Falls,W19,85+ yr,4,1,3
+Ischemic Heart Disease,I24,85+ yr,10,8,2
+Other Non-communicable Diseases,UU1,85+ yr,2,0,2
+Prostate Cancer,C61,85+ yr,3,3,0
+Road Traffic,V89,85+ yr,1,1,0
+Stroke,I64,85+ yr,9,7,2
+Suicide,X84,85+ yr,1,1,0
+TB,A16,85+ yr,6,5,1
+Undetermined,R99,85+ yr,107,57,50

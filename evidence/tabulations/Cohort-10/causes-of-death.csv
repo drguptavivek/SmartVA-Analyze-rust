@@ -1,0 +1,19 @@
+module,cause34,age,sex,counts
+adult,TB,20-29 years,Male,1
+adult,Ischemic Heart Disease,30-39 years,Male,1
+adult,Undetermined,30-39 years,Male,2
+adult,Ischemic Heart Disease,40-49 years,Male,1
+adult,Bite of Venomous Animal,40-49 years,Female,1
+adult,Ischemic Heart Disease,40-49 years,Female,1
+adult,Stroke,50-59 years,Female,1
+adult,Diabetes,60-69 years,Male,2
+adult,Undetermined,60-69 years,Male,2
+adult,Undetermined,60-69 years,Female,1
+adult,Falls,70-79 years,Male,1
+adult,Road Traffic,70-79 years,Male,1
+adult,Diabetes,70-79 years,Female,1
+adult,Stroke,70-79 years,Female,1
+adult,Undetermined,70-79 years,Female,1
+adult,Diabetes,80+,Male,1
+adult,Undetermined,80+,Male,3
+adult,Chronic Respiratory,80+,Female,1

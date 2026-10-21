@@ -1,0 +1,73 @@
+symptom,description,Diarrhea/Dysentery,Falls,Meningitis,Pneumonia,Road Traffic,Sepsis,Undetermined
+s113991,Severe fever,0.0%,100.0%,50.0%,80.0%,0.0%,0.0%,33.3%
+s115,Loose or liquid stools,100.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s116991,More than 1 loose stools,100.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s117,Loose or liquid stools started at least 3 days before death,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s118,Loose or liquid stools continued until death,100.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s11991,Not born in a hospital,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s121,Cough,0.0%,0.0%,0.0%,60.0%,0.0%,0.0%,0.0%
+s122,Cough for at least 7 days,0.0%,0.0%,0.0%,20.0%,0.0%,0.0%,0.0%
+s123,Very severe cough,0.0%,0.0%,0.0%,60.0%,0.0%,0.0%,0.0%
+s125,Difficulty breathing,0.0%,0.0%,50.0%,80.0%,0.0%,100.0%,33.3%
+s126,Difficulty breathing for at least 3 days,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s128,Fast breathing for at least 3 days,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s131,Breathing: Grunting,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s133,Generalized convulsions or fits,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,33.3%
+s134,Unconsciousness,50.0%,0.0%,100.0%,40.0%,0.0%,0.0%,0.0%
+s135991,Unconsciousness started >24hrs before death,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s136,Stiff neck,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s137,Bulging fontanelle,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s138,Skin rash,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s13991,Small or very small at birth,50.0%,0.0%,0.0%,40.0%,0.0%,100.0%,0.0%
+s142,Rash for at least 5 days,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s146,Swelling for at least 3.5 days,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s147,Skin flaked off in patches,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s148,Hair changed in color to a reddish or yellowish color,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s149,Protruding belly,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,33.3%
+s150,Suffered from 'lack of blood' or 'pallor',0.0%,0.0%,50.0%,0.0%,0.0%,0.0%,0.0%
+s151,Swelling in the armpits,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s153,Bled from somewhere,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s154,Skin that turned black,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s155,Suffered road traffic injury,0.0%,0.0%,0.0%,0.0%,100.0%,0.0%,0.0%
+s156,Suffered fall,0.0%,100.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s157,Suffered drowning,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s158,Suffered poisoning,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s159,Suffered bite/sting,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s160,Suffered burn/fire,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s161,Victim of violence,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s162,Suffered other injury,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s164,Did not suffer accident,100.0%,0.0%,100.0%,100.0%,0.0%,100.0%,100.0%
+s165,Injury was intentionally inflicted by someone else,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s16991,Baby was born dead,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s17,Baby did cry,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s18,Baby did move,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s188,Mother has been tested for HIV,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s19,Baby did breathe,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s190,Mother has been told she had AIDS by a health worker,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s28,At least 9 months old when the fatal illness started,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s29,Illness lasted at least 8 days,0.0%,100.0%,0.0%,0.0%,0.0%,100.0%,0.0%
+s2991,Age quintile: 1 to 4 months,50.0%,100.0%,0.0%,40.0%,0.0%,100.0%,33.3%
+s2992,Age quintile: 5 to 11 months,50.0%,0.0%,100.0%,40.0%,0.0%,0.0%,0.0%
+s2993,Age quintile: 1 to 2 years,0.0%,0.0%,0.0%,20.0%,0.0%,0.0%,0.0%
+s2994,Age quintile: 3 to 6 years,0.0%,0.0%,0.0%,0.0%,100.0%,0.0%,33.3%
+s2995,Age quintile: 7 to 11 years,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,33.3%
+s30991,Didn't die in a hospital,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s31,Age greater than 300 days,0.0%,0.0%,50.0%,40.0%,100.0%,0.0%,66.7%
+s5991,Part of multiple birth,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s6991,2nd or later in birth order,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s8991,Mother died before delivery,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s8992,Mother died after delivery,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s9,Mother died at least 1000 days after delivery,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s99991,Open Response Word: abdomen,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s999914,Open Response Word: dehydr,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s999915,Open Response Word: dengu,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s999916,Open Response Word: diarrhea,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s999919,Open Response Word: fever,0.0%,100.0%,50.0%,20.0%,0.0%,0.0%,33.3%
+s999923,Open Response Word: heart,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s999926,Open Response Word: jaundic,50.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s999930,Open Response Word: malaria,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s999933,Open Response Word: pneumonia,0.0%,0.0%,0.0%,80.0%,0.0%,100.0%,0.0%
+s999935,Open Response Word: pox,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s999937,Open Response Word: rash,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s999949,Open Response Word: yellow,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+s99999,Open Response Word: cancer,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%

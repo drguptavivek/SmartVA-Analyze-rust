@@ -1,0 +1,110 @@
+module,cause34,age,sex,counts
+child,Meningitis, 29 days - <1 year,Male,1
+child,Other Defined Causes of Child Deaths, 29 days - <1 year,Male,1
+child,Undetermined, 29 days - <1 year,Male,1
+child,Diarrhea/Dysentery,01-04 years,Female,1
+child,Road Traffic,05-11 years,Male,1
+adult,Chronic Kidney Disease,12-19 years,Male,1
+adult,Homicide,12-19 years,Male,1
+adult,Suicide,12-19 years,Male,1
+adult,Fires,12-19 years,Female,1
+adult,Undetermined,12-19 years,Female,1
+adult,Prostate Cancer,20-29 years,Male,1
+adult,Road Traffic,20-29 years,Male,3
+adult,Suicide,20-29 years,Male,4
+adult,Undetermined,20-29 years,Male,4
+adult,Maternal,20-29 years,Female,1
+adult,Suicide,20-29 years,Female,1
+adult,Undetermined,20-29 years,Female,1
+adult,Diabetes,30-39 years,Male,1
+adult,Lung Cancer,30-39 years,Male,1
+adult,Other Infectious Diseases,30-39 years,Male,1
+adult,Pneumonia,30-39 years,Male,1
+adult,Suicide,30-39 years,Male,1
+adult,TB,30-39 years,Male,1
+adult,Undetermined,30-39 years,Male,4
+adult,Falls,30-39 years,Female,1
+adult,Diabetes,40-49 years,Male,1
+adult,Esophageal Cancer,40-49 years,Male,1
+adult,Ischemic Heart Disease,40-49 years,Male,1
+adult,Road Traffic,40-49 years,Male,1
+adult,Suicide,40-49 years,Male,3
+adult,TB,40-49 years,Male,1
+adult,Undetermined,40-49 years,Male,2
+adult,Chronic Kidney Disease,40-49 years,Female,1
+adult,Cirrhosis,40-49 years,Female,1
+adult,Diabetes,40-49 years,Female,2
+adult,Suicide,40-49 years,Female,1
+adult,TB,40-49 years,Female,1
+adult,Undetermined,40-49 years,Female,2
+adult,Chronic Respiratory,50-59 years,Male,1
+adult,Cirrhosis,50-59 years,Male,2
+adult,Diabetes,50-59 years,Male,3
+adult,Ischemic Heart Disease,50-59 years,Male,2
+adult,Other Non-communicable Diseases,50-59 years,Male,1
+adult,Stroke,50-59 years,Male,3
+adult,Suicide,50-59 years,Male,1
+adult,TB,50-59 years,Male,2
+adult,Undetermined,50-59 years,Male,3
+adult,Breast Cancer,50-59 years,Female,1
+adult,Cirrhosis,50-59 years,Female,2
+adult,Colorectal Cancer,50-59 years,Female,1
+adult,Diabetes,50-59 years,Female,1
+adult,Diarrhea/Dysentery,50-59 years,Female,1
+adult,Ischemic Heart Disease,50-59 years,Female,1
+adult,Lung Cancer,50-59 years,Female,1
+adult,Other Cancers,50-59 years,Female,1
+adult,Pneumonia,50-59 years,Female,1
+adult,Road Traffic,50-59 years,Female,1
+adult,Suicide,50-59 years,Female,2
+adult,Undetermined,50-59 years,Female,3
+adult,Chronic Kidney Disease,60-69 years,Male,3
+adult,Cirrhosis,60-69 years,Male,1
+adult,Diabetes,60-69 years,Male,6
+adult,Ischemic Heart Disease,60-69 years,Male,7
+adult,Other Non-communicable Diseases,60-69 years,Male,1
+adult,Stroke,60-69 years,Male,7
+adult,TB,60-69 years,Male,1
+adult,Undetermined,60-69 years,Male,10
+adult,Chronic Kidney Disease,60-69 years,Female,1
+adult,Colorectal Cancer,60-69 years,Female,1
+adult,Diabetes,60-69 years,Female,3
+adult,Diarrhea/Dysentery,60-69 years,Female,1
+adult,Falls,60-69 years,Female,1
+adult,Ischemic Heart Disease,60-69 years,Female,4
+adult,Other Non-communicable Diseases,60-69 years,Female,1
+adult,Stroke,60-69 years,Female,2
+adult,Undetermined,60-69 years,Female,4
+adult,Chronic Kidney Disease,70-79 years,Male,3
+adult,Cirrhosis,70-79 years,Male,2
+adult,Diabetes,70-79 years,Male,1
+adult,Ischemic Heart Disease,70-79 years,Male,1
+adult,Lung Cancer,70-79 years,Male,1
+adult,Other Non-communicable Diseases,70-79 years,Male,2
+adult,Prostate Cancer,70-79 years,Male,1
+adult,Stroke,70-79 years,Male,2
+adult,Suicide,70-79 years,Male,1
+adult,TB,70-79 years,Male,1
+adult,Undetermined,70-79 years,Male,5
+adult,Breast Cancer,70-79 years,Female,1
+adult,Chronic Kidney Disease,70-79 years,Female,1
+adult,Cirrhosis,70-79 years,Female,1
+adult,Diabetes,70-79 years,Female,1
+adult,Diarrhea/Dysentery,70-79 years,Female,1
+adult,Ischemic Heart Disease,70-79 years,Female,4
+adult,Stroke,70-79 years,Female,4
+adult,Suicide,70-79 years,Female,1
+adult,Undetermined,70-79 years,Female,16
+adult,Chronic Respiratory,80+,Male,3
+adult,Ischemic Heart Disease,80+,Male,1
+adult,Prostate Cancer,80+,Male,1
+adult,TB,80+,Male,1
+adult,Undetermined,80+,Male,11
+adult,Chronic Respiratory,80+,Female,1
+adult,Diabetes,80+,Female,1
+adult,Diarrhea/Dysentery,80+,Female,1
+adult,Esophageal Cancer,80+,Female,1
+adult,Ischemic Heart Disease,80+,Female,2
+adult,Other Non-communicable Diseases,80+,Female,1
+adult,Stroke,80+,Female,2
+adult,Undetermined,80+,Female,9

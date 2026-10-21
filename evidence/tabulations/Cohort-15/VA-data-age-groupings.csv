@@ -1,0 +1,106 @@
+cause34,icd10,age group,count,male (count),female (count)
+Meningitis,G03, <1 yr,1,1,0
+Other Defined Causes of Child Deaths,UU2, <1 yr,1,1,0
+Undetermined,R99, <1 yr,1,1,0
+Diarrhea/Dysentery,A09,1-4 yr,1,0,1
+Road Traffic,V89,10-14 yr,1,1,0
+Chronic Kidney Disease,N18,15-19 yr,1,1,0
+Fires,X09,15-19 yr,1,0,1
+Homicide,Y09,15-19 yr,1,1,0
+Suicide,X84,15-19 yr,1,1,0
+Undetermined,R99,15-19 yr,1,0,1
+Maternal,O95,20-24 yr,1,0,1
+Suicide,X84,20-24 yr,2,1,1
+Undetermined,R99,20-24 yr,2,1,1
+Prostate Cancer,C61,25-29 yr,1,1,0
+Road Traffic,V89,25-29 yr,3,3,0
+Suicide,X84,25-29 yr,3,3,0
+Undetermined,R99,25-29 yr,3,3,0
+Pneumonia,J22,30-34 yr,1,1,0
+Diabetes,E14,35-39 yr,1,1,0
+Falls,W19,35-39 yr,1,0,1
+Lung Cancer,C34,35-39 yr,1,1,0
+Other Infectious Diseases,B99,35-39 yr,1,1,0
+Suicide,X84,35-39 yr,1,1,0
+TB,A16,35-39 yr,1,1,0
+Undetermined,R99,35-39 yr,4,4,0
+Chronic Kidney Disease,N18,40-44 yr,1,0,1
+Diabetes,E14,40-44 yr,3,1,2
+Road Traffic,V89,40-44 yr,1,1,0
+Suicide,X84,40-44 yr,2,2,0
+TB,A16,40-44 yr,2,1,1
+Undetermined,R99,40-44 yr,2,2,0
+Cirrhosis,K74,45-49 yr,1,0,1
+Esophageal Cancer,C15,45-49 yr,1,1,0
+Ischemic Heart Disease,I24,45-49 yr,1,1,0
+Suicide,X84,45-49 yr,2,1,1
+Undetermined,R99,45-49 yr,2,0,2
+Breast Cancer,C50,50-54 yr,1,0,1
+Cirrhosis,K74,50-54 yr,3,2,1
+Diabetes,E14,50-54 yr,1,1,0
+Ischemic Heart Disease,I24,50-54 yr,2,1,1
+Other Cancers,C76,50-54 yr,1,0,1
+Other Non-communicable Diseases,UU1,50-54 yr,1,1,0
+Road Traffic,V89,50-54 yr,1,0,1
+Suicide,X84,50-54 yr,2,1,1
+Undetermined,R99,50-54 yr,1,1,0
+Chronic Respiratory,J44,55-59 yr,1,1,0
+Cirrhosis,K74,55-59 yr,1,0,1
+Colorectal Cancer,C18,55-59 yr,1,0,1
+Diabetes,E14,55-59 yr,3,2,1
+Diarrhea/Dysentery,A09,55-59 yr,1,0,1
+Ischemic Heart Disease,I24,55-59 yr,1,1,0
+Lung Cancer,C34,55-59 yr,1,0,1
+Pneumonia,J22,55-59 yr,1,0,1
+Stroke,I64,55-59 yr,3,3,0
+Suicide,X84,55-59 yr,1,0,1
+TB,A16,55-59 yr,2,2,0
+Undetermined,R99,55-59 yr,5,2,3
+Chronic Kidney Disease,N18,60-64 yr,3,3,0
+Diabetes,E14,60-64 yr,8,5,3
+Diarrhea/Dysentery,A09,60-64 yr,1,0,1
+Ischemic Heart Disease,I24,60-64 yr,4,3,1
+Stroke,I64,60-64 yr,3,2,1
+TB,A16,60-64 yr,1,1,0
+Undetermined,R99,60-64 yr,7,5,2
+Chronic Kidney Disease,N18,65-69 yr,1,0,1
+Cirrhosis,K74,65-69 yr,1,1,0
+Colorectal Cancer,C18,65-69 yr,1,0,1
+Diabetes,E14,65-69 yr,1,1,0
+Falls,W19,65-69 yr,1,0,1
+Ischemic Heart Disease,I24,65-69 yr,7,4,3
+Other Non-communicable Diseases,UU1,65-69 yr,2,1,1
+Stroke,I64,65-69 yr,6,5,1
+Undetermined,R99,65-69 yr,7,5,2
+Breast Cancer,C50,70-74 yr,1,0,1
+Chronic Kidney Disease,N18,70-74 yr,2,2,0
+Cirrhosis,K74,70-74 yr,3,2,1
+Diabetes,E14,70-74 yr,1,1,0
+Ischemic Heart Disease,I24,70-74 yr,3,0,3
+Other Non-communicable Diseases,UU1,70-74 yr,2,2,0
+Prostate Cancer,C61,70-74 yr,1,1,0
+Stroke,I64,70-74 yr,3,1,2
+Suicide,X84,70-74 yr,1,1,0
+TB,A16,70-74 yr,1,1,0
+Undetermined,R99,70-74 yr,8,2,6
+Chronic Kidney Disease,N18,75-79 yr,2,1,1
+Diabetes,E14,75-79 yr,1,0,1
+Diarrhea/Dysentery,A09,75-79 yr,1,0,1
+Ischemic Heart Disease,I24,75-79 yr,2,1,1
+Lung Cancer,C34,75-79 yr,1,1,0
+Stroke,I64,75-79 yr,3,1,2
+Suicide,X84,75-79 yr,1,0,1
+Undetermined,R99,75-79 yr,13,3,10
+Chronic Respiratory,J44,80-84 yr,2,2,0
+Diabetes,E14,80-84 yr,1,0,1
+Prostate Cancer,C61,80-84 yr,1,1,0
+Stroke,I64,80-84 yr,1,0,1
+Undetermined,R99,80-84 yr,5,3,2
+Chronic Respiratory,J44,85+ yr,2,1,1
+Diarrhea/Dysentery,A09,85+ yr,1,0,1
+Esophageal Cancer,C15,85+ yr,1,0,1
+Ischemic Heart Disease,I24,85+ yr,3,1,2
+Other Non-communicable Diseases,UU1,85+ yr,1,0,1
+Stroke,I64,85+ yr,1,0,1
+TB,A16,85+ yr,1,1,0
+Undetermined,R99,85+ yr,15,8,7

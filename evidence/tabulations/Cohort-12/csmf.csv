@@ -1,0 +1,49 @@
+cause34,icd10,all,male,female
+AIDS,B24,0.005,0.004,0.007
+Birth asphyxia,P21,0.013,0.023,0.008
+Bite of Venomous Animal,X27,0.004,0.007,0.001
+Breast Cancer,C50,0.005,0.0,0.012
+Cervical Cancer,C53,0.012,0.0,0.033
+Childhood Cancer,C76,0.001,0.0,0.001
+Childhood Cardiovascular Diseases,I99,0.008,0.014,0.006
+Chronic Kidney Disease,N18,0.031,0.037,0.021
+Chronic Respiratory,J44,0.047,0.029,0.075
+Cirrhosis,K74,0.06,0.093,0.006
+Colorectal Cancer,C18,0.005,0.004,0.006
+Congenital malformation,Q89,0.008,0.0,0.012
+Diabetes,E14,0.069,0.056,0.092
+Diarrhea/Dysentery,A09,0.042,0.029,0.057
+Digestive Diseases,K92,0.0,0.0,0.0
+Drowning,W74,0.003,0.003,0.004
+Encephalitis,G04,0.0,0.0,0.001
+Esophageal Cancer,C15,0.009,0.014,0.002
+Falls,W19,0.027,0.034,0.015
+Fires,X09,0.002,0.002,0.003
+Hemorrhagic fever,A99,0.0,0.0,0.0
+Homicide,Y09,0.004,0.003,0.005
+Ischemic Heart Disease,I24,0.276,0.285,0.261
+Leukemia/Lymphomas,C96,0.016,0.022,0.005
+Lung Cancer,C34,0.002,0.002,0.003
+Malaria,B54,0.014,0.01,0.018
+Maternal,O95,0.004,0.0,0.011
+Measles,B05,0.0,0.0,0.0
+Meningitis,G03,0.001,0.0,0.001
+Neonatal Meningitis/Sepsis,P36,0.0,0.0,0.0
+Neonatal Pneumonia,P23,0.0,0.0,0.0
+Other Cancers,C76,0.005,0.004,0.007
+Other Cardiovascular Diseases,I99,0.006,0.004,0.009
+Other Defined Causes of Child Deaths,UU2,0.002,0.0,0.002
+Other Infectious Diseases,B99,0.013,0.013,0.011
+Other Injuries,X58,0.007,0.006,0.009
+Other Non-communicable Diseases,UU1,0.026,0.023,0.031
+Pneumonia,J22,0.036,0.041,0.038
+Poisonings,X49,0.007,0.005,0.009
+Preterm Delivery,P07,0.017,0.012,0.02
+Prostate Cancer,C61,0.009,0.015,0.0
+Road Traffic,V89,0.028,0.043,0.004
+Sepsis,A41,0.001,0.0,0.001
+Stillbirth,P95,0.02,0.023,0.018
+Stomach Cancer,C16,0.005,0.001,0.012
+Stroke,I64,0.095,0.078,0.122
+Suicide,X84,0.022,0.035,0.002
+TB,A16,0.03,0.025,0.038

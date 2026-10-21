@@ -1,0 +1,34 @@
+cause34,cause list #,icd10,all,male,female
+AIDS,1,B24,0.007,0.002,0.014
+Bite of Venomous Animal,3,X27,0.0,0.0,0.0
+Breast Cancer,4,C50,0.008,0.0,0.02
+Cervical Cancer,5,C53,0.004,0.0,0.011
+Chronic Kidney Disease,29,N18,0.032,0.03,0.035
+Chronic Respiratory,35,J44,0.07,0.035,0.12
+Cirrhosis,6,K74,0.07,0.109,0.013
+Colorectal Cancer,7,C18,0.003,0.002,0.004
+Diabetes,9,E14,0.142,0.083,0.227
+Diarrhea/Dysentery,10,A09,0.016,0.013,0.021
+Drowning,11,W74,0.002,0.001,0.002
+Esophageal Cancer,13,C15,0.009,0.014,0.001
+Falls,14,W19,0.03,0.022,0.041
+Fires,15,X09,0.005,0.008,0.002
+Homicide,16,Y09,0.002,0.002,0.003
+Ischemic Heart Disease,36,I24,0.24,0.261,0.208
+Leukemia/Lymphomas,18,C96,0.01,0.015,0.003
+Lung Cancer,19,C34,0.005,0.001,0.011
+Malaria,20,B54,0.012,0.013,0.01
+Maternal,21,O95,0.0,0.0,0.001
+Other Cancers,37,C76,0.007,0.009,0.004
+Other Cardiovascular Diseases,22,I99,0.004,0.003,0.005
+Other Infectious Diseases,23,B99,0.012,0.017,0.005
+Other Injuries,24,X58,0.008,0.01,0.006
+Other Non-communicable Diseases,25,UU1,0.025,0.021,0.033
+Pneumonia,26,J22,0.011,0.005,0.019
+Poisonings,27,X49,0.004,0.003,0.005
+Prostate Cancer,28,C61,0.013,0.021,0.0
+Road Traffic,30,V89,0.026,0.029,0.022
+Stomach Cancer,31,C16,0.005,0.007,0.001
+Stroke,32,I64,0.181,0.205,0.146
+Suicide,33,X84,0.021,0.034,0.001
+TB,34,A16,0.016,0.024,0.004

@@ -1,0 +1,70 @@
+name: Release Binaries
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    name: Build Release (${{ matrix.target }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            archive_name: smartva-rs-linux-x86_64
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            archive_name: smartva-rs-macos-arm64
+          - os: macos-latest
+            target: x86_64-apple-darwin
+            archive_name: smartva-rs-macos-x86_64
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            archive_name: smartva-rs-windows-x86_64
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Build release artifacts
+        run: cargo build --release --target ${{ matrix.target }} --bins --lib
+
+      - name: Package Unix Archive
+        if: runner.os != 'Windows'
+        run: |
+          mkdir -p dist/${{ matrix.archive_name }}
+          cp target/${{ matrix.target }}/release/smartva-rs dist/${{ matrix.archive_name }}/
+          cp target/${{ matrix.target }}/release/phmrc-source-prep dist/${{ matrix.archive_name }}/
+          cp target/${{ matrix.target }}/release/libsmartva_rust.* dist/${{ matrix.archive_name }}/
+          cp README.md LICENSE dist/${{ matrix.archive_name }}/
+          tar -C dist -czf ${{ matrix.archive_name }}.tar.gz ${{ matrix.archive_name }}
+
+      - name: Package Windows Archive
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist/${{ matrix.archive_name }}
+          Copy-Item target/${{ matrix.target }}/release/smartva-rs.exe dist/${{ matrix.archive_name }}/
+          Copy-Item target/${{ matrix.target }}/release/phmrc-source-prep.exe dist/${{ matrix.archive_name }}/
+          Copy-Item target/${{ matrix.target }}/release/*smartva_rust* dist/${{ matrix.archive_name }}/
+          Copy-Item README.md, LICENSE dist/${{ matrix.archive_name }}/
+          Compress-Archive -Path dist/${{ matrix.archive_name }} -DestinationPath ${{ matrix.archive_name }}.zip
+
+      - name: Upload Release Assets
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ${{ matrix.archive_name }}.tar.gz
+            ${{ matrix.archive_name }}.zip

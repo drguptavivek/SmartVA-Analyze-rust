@@ -1,0 +1,21 @@
+cause34,icd10,age group,count,male (count),female (count)
+TB,A16,25-29 yr,1,1,0
+Ischemic Heart Disease,I24,30-34 yr,1,1,0
+Undetermined,R99,30-34 yr,2,2,0
+Ischemic Heart Disease,I24,40-44 yr,1,0,1
+Bite of Venomous Animal,X27,45-49 yr,1,0,1
+Ischemic Heart Disease,I24,45-49 yr,1,1,0
+Stroke,I64,55-59 yr,1,0,1
+Diabetes,E14,60-64 yr,1,1,0
+Undetermined,R99,60-64 yr,2,1,1
+Diabetes,E14,65-69 yr,1,1,0
+Undetermined,R99,65-69 yr,1,1,0
+Diabetes,E14,70-74 yr,1,0,1
+Undetermined,R99,70-74 yr,1,0,1
+Falls,W19,75-79 yr,1,1,0
+Road Traffic,V89,75-79 yr,1,1,0
+Stroke,I64,75-79 yr,1,0,1
+Chronic Respiratory,J44,80-84 yr,1,0,1
+Diabetes,E14,80-84 yr,1,1,0
+Undetermined,R99,80-84 yr,1,1,0
+Undetermined,R99,85+ yr,2,2,0

@@ -1,0 +1,6 @@
+cause34,cause list #,icd10,all,male,female
+Childhood Cancer,12,C76,0.167,0.0,0.5
+Diarrhea/Dysentery,3,A09,0.167,0.25,0.0
+Other Infectious Diseases,16,B99,0.167,0.0,0.5
+Pneumonia,17,J22,0.333,0.5,0.0
+Road Traffic,19,V89,0.167,0.25,0.0

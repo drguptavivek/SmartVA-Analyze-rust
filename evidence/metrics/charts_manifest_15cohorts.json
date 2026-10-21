@@ -1,0 +1,289 @@
+[
+  {
+    "cohort_id": "Cohort-01",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "neonate-csmf-figure.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx",
+      "neonate-likelihoods.xlsx"
+    ],
+    "csv_matches": 11,
+    "csv_total": 11
+  },
+  {
+    "cohort_id": "Cohort-02",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "neonate-csmf-figure.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx",
+      "neonate-likelihoods.xlsx"
+    ],
+    "csv_matches": 11,
+    "csv_total": 11
+  },
+  {
+    "cohort_id": "Cohort-03",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "gbd-level1-csmf.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx"
+    ],
+    "csv_matches": 9,
+    "csv_total": 9
+  },
+  {
+    "cohort_id": "Cohort-04",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "neonate-csmf-figure.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx",
+      "neonate-likelihoods.xlsx"
+    ],
+    "csv_matches": 11,
+    "csv_total": 11
+  },
+  {
+    "cohort_id": "Cohort-05",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx"
+    ],
+    "csv_matches": 10,
+    "csv_total": 10
+  },
+  {
+    "cohort_id": "Cohort-06",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx"
+    ],
+    "csv_matches": 10,
+    "csv_total": 10
+  },
+  {
+    "cohort_id": "Cohort-07",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "neonate-csmf-figure.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx",
+      "neonate-likelihoods.xlsx"
+    ],
+    "csv_matches": 11,
+    "csv_total": 11
+  },
+  {
+    "cohort_id": "Cohort-08",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx"
+    ],
+    "csv_matches": 10,
+    "csv_total": 10
+  },
+  {
+    "cohort_id": "Cohort-09",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "gbd-level1-csmf.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx"
+    ],
+    "csv_matches": 9,
+    "csv_total": 9
+  },
+  {
+    "cohort_id": "Cohort-10",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "gbd-level1-csmf.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx"
+    ],
+    "csv_matches": 9,
+    "csv_total": 9
+  },
+  {
+    "cohort_id": "Cohort-11",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "gbd-level1-csmf.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx"
+    ],
+    "csv_matches": 9,
+    "csv_total": 9
+  },
+  {
+    "cohort_id": "Cohort-12",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "neonate-csmf-figure.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx",
+      "neonate-likelihoods.xlsx"
+    ],
+    "csv_matches": 11,
+    "csv_total": 11
+  },
+  {
+    "cohort_id": "Cohort-13",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "gbd-level1-csmf.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx"
+    ],
+    "csv_matches": 9,
+    "csv_total": 9
+  },
+  {
+    "cohort_id": "Cohort-14",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "neonate-csmf-figure.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx",
+      "neonate-likelihoods.xlsx"
+    ],
+    "csv_matches": 11,
+    "csv_total": 11
+  },
+  {
+    "cohort_id": "Cohort-15",
+    "pngs": [
+      "adult-csmf-figure.png",
+      "adult-female-csmf-figure.png",
+      "adult-male-csmf-figure.png",
+      "all-csmf-figure.png",
+      "all-figure.png",
+      "child-csmf-figure.png",
+      "gbd-level1-csmf.png",
+      "undetermined-figure.png"
+    ],
+    "xlsxs": [
+      "adult-likelihoods.xlsx",
+      "child-likelihoods.xlsx"
+    ],
+    "csv_matches": 10,
+    "csv_total": 10
+  }
+]

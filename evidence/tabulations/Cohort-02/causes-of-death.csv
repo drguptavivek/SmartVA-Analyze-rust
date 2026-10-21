@@ -1,0 +1,226 @@
+module,cause34,age,sex,counts
+neonate,Birth asphyxia, 00-07 days,Female,1
+child,Measles, 29 days - <1 year,Male,1
+child,Meningitis, 29 days - <1 year,Male,1
+child,Undetermined, 29 days - <1 year,Male,2
+child,Diarrhea/Dysentery, 29 days - <1 year,Female,1
+child,Pneumonia, 29 days - <1 year,Female,1
+child,Sepsis, 29 days - <1 year,Female,2
+child,Road Traffic,01-04 years,Male,1
+child,Undetermined,01-04 years,Male,4
+child,Undetermined,01-04 years,Female,1
+child,Drowning,05-11 years,Male,1
+child,Falls,05-11 years,Male,2
+child,Undetermined,05-11 years,Female,2
+adult,Diarrhea/Dysentery,12-19 years,Male,1
+adult,Drowning,12-19 years,Male,2
+adult,Homicide,12-19 years,Male,1
+adult,Ischemic Heart Disease,12-19 years,Male,1
+adult,Other Non-communicable Diseases,12-19 years,Male,1
+adult,Poisonings,12-19 years,Male,2
+adult,Prostate Cancer,12-19 years,Male,1
+adult,Road Traffic,12-19 years,Male,2
+adult,Undetermined,12-19 years,Male,5
+adult,Breast Cancer,12-19 years,Female,1
+adult,Cirrhosis,12-19 years,Female,1
+adult,Ischemic Heart Disease,12-19 years,Female,1
+adult,Poisonings,12-19 years,Female,1
+adult,Road Traffic,12-19 years,Female,1
+adult,Suicide,12-19 years,Female,1
+adult,Undetermined,12-19 years,Female,2
+adult,Diabetes,20-29 years,Male,1
+adult,Drowning,20-29 years,Male,2
+adult,Falls,20-29 years,Male,1
+adult,Homicide,20-29 years,Male,1
+adult,Ischemic Heart Disease,20-29 years,Male,5
+adult,Poisonings,20-29 years,Male,3
+adult,Prostate Cancer,20-29 years,Male,1
+adult,Road Traffic,20-29 years,Male,13
+adult,Suicide,20-29 years,Male,7
+adult,TB,20-29 years,Male,2
+adult,Undetermined,20-29 years,Male,16
+adult,Falls,20-29 years,Female,1
+adult,Maternal,20-29 years,Female,5
+adult,Road Traffic,20-29 years,Female,1
+adult,Suicide,20-29 years,Female,2
+adult,Undetermined,20-29 years,Female,4
+adult,Bite of Venomous Animal,30-39 years,Male,1
+adult,Chronic Kidney Disease,30-39 years,Male,1
+adult,Cirrhosis,30-39 years,Male,3
+adult,Diabetes,30-39 years,Male,1
+adult,Drowning,30-39 years,Male,1
+adult,Esophageal Cancer,30-39 years,Male,1
+adult,Falls,30-39 years,Male,3
+adult,Fires,30-39 years,Male,1
+adult,Ischemic Heart Disease,30-39 years,Male,10
+adult,Other Injuries,30-39 years,Male,2
+adult,Other Non-communicable Diseases,30-39 years,Male,2
+adult,Poisonings,30-39 years,Male,2
+adult,Road Traffic,30-39 years,Male,20
+adult,Suicide,30-39 years,Male,3
+adult,TB,30-39 years,Male,3
+adult,Undetermined,30-39 years,Male,26
+adult,Cervical Cancer,30-39 years,Female,1
+adult,Cirrhosis,30-39 years,Female,2
+adult,Diarrhea/Dysentery,30-39 years,Female,1
+adult,Ischemic Heart Disease,30-39 years,Female,4
+adult,Maternal,30-39 years,Female,2
+adult,Road Traffic,30-39 years,Female,3
+adult,Suicide,30-39 years,Female,3
+adult,Undetermined,30-39 years,Female,11
+adult,AIDS,40-49 years,Male,1
+adult,Bite of Venomous Animal,40-49 years,Male,2
+adult,Chronic Kidney Disease,40-49 years,Male,3
+adult,Cirrhosis,40-49 years,Male,3
+adult,Diabetes,40-49 years,Male,4
+adult,Diarrhea/Dysentery,40-49 years,Male,1
+adult,Drowning,40-49 years,Male,1
+adult,Esophageal Cancer,40-49 years,Male,4
+adult,Falls,40-49 years,Male,1
+adult,Fires,40-49 years,Male,1
+adult,Ischemic Heart Disease,40-49 years,Male,9
+adult,Leukemia/Lymphomas,40-49 years,Male,5
+adult,Lung Cancer,40-49 years,Male,1
+adult,Other Injuries,40-49 years,Male,1
+adult,Other Non-communicable Diseases,40-49 years,Male,1
+adult,Pneumonia,40-49 years,Male,1
+adult,Poisonings,40-49 years,Male,1
+adult,Prostate Cancer,40-49 years,Male,7
+adult,Road Traffic,40-49 years,Male,21
+adult,Stroke,40-49 years,Male,1
+adult,Suicide,40-49 years,Male,3
+adult,TB,40-49 years,Male,4
+adult,Undetermined,40-49 years,Male,27
+adult,Bite of Venomous Animal,40-49 years,Female,3
+adult,Breast Cancer,40-49 years,Female,2
+adult,Cervical Cancer,40-49 years,Female,2
+adult,Chronic Kidney Disease,40-49 years,Female,1
+adult,Colorectal Cancer,40-49 years,Female,1
+adult,Diabetes,40-49 years,Female,6
+adult,Ischemic Heart Disease,40-49 years,Female,2
+adult,Leukemia/Lymphomas,40-49 years,Female,1
+adult,Maternal,40-49 years,Female,5
+adult,Poisonings,40-49 years,Female,1
+adult,Road Traffic,40-49 years,Female,3
+adult,Suicide,40-49 years,Female,1
+adult,TB,40-49 years,Female,4
+adult,Undetermined,40-49 years,Female,17
+adult,Bite of Venomous Animal,50-59 years,Male,1
+adult,Chronic Respiratory,50-59 years,Male,1
+adult,Cirrhosis,50-59 years,Male,1
+adult,Colorectal Cancer,50-59 years,Male,2
+adult,Diabetes,50-59 years,Male,6
+adult,Drowning,50-59 years,Male,2
+adult,Esophageal Cancer,50-59 years,Male,1
+adult,Falls,50-59 years,Male,2
+adult,Homicide,50-59 years,Male,1
+adult,Ischemic Heart Disease,50-59 years,Male,28
+adult,Lung Cancer,50-59 years,Male,2
+adult,Other Non-communicable Diseases,50-59 years,Male,1
+adult,Poisonings,50-59 years,Male,1
+adult,Prostate Cancer,50-59 years,Male,3
+adult,Road Traffic,50-59 years,Male,14
+adult,Stomach Cancer,50-59 years,Male,1
+adult,Stroke,50-59 years,Male,3
+adult,Suicide,50-59 years,Male,5
+adult,TB,50-59 years,Male,11
+adult,Undetermined,50-59 years,Male,34
+adult,Bite of Venomous Animal,50-59 years,Female,1
+adult,Breast Cancer,50-59 years,Female,1
+adult,Cervical Cancer,50-59 years,Female,1
+adult,Chronic Kidney Disease,50-59 years,Female,1
+adult,Chronic Respiratory,50-59 years,Female,2
+adult,Cirrhosis,50-59 years,Female,1
+adult,Colorectal Cancer,50-59 years,Female,1
+adult,Diabetes,50-59 years,Female,4
+adult,Esophageal Cancer,50-59 years,Female,1
+adult,Falls,50-59 years,Female,1
+adult,Ischemic Heart Disease,50-59 years,Female,5
+adult,Leukemia/Lymphomas,50-59 years,Female,1
+adult,Road Traffic,50-59 years,Female,3
+adult,Stroke,50-59 years,Female,1
+adult,Suicide,50-59 years,Female,3
+adult,TB,50-59 years,Female,2
+adult,Undetermined,50-59 years,Female,25
+adult,Chronic Respiratory,60-69 years,Male,2
+adult,Cirrhosis,60-69 years,Male,4
+adult,Diabetes,60-69 years,Male,11
+adult,Diarrhea/Dysentery,60-69 years,Male,1
+adult,Drowning,60-69 years,Male,2
+adult,Esophageal Cancer,60-69 years,Male,1
+adult,Falls,60-69 years,Male,4
+adult,Fires,60-69 years,Male,1
+adult,Ischemic Heart Disease,60-69 years,Male,22
+adult,Pneumonia,60-69 years,Male,1
+adult,Prostate Cancer,60-69 years,Male,11
+adult,Road Traffic,60-69 years,Male,7
+adult,Stomach Cancer,60-69 years,Male,1
+adult,Stroke,60-69 years,Male,3
+adult,Suicide,60-69 years,Male,2
+adult,TB,60-69 years,Male,6
+adult,Undetermined,60-69 years,Male,37
+adult,Breast Cancer,60-69 years,Female,1
+adult,Cervical Cancer,60-69 years,Female,1
+adult,Chronic Kidney Disease,60-69 years,Female,1
+adult,Chronic Respiratory,60-69 years,Female,1
+adult,Diabetes,60-69 years,Female,6
+adult,Diarrhea/Dysentery,60-69 years,Female,2
+adult,Esophageal Cancer,60-69 years,Female,1
+adult,Falls,60-69 years,Female,1
+adult,Fires,60-69 years,Female,1
+adult,Ischemic Heart Disease,60-69 years,Female,5
+adult,Road Traffic,60-69 years,Female,2
+adult,Suicide,60-69 years,Female,1
+adult,TB,60-69 years,Female,3
+adult,Undetermined,60-69 years,Female,32
+adult,Chronic Respiratory,70-79 years,Male,5
+adult,Cirrhosis,70-79 years,Male,2
+adult,Diabetes,70-79 years,Male,5
+adult,Diarrhea/Dysentery,70-79 years,Male,2
+adult,Esophageal Cancer,70-79 years,Male,1
+adult,Ischemic Heart Disease,70-79 years,Male,14
+adult,Other Non-communicable Diseases,70-79 years,Male,1
+adult,Pneumonia,70-79 years,Male,1
+adult,Prostate Cancer,70-79 years,Male,3
+adult,Road Traffic,70-79 years,Male,1
+adult,Stomach Cancer,70-79 years,Male,1
+adult,Stroke,70-79 years,Male,14
+adult,Suicide,70-79 years,Male,1
+adult,TB,70-79 years,Male,2
+adult,Undetermined,70-79 years,Male,35
+adult,Breast Cancer,70-79 years,Female,1
+adult,Cervical Cancer,70-79 years,Female,2
+adult,Chronic Respiratory,70-79 years,Female,2
+adult,Diabetes,70-79 years,Female,11
+adult,Diarrhea/Dysentery,70-79 years,Female,3
+adult,Esophageal Cancer,70-79 years,Female,1
+adult,Ischemic Heart Disease,70-79 years,Female,6
+adult,Leukemia/Lymphomas,70-79 years,Female,1
+adult,Other Injuries,70-79 years,Female,1
+adult,Road Traffic,70-79 years,Female,1
+adult,Stroke,70-79 years,Female,2
+adult,TB,70-79 years,Female,1
+adult,Undetermined,70-79 years,Female,27
+adult,Bite of Venomous Animal,80+,Male,1
+adult,Chronic Respiratory,80+,Male,5
+adult,Diabetes,80+,Male,4
+adult,Diarrhea/Dysentery,80+,Male,5
+adult,Falls,80+,Male,1
+adult,Ischemic Heart Disease,80+,Male,10
+adult,Prostate Cancer,80+,Male,3
+adult,Road Traffic,80+,Male,2
+adult,Stroke,80+,Male,9
+adult,Suicide,80+,Male,1
+adult,TB,80+,Male,6
+adult,Undetermined,80+,Male,74
+adult,Cervical Cancer,80+,Female,1
+adult,Chronic Respiratory,80+,Female,2
+adult,Diabetes,80+,Female,10
+adult,Diarrhea/Dysentery,80+,Female,7
+adult,Falls,80+,Female,4
+adult,Ischemic Heart Disease,80+,Female,3
+adult,Other Non-communicable Diseases,80+,Female,2
+adult,Pneumonia,80+,Female,1
+adult,Stroke,80+,Female,2
+adult,TB,80+,Female,1
+adult,Undetermined,80+,Female,60

@@ -1,0 +1,42 @@
+module,cause34,age,sex,counts
+adult,Road Traffic,20-29 years,Male,1
+adult,Ischemic Heart Disease,30-39 years,Male,1
+adult,Stroke,30-39 years,Male,1
+adult,Undetermined,30-39 years,Female,1
+adult,Chronic Kidney Disease,40-49 years,Male,1
+adult,Ischemic Heart Disease,40-49 years,Male,1
+adult,Suicide,40-49 years,Male,1
+adult,Falls,40-49 years,Female,1
+adult,Ischemic Heart Disease,40-49 years,Female,1
+adult,Cirrhosis,50-59 years,Male,3
+adult,Diabetes,50-59 years,Male,1
+adult,Ischemic Heart Disease,50-59 years,Male,1
+adult,Stroke,50-59 years,Male,2
+adult,Leukemia/Lymphomas,50-59 years,Female,1
+adult,Undetermined,50-59 years,Female,1
+adult,Chronic Respiratory,60-69 years,Male,3
+adult,TB,60-69 years,Male,1
+adult,Undetermined,60-69 years,Male,2
+adult,Diabetes,60-69 years,Female,1
+adult,Diarrhea/Dysentery,60-69 years,Female,2
+adult,Ischemic Heart Disease,60-69 years,Female,4
+adult,Lung Cancer,60-69 years,Female,1
+adult,Stroke,60-69 years,Female,1
+adult,Undetermined,60-69 years,Female,2
+adult,Chronic Kidney Disease,70-79 years,Male,1
+adult,Diabetes,70-79 years,Male,2
+adult,Diarrhea/Dysentery,70-79 years,Male,1
+adult,Falls,70-79 years,Male,1
+adult,Stroke,70-79 years,Male,2
+adult,Chronic Respiratory,70-79 years,Female,1
+adult,Diabetes,70-79 years,Female,1
+adult,Diarrhea/Dysentery,70-79 years,Female,2
+adult,Ischemic Heart Disease,70-79 years,Female,2
+adult,Stroke,70-79 years,Female,1
+adult,Undetermined,70-79 years,Female,1
+adult,Chronic Respiratory,80+,Male,1
+adult,Diabetes,80+,Male,1
+adult,Diarrhea/Dysentery,80+,Male,3
+adult,Undetermined,80+,Male,2
+adult,Diarrhea/Dysentery,80+,Female,1
+adult,Undetermined,80+,Female,1
