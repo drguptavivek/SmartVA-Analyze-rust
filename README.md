@@ -542,9 +542,25 @@ print(result["predictions"][0])
 
 ---
 
-## License & Upstream Acknowledgment
+## Credits, Acknowledgments & Scientific Citations
+
+### 1. Upstream SmartVA-Analyze & Tariff 2.0 Method
+- **Institute for Health Metrics and Evaluation (IHME), University of Washington**: Original developers and maintainers of [**SmartVA-Analyze**](https://github.com/ihmeuw/SmartVA-Analyze) (`v3.0.1`, MIT License, Copyright © 2018 University of Washington) and the Tariff 2.0 Verbal Autopsy algorithm, led by Peter Serina, Ian Riley, Andrea Stewart, Spencer L. James, Abraham D. Flaxman, Rafael Lozano, Bernardo Hernandez, Christopher J.L. Murray, Alan D. Lopez, and the IHME Verbal Autopsy engineering and research team.
+- **Population Health Metrics Research Consortium (PHMRC)**: Principal investigators, clinical study sites (`Andhra Pradesh`, `Bohol`, `Dar es Salaam`, `Mexico`, `Pemba`, `Uttar Pradesh`), and hospital physicians who established the 12,530 clinically validated gold-standard Verbal Autopsy dataset ([GHDx PHMRC Gold Standard VA Dataset](https://ghdx.healthdata.org/record/ihme-data/population-health-metrics-research-consortium-gold-standard-verbal-autopsy-data-2005-2011)).
+- **Bloomberg Philanthropies Data for Health Initiative & University of Melbourne**: Global Civil Registration and Vital Statistics (CRVS) field validation and deployment of SmartVA.
+- **World Health Organization (WHO)**: Development and maintenance of the WHO 2016 and WHO 2022 standard Verbal Autopsy questionnaires.
+
+### 2. Pure-Rust Port (`SmartVA-Rust` / `smartva-rs`)
+- **Dr. Vivek Gupta** ([`@drguptavivek`](https://github.com/drguptavivek)), Dr. Rajendra Prasad Centre for Ophthalmic Sciences, All India Institute of Medical Sciences (AIIMS), New Delhi: Architecture, 100% pure native Rust port (`smartva-rust` / `smartva-rs` / `phmrc-source-prep`), C-ABI FFI / JSON / Protobuf extensions, and two-stage empirical validation across 20,813 Verbal Autopsies.
+
+### 3. Key Scientific References
+1. **Tariff 2.0 Algorithm**: Serina P, Riley I, Stewart A, James SL, Flaxman AD, Lozano R, Hernandez B, Mooney MD, Luning R, Black R, et al. *Improving performance of the Tariff Method for assigning causes of death to verbal autopsies.* **BMC Medicine**. 2015;13:291. doi:[10.1186/s12916-015-0527-9](https://doi.org/10.1186/s12916-015-0527-9)
+2. **Shortened SmartVA Questionnaire**: Serina P, Riley I, Stewart A, et al. *A shortened verbal autopsy instrument for use in routine mortality surveillance systems.* **BMC Medicine**. 2015;13:302. doi:[10.1186/s12916-015-0528-8](https://doi.org/10.1186/s12916-015-0528-8)
+3. **PHMRC Gold Standard Validation Study**: Murray CJL, Lopez AD, Black R, et al. *Population Health Metrics Research Consortium gold standard verbal autopsy validation study: design, implementation, and development of analysis datasets.* **Population Health Metrics**. 2011;9:27. doi:[10.1186/1478-7954-9-27](https://doi.org/10.1186/1478-7954-9-27)
+4. **Tariff 1.0 Foundation**: James SL, Flaxman AD, Murray CJL; Population Health Metrics Research Consortium (PHMRC). *Performance of the Tariff Method: validation of a simple additive algorithm for analysis of verbal autopsies.* **Population Health Metrics**. 2011;9:31. doi:[10.1186/1478-7954-9-31](https://doi.org/10.1186/1478-7954-9-31)
+
+---
+
+## License
 
 Released under the **MIT License** (see [`LICENSE`](./LICENSE)).
-
-This project is a pure-Rust reimplementation of [**SmartVA-Analyze**](https://github.com/ihmeuw/SmartVA-Analyze), originally developed in Python by the **Institute for Health Metrics and Evaluation (IHME), University of Washington** (Copyright (c) 2018 University of Washington) and implementing the **Tariff 2.0** verbal autopsy method described in:
-- Serina P, Riley I, Stewart A, et al. *Improving performance of the Tariff Method for assigning causes of death to verbal autopsies.* **BMC Medicine** 2015; 13:291.
