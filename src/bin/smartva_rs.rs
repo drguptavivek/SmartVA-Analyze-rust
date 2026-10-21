@@ -32,7 +32,7 @@ use std::process;
 
 use smartva_rust::{SmartVaEngine, SmartVaRunOptions};
 
-const VERSION_STR: &str = "SmartVA-Analyze 3.0.0-rust (smartva-rust 0.2.0)";
+const VERSION_STR: &str = concat!("SmartVA-Analyze ", env!("CARGO_PKG_VERSION"), "-rust (smartva-rust ", env!("CARGO_PKG_VERSION"), ")");
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum OutputFormat {
@@ -53,29 +53,50 @@ fn print_help(prog: &str) {
     let mut out = io::stdout().lock();
     let _ = writeln!(
         out,
-        "Usage: {prog} [OPTIONS] [INPUT_CSV] [OUTPUT_DIR]\n\n\
-         Drop-in Pure-Rust replacement for SmartVA-Analyze `smartva` CLI.\n\n\
-         Options:\n  \
-           --country <CODE>          Data origin country abbreviation (default: \"Unknown\")\n  \
-           --hiv <BOOL>              Acquire data from an HIV region (default: True)\n  \
-           --malaria <BOOL>          Acquire data from a Malaria region (default: True)\n  \
+        "{VERSION_STR}\n\
+         Drop-in Pure-Rust replacement for IHME SmartVA-Analyze (`smartva` / `va_cli.py`).\n\n\
+         USAGE:\n  \
+           {prog} [OPTIONS] <INPUT_CSV> <OUTPUT_DIR>\n  \
+           {prog} [OPTIONS] --json <FILE_OR_JSON_OR_STDIN> [--format <FMT>] [--output-file <PATH>]\n  \
+           {prog} <COMMAND>\n\n\
+         COMMANDS:\n  \
+           help, -h, --help          Show this help message and exit\n  \
+           version, -V, --version    Show program's version number and exit\n  \
+           countries, --list-countries\n                            \
+                                     List all valid ISO-3 country codes and exit\n\n\
+         POSITIONAL ARGUMENTS:\n  \
+           <INPUT_CSV>               Input Verbal Autopsy CSV file (PHMRC Full/Short, WHO 2016, or WHO 2022)\n  \
+           <OUTPUT_DIR>              Output directory for 4-folder CSV, .xlsx, and .png results\n\n\
+         OPTIONS:\n  \
+           --country <CODE>          Data origin country ISO-3 abbreviation (default: \"Unknown\")\n  \
+           --hiv <BOOL>              Data originates from an HIV region (default: True)\n  \
+           --malaria <BOOL>          Data originates from a Malaria region (default: True)\n  \
            --hce <BOOL>              Use Health Care Experience (HCE) variables (default: True)\n  \
-           --freetext <BOOL>         Use \"open response\" variables (default: True)\n  \
+           --freetext <BOOL>         Use \"open response\" free-text variables (default: True)\n  \
            --csv <BOOL>              Generate 4-folder CSV + .xlsx directory output (default: True with OUTPUT_DIR)\n  \
            --no-csv                  Skip generating CSV + .xlsx directory files\n  \
            --charts <BOOL>           Generate .png figures and graphs (alias: --figures; default: True)\n  \
            --no-charts               Skip generating .png figures and graphs (alias: --no-figures)\n  \
            --json <FILE_OR_JSON>     Accept input VA data as JSON (inline JSON, file path, or `-` for stdin)\n  \
            --format <FMT>            Output format: dir | json | json-extended | protobuf | protobuf-extended\n  \
-           --out-json                Return analysis results as JSON\n  \
-           --out-protobuf            Return analysis results as Protocol Buffers v3 binary\n  \
+           --out-json                Shorthand for `--format json`\n  \
+           --out-protobuf            Shorthand for `--format protobuf`\n  \
            --extended                Include cohort CSMFs and population CSV tables in JSON/Protobuf output\n  \
            --output-file <PATH>      File path for JSON/Protobuf output (`-` for stdout; default: `-`)\n  \
-           --language <LANG>         Translation language: english | chinese | spanish\n  \
+           --language <LANG>         Translation language: english | chinese | spanish (default: english)\n  \
            --legacy-format           Output files in a file structure similar to v1.1\n  \
            --list-countries          List all valid country codes and exit\n  \
-           --version                 Show program's version number and exit\n  \
-           -h, --help                Show this help message and exit"
+           -V, --version             Show program's version number and exit\n  \
+           -h, --help                Show this help message and exit\n\n\
+         EXAMPLES:\n  \
+           # 1. Standard 4-folder CSV + .xlsx + .png cohort analysis (drop-in for `smartva` CLI):\n  \
+           {prog} --country IND --hiv true --malaria true input_va.csv ./output_dir\n\n  \
+           # 2. Fast batch scoring without .png chart rendering:\n  \
+           {prog} --country UNK --no-charts input_va.csv ./output_dir\n\n  \
+           # 3. Score a single VA or batch from inline JSON and emit extended JSON to stdout:\n  \
+           {prog} --country IND --json '{{\"sid\":\"VA-01\",\"Id10019\":\"male\",\"ageInYears\":62,\"Id10147\":\"yes\"}}' --format json-extended\n\n  \
+           # 4. Score an ODK CSV and emit Protocol Buffers v3 binary output:\n  \
+           {prog} --country IND --no-csv --format protobuf-extended --output-file results.pb input_va.csv"
     );
 }
 
@@ -92,8 +113,10 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     let prog = args.first().map(|s| s.as_str()).unwrap_or("smartva-rs");
 
-    let mut default_opts = SmartVaRunOptions::default();
-    default_opts.country = "Unknown".to_string();
+    let default_opts = SmartVaRunOptions {
+        country: "Unknown".to_string(),
+        ..Default::default()
+    };
 
     let mut state = CliState {
         opts: default_opts,
@@ -107,16 +130,27 @@ fn main() {
     let mut list_countries = false;
     let mut positionals: Vec<String> = Vec::new();
 
+    if args.len() == 1 {
+        print_help(prog);
+        process::exit(0);
+    }
+
     let mut i = 1;
     while i < args.len() {
         let arg = &args[i];
-        if arg == "-h" || arg == "--help" {
+        if arg == "-h" || arg == "--help" || (i == 1 && arg.eq_ignore_ascii_case("help")) {
             print_help(prog);
             process::exit(0);
-        } else if arg == "--version" {
+        } else if arg == "--version"
+            || arg == "-V"
+            || arg == "-v"
+            || (i == 1 && arg.eq_ignore_ascii_case("version"))
+        {
             let _ = writeln!(io::stdout().lock(), "{VERSION_STR}");
             process::exit(0);
-        } else if arg == "--list-countries" {
+        } else if arg == "--list-countries"
+            || (i == 1 && (arg.eq_ignore_ascii_case("countries") || arg.eq_ignore_ascii_case("list-countries")))
+        {
             list_countries = true;
             i += 1;
         } else if arg == "--legacy-format" {

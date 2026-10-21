@@ -1,6 +1,6 @@
 [package]
 name = "smartva-rust"
-version = "0.2.0"
+version = "3.0.1"
 edition = "2024"
 description = "100% Pure Native Rust SmartVA-Analyze engine, drop-in CLI replacement (smartva-rs), and C-ABI FFI library"
 license = "MIT"

@@ -194,11 +194,10 @@ fn step_2(word: &str, r1: usize) -> String {
     ];
     for &(end, repl, prev) in S2 {
         if let Some(stem_part) = word.strip_suffix(end) {
-            if stem_part.len() >= r1 {
-                if prev.is_empty() || prev.iter().any(|p| stem_part.ends_with(p)) {
+            if stem_part.len() >= r1
+                && (prev.is_empty() || prev.iter().any(|p| stem_part.ends_with(p))) {
                     return format!("{stem_part}{repl}");
                 }
-            }
             return word.to_string();
         }
     }
@@ -241,11 +240,10 @@ fn step_4(word: &str, r2: usize) -> String {
             return word.to_string();
         }
     }
-    if word.ends_with("sion") || word.ends_with("tion") {
-        if word.len() - 3 >= r2 {
+    if (word.ends_with("sion") || word.ends_with("tion"))
+        && word.len() - 3 >= r2 {
             return word[..word.len() - 3].to_string();
         }
-    }
     word.to_string()
 }
 
@@ -256,13 +254,12 @@ fn step_5(word: &str, r1: usize, r2: usize) -> String {
         }
         return word.to_string();
     }
-    if let Some(stem_part) = word.strip_suffix('e') {
-        if stem_part.len() >= r2
-            || (stem_part.len() >= r1 && !ends_with_short_syllable(stem_part))
+    if let Some(stem_part) = word.strip_suffix('e')
+        && (stem_part.len() >= r2
+            || (stem_part.len() >= r1 && !ends_with_short_syllable(stem_part)))
         {
             return stem_part.to_string();
         }
-    }
     word.to_string()
 }
 

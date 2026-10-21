@@ -52,11 +52,10 @@ pub fn safe_int(val: Option<&str>) -> i32 {
     if let Ok(i) = trimmed.parse::<i32>() {
         return i;
     }
-    if let Ok(f) = trimmed.parse::<f64>() {
-        if f.is_finite() {
+    if let Ok(f) = trimmed.parse::<f64>()
+        && f.is_finite() {
             return f as i32;
         }
-    }
     0
 }
 
@@ -221,7 +220,7 @@ fn format_headers_step(
 
     let headers: Vec<String> = raw_headers
         .iter()
-        .map(|h| format_header_name(h))
+        .map(format_header_name)
         .collect();
 
     // Check duplicate headers in order of appearance
@@ -353,14 +352,13 @@ fn who_prep_in_memory(matrix: &mut [Row], who_2016: bool) -> Vec<String> {
         who_calculate_age(row);
         // 3. recode_yes_no_questions
         for &(dest, mut src) in who_data::YES_NO_QUESTIONS {
-            if !who_2016 {
-                if let Some(&(_, override_src)) = who_data::YES_NO_QUESTIONS_WHO_2022
+            if !who_2016
+                && let Some(&(_, override_src)) = who_data::YES_NO_QUESTIONS_WHO_2022
                     .iter()
                     .find(|&&(k, _)| k == dest)
                 {
                     src = override_src;
                 }
-            }
             let val = match row.get(src).map(|s| s.as_str()) {
                 Some("yes") => "1",
                 Some("no") => "0",
@@ -566,12 +564,11 @@ fn who_map_adult_chest_pain_duration(row: &mut Row) {
             return;
         }
     }
-    if let Some(d) = parse_py_int(row.get("Id10179_1").map(|s| s.as_str())) {
-        if d > 0 {
+    if let Some(d) = parse_py_int(row.get("Id10179_1").map(|s| s.as_str()))
+        && d > 0 {
             row.insert(key.to_string(), "3".to_string());
             return;
         }
-    }
     row.insert(key.to_string(), String::new());
 }
 
@@ -826,11 +823,10 @@ fn common_prep_in_memory(
 
         // expand_row (only insert non-empty defaults and AGE_VARS to avoid ~1,600 empty String allocations per row)
         for (k, v) in add_headers.iter().zip(add_values.iter()) {
-            if !v.is_empty() || common_data::AGE_VARS.iter().any(|&(_, av)| av == k.as_str()) {
-                if !row.contains_key(k) {
+            if (!v.is_empty() || common_data::AGE_VARS.iter().any(|&(_, av)| av == k.as_str()))
+                && !row.contains_key(k) {
                     row.insert(k.clone(), v.clone());
                 }
-            }
         }
 
         // correct_missing_age
@@ -1328,13 +1324,12 @@ fn pre_symptom_prep_in_memory(
         }
 
         // fix_agedays
-        if module == "child" || module == "neonate" {
-            if row.contains_key("c1_25b") {
+        if (module == "child" || module == "neonate")
+            && row.contains_key("c1_25b") {
                 let v = parse_py_int(row.get("c1_25b").map(|s| s.as_str()));
                 let c1_25a = if v.is_none() { "0" } else { "4" };
                 row.insert("c1_25a".to_string(), c1_25a.to_string());
             }
-        }
 
         // calculate_age_at_death_value
         if module == "neonate" {
@@ -1351,8 +1346,8 @@ fn pre_symptom_prep_in_memory(
         // recode_answers
         for &((read_h, write_h), data_map) in cfg.recode_map {
             if let Some(raw) = row.get(read_h).cloned() {
-                if let Ok(val) = raw.trim().parse::<i32>() {
-                    if let Some(&(_, target)) = data_map.iter().find(|&&(k, _)| k == val) {
+                if let Ok(val) = raw.trim().parse::<i32>()
+                    && let Some(&(_, target)) = data_map.iter().find(|&&(k, _)| k == val) {
                         match target {
                             RecodeTarget::Column(col) => {
                                 let v = row.get(col).cloned().unwrap_or_default();
@@ -1363,7 +1358,6 @@ fn pre_symptom_prep_in_memory(
                             }
                         }
                     }
-                }
             } else {
                 loggers.warnings.push(format!(
                     "SID: {} variable '{}' does not exist.",
@@ -1391,12 +1385,10 @@ fn pre_symptom_prep_in_memory(
                 .duration_vars_special_case
                 .iter()
                 .find(|&&(k, _)| k == var)
-            {
-                if length_raw.is_empty() {
+                && length_raw.is_empty() {
                     row.insert(var.to_string(), spec_val.to_string());
                     continue;
                 }
-            }
             let factor = match code_val {
                 1 => Some(365.0),
                 2 => Some(30.0),
@@ -1445,11 +1437,10 @@ fn pre_symptom_prep_in_memory(
                 ("y", &["", "999", "9999"][..], "0"),
             ] {
                 let var_name = format!("{}{}", var, suffix);
-                if let Some(cur) = row.get(&var_name) {
-                    if invalids.contains(&cur.as_str()) {
+                if let Some(cur) = row.get(&var_name)
+                    && invalids.contains(&cur.as_str()) {
                         row.insert(var_name, def_val.to_string());
                     }
-                }
             }
         }
 
@@ -1489,8 +1480,8 @@ fn pre_symptom_prep_in_memory(
 
         // convert_free_text_vars
         for &ft_hdr in cfg.free_text_vars {
-            if let Some(raw) = row.get(ft_hdr).cloned() {
-                if !raw.is_empty() {
+            if let Some(raw) = row.get(ft_hdr).cloned()
+                && !raw.is_empty() {
                     for word in raw.split(' ') {
                         let stemmed = stem_porter2(word);
                         if let Some(&target_var) = words_lookup.get(stemmed.as_str()) {
@@ -1498,7 +1489,6 @@ fn pre_symptom_prep_in_memory(
                         }
                     }
                 }
-            }
         }
 
         // short_form free text conversion
@@ -1518,17 +1508,15 @@ fn pre_symptom_prep_in_memory(
         }
 
         // fix_rash_length
-        if let Some(c4_33a) = row.get("c4_33a") {
-            if let Ok(iv) = c4_33a.trim().parse::<i32>() {
-                if iv != 4 {
+        if let Some(c4_33a) = row.get("c4_33a")
+            && let Ok(iv) = c4_33a.trim().parse::<i32>()
+                && iv != 4 {
                     row.insert("c4_33b".to_string(), "0".to_string());
                 }
-            }
-        }
 
         // fix_rash_location
-        if module == "child" {
-            if row.contains_key("c4_31_1") && row.contains_key("c4_32") {
+        if module == "child"
+            && row.contains_key("c4_31_1") && row.contains_key("c4_32") {
                 for var in ["c4_31_1", "c4_32"] {
                     let has_one = row
                         .get(var)
@@ -1540,18 +1528,16 @@ fn pre_symptom_prep_in_memory(
                     );
                 }
             }
-        }
 
         // process_weight_sd_vars
         process_weight_sd_vars(row, cfg.exam_date_vars, cfg.weight_sd_data);
 
         // fill_missing_data
         for &(var, def_val) in default_fill {
-            if let Some(cur) = row.get_mut(var) {
-                if cur.is_empty() {
+            if let Some(cur) = row.get_mut(var)
+                && cur.is_empty() {
                     *cur = def_val.to_string();
                 }
-            }
         }
     }
 
@@ -2712,29 +2698,25 @@ fn tariff_prep_in_memory(
     let female_drops: Vec<i32> = cfg.male_causes.to_vec();
 
     for c46 in drop_causes {
-        if let Some(&c34) = reduction_map.get(&c46) {
-            if let Some(&gs_text34) = causes34_map.get(&c34) {
-                if cause_counts.contains_key(gs_text34) {
+        if let Some(&c34) = reduction_map.get(&c46)
+            && let Some(&gs_text34) = causes34_map.get(&c34)
+                && cause_counts.contains_key(gs_text34) {
                     cause_counts.remove(gs_text34);
                     counts_by_sex.get_mut(&1).unwrap().remove(gs_text34);
                     counts_by_sex.get_mut(&2).unwrap().remove(gs_text34);
                 }
-            }
-        }
     }
     for c46 in male_drops {
-        if let Some(&c34) = reduction_map.get(&c46) {
-            if let Some(&gs_text34) = causes34_map.get(&c34) {
+        if let Some(&c34) = reduction_map.get(&c46)
+            && let Some(&gs_text34) = causes34_map.get(&c34) {
                 counts_by_sex.get_mut(&1).unwrap().remove(gs_text34);
             }
-        }
     }
     for c46 in female_drops {
-        if let Some(&c34) = reduction_map.get(&c46) {
-            if let Some(&gs_text34) = causes34_map.get(&c34) {
+        if let Some(&c34) = reduction_map.get(&c46)
+            && let Some(&gs_text34) = causes34_map.get(&c34) {
                 counts_by_sex.get_mut(&2).unwrap().remove(gs_text34);
             }
-        }
     }
 
     // write_predictions (mutates va.age to "" if 0 for adult/child)
@@ -3465,8 +3447,8 @@ fn run_output_prep(
         for sex_lbl in ["Male", "Female", "Missing"] {
             if let Some(c_set) = mod_causes.get(module) {
                 for cause in c_set {
-                    if let Some(&cnt) = cod_counts.get(&(age_grp, sex_lbl, cause.clone())) {
-                        if cnt > 0 {
+                    if let Some(&cnt) = cod_counts.get(&(age_grp, sex_lbl, cause.clone()))
+                        && cnt > 0 {
                             cod_table.push(vec![
                                 module.to_string(),
                                 cause.clone(),
@@ -3475,7 +3457,6 @@ fn run_output_prep(
                                 cnt.to_string(),
                             ]);
                         }
-                    }
                 }
             }
         }
@@ -3746,23 +3727,19 @@ pub fn resolve_country_iso3(country: &str) -> Result<Option<String>, SmartVaErro
         if entry == "Unknown" {
             continue;
         }
-        if entry.eq_ignore_ascii_case(raw) {
-            if let Some(code) = entry.split('(').nth(1).and_then(|s| s.strip_suffix(')')) {
+        if entry.eq_ignore_ascii_case(raw)
+            && let Some(code) = entry.split('(').nth(1).and_then(|s| s.strip_suffix(')')) {
                 return Ok(Some(code.to_string()));
             }
-        }
-        if let Some(code) = entry.split('(').nth(1).and_then(|s| s.strip_suffix(')')) {
-            if code == upper {
+        if let Some(code) = entry.split('(').nth(1).and_then(|s| s.strip_suffix(')'))
+            && code == upper {
                 return Ok(Some(code.to_string()));
             }
-        }
-        if let Some(name_part) = entry.split(" (").next() {
-            if name_part.eq_ignore_ascii_case(raw) {
-                if let Some(code) = entry.split('(').nth(1).and_then(|s| s.strip_suffix(')')) {
+        if let Some(name_part) = entry.split(" (").next()
+            && name_part.eq_ignore_ascii_case(raw)
+                && let Some(code) = entry.split('(').nth(1).and_then(|s| s.strip_suffix(')')) {
                     return Ok(Some(code.to_string()));
                 }
-            }
-        }
     }
     Err(SmartVaError::ExecutionError(format!(
         "Invalid country code specified: {}",
@@ -4282,11 +4259,10 @@ pub fn run_smartva_pipeline_directory(
         let mut m = BTreeMap::new();
         if let Ok((_, rows)) = read_csv_matrix(p) {
             for r in rows {
-                if let (Some(c), Some(v)) = (r.get("cause34"), r.get("all")) {
-                    if let Ok(fv) = v.parse::<f64>() {
+                if let (Some(c), Some(v)) = (r.get("cause34"), r.get("all"))
+                    && let Ok(fv) = v.parse::<f64>() {
                         m.insert(c.clone(), fv);
                     }
-                }
             }
         }
         m
@@ -4796,8 +4772,8 @@ pub fn run_smartva_in_memory(
             for sex_lbl in ["Male", "Female", "Missing"] {
                 if let Some(c_set) = mod_causes.get(module) {
                     for cause in c_set {
-                        if let Some(&cnt) = cod_counts.get(&(age_grp, sex_lbl, cause.clone())) {
-                            if cnt > 0 {
+                        if let Some(&cnt) = cod_counts.get(&(age_grp, sex_lbl, cause.clone()))
+                            && cnt > 0 {
                                 cod_csv_rows.push(vec![
                                     module.to_string(),
                                     cause.clone(),
@@ -4813,7 +4789,6 @@ pub fn run_smartva_in_memory(
                                     counts: cnt,
                                 });
                             }
-                        }
                     }
                 }
             }

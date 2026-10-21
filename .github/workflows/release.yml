@@ -20,6 +20,9 @@ jobs:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             archive_name: smartva-rs-linux-x86_64
+          - os: ubuntu-24.04-arm
+            target: aarch64-unknown-linux-gnu
+            archive_name: smartva-rs-linux-arm64
           - os: macos-latest
             target: aarch64-apple-darwin
             archive_name: smartva-rs-macos-arm64
@@ -32,6 +35,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install Linux system dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pkg-config libfontconfig1-dev libfreetype6-dev
+
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
@@ -43,10 +52,11 @@ jobs:
       - name: Package Unix Archive
         if: runner.os != 'Windows'
         run: |
-          mkdir -p dist/${{ matrix.archive_name }}
+          mkdir -p dist/${{ matrix.archive_name }}/include
           cp target/${{ matrix.target }}/release/smartva-rs dist/${{ matrix.archive_name }}/
           cp target/${{ matrix.target }}/release/phmrc-source-prep dist/${{ matrix.archive_name }}/
           cp target/${{ matrix.target }}/release/libsmartva_rust.* dist/${{ matrix.archive_name }}/
+          cp include/smartva_rust.h dist/${{ matrix.archive_name }}/include/
           cp README.md LICENSE dist/${{ matrix.archive_name }}/
           tar -C dist -czf ${{ matrix.archive_name }}.tar.gz ${{ matrix.archive_name }}
 
@@ -54,10 +64,11 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force -Path dist/${{ matrix.archive_name }}
+          New-Item -ItemType Directory -Force -Path dist/${{ matrix.archive_name }}/include
           Copy-Item target/${{ matrix.target }}/release/smartva-rs.exe dist/${{ matrix.archive_name }}/
           Copy-Item target/${{ matrix.target }}/release/phmrc-source-prep.exe dist/${{ matrix.archive_name }}/
           Copy-Item target/${{ matrix.target }}/release/*smartva_rust* dist/${{ matrix.archive_name }}/
+          Copy-Item include/smartva_rust.h dist/${{ matrix.archive_name }}/include/
           Copy-Item README.md, LICENSE dist/${{ matrix.archive_name }}/
           Compress-Archive -Path dist/${{ matrix.archive_name }} -DestinationPath ${{ matrix.archive_name }}.zip
 

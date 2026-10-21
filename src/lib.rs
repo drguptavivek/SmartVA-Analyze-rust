@@ -10,6 +10,7 @@
 //!   in Rust via [`rust_xlsxwriter`] ([`xlsx`]).
 //! - Generates all `.png` figures (`3-graphs-and-tables/*.png`) natively in Rust via
 //!   [`plotters`] ([`charts`]).
+#![allow(clippy::type_complexity, clippy::needless_range_loop)]
 
 pub mod charts;
 pub mod data;
@@ -489,6 +490,58 @@ pub unsafe extern "C" fn smartva_score_json(
     }
 }
 
+/// Simplified single-return-pointer C-ABI export for higher-level FFI runtimes
+/// (Swift, Flutter `dart:ffi`, Kotlin JNA, Node.js `koffi`, Bun `bun:ffi`, Deno `Deno.dlopen`, Python `ctypes`).
+///
+/// Returns a newly allocated UTF-8 JSON C-string containing the analysis response
+/// (or `{"error":"..."}` on failure). Always free the returned pointer with [`smartva_free_string`].
+///
+/// # Safety
+/// `json_payload` and `country` must be valid null-terminated UTF-8 C strings.
+#[unsafe(no_mangle)]
+pub unsafe extern "C" fn smartva_score_json_simple(
+    json_payload: *const c_char,
+    country: *const c_char,
+    hiv: c_int,
+    malaria: c_int,
+    hce: c_int,
+    freetext: c_int,
+    extended: c_int,
+) -> *mut c_char {
+    let mut out_ptr: *mut c_char = ptr::null_mut();
+    let mut err_ptr: *mut c_char = ptr::null_mut();
+    let rc = unsafe {
+        smartva_score_json(
+            json_payload,
+            country,
+            hiv,
+            malaria,
+            hce,
+            freetext,
+            extended,
+            &mut out_ptr,
+            &mut err_ptr,
+        )
+    };
+    if rc == 0 && !out_ptr.is_null() {
+        out_ptr
+    } else {
+        let err_msg = if !err_ptr.is_null() {
+            let s = unsafe { CStr::from_ptr(err_ptr) }
+                .to_string_lossy()
+                .into_owned();
+            unsafe { smartva_free_string(err_ptr) };
+            s
+        } else {
+            "Unknown error in smartva_score_json_simple".to_string()
+        };
+        let escaped = err_msg.replace('\\', "\\\\").replace('"', "\\\"");
+        CString::new(format!("{{\"error\":\"{escaped}\"}}"))
+            .unwrap_or_default()
+            .into_raw()
+    }
+}
+
 /// Score a JSON payload via C-ABI and return the analysis result as a newly allocated Protobuf
 /// (`proto3` binary wire format) buffer in `result_bytes_out` and `result_len_out`
 /// (free with [`smartva_free_bytes`]).
@@ -626,9 +679,11 @@ mod tests {
         }"#;
 
         // 1. Standard level (extended = false): individual CSV outputs only, no CSMF
-        let mut std_opts = SmartVaRunOptions::default();
-        std_opts.country = "IND".to_string();
-        std_opts.extended = false;
+        let std_opts = SmartVaRunOptions {
+            country: "IND".to_string(),
+            extended: false,
+            ..Default::default()
+        };
         let std_json_str = engine
             .score_json(payload, &std_opts)
             .expect("Standard JSON scoring failed");
@@ -731,5 +786,55 @@ mod tests {
         assert!(decoded_ext.csv_tables.contains_key("csmf.csv"));
         assert!(!decoded_ext.csmf_all.is_empty());
         assert!(!decoded_ext.report_text.is_empty());
+    }
+
+    #[test]
+    fn test_c_abi_ffi_exports_and_simple_helper() {
+        assert_eq!(smartva_warm_cache(), 0);
+
+        let payload = CString::new(
+            r#"{"sid":"VA-FFI-001","Id10013":"yes","Id10019":"female","ageInYears":34,"Id10147":"yes","Id10310":"yes"}"#,
+        )
+        .unwrap();
+        let country = CString::new("IND").unwrap();
+
+        // 1. Test smartva_score_json_simple
+        let ptr = unsafe {
+            smartva_score_json_simple(payload.as_ptr(), country.as_ptr(), 1, 1, 1, 1, 1)
+        };
+        assert!(!ptr.is_null());
+        let json_str = unsafe { CStr::from_ptr(ptr) }.to_str().unwrap().to_owned();
+        unsafe { smartva_free_string(ptr) };
+        let parsed = json::parse_json(&json_str).expect("Valid FFI JSON");
+        assert_eq!(parsed.get("total_vas").unwrap().to_cell_string(), "1");
+        assert!(parsed.get("csmf_all").is_some());
+
+        // 2. Test smartva_score_protobuf
+        let mut pb_ptr: *mut u8 = ptr::null_mut();
+        let mut pb_len: usize = 0;
+        let mut err_ptr: *mut c_char = ptr::null_mut();
+        let rc = unsafe {
+            smartva_score_protobuf(
+                payload.as_ptr(),
+                country.as_ptr(),
+                1,
+                1,
+                1,
+                1,
+                1,
+                &mut pb_ptr,
+                &mut pb_len,
+                &mut err_ptr,
+            )
+        };
+        assert_eq!(rc, 0);
+        assert!(!pb_ptr.is_null());
+        assert!(pb_len > 0);
+        assert!(err_ptr.is_null());
+        let slice = unsafe { std::slice::from_raw_parts(pb_ptr, pb_len) };
+        let decoded = protobuf::decode_result_protobuf(slice).expect("Valid FFI Protobuf");
+        assert_eq!(decoded.total_vas, 1);
+        assert_eq!(decoded.predictions[0].sid, "VA-FFI-001");
+        unsafe { smartva_free_bytes(pb_ptr, pb_len) };
     }
 }

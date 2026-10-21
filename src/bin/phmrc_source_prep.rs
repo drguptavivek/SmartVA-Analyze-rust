@@ -8,16 +8,62 @@ use std::process;
 
 use smartva_rust::phmrc_source_prep::convert_phmrc_gold_standard_csv;
 
+const VERSION_STR: &str = concat!(
+    "phmrc-source-prep ",
+    env!("CARGO_PKG_VERSION"),
+    " (SmartVA-Analyze ",
+    env!("CARGO_PKG_VERSION"),
+    "-rust)"
+);
+
+fn print_help(prog: &str) {
+    println!(
+        "{VERSION_STR}\n\
+         Converts GHDx PHMRC Gold Standard Verbal Autopsy validation CSVs into\n\
+         standard ODK PHMRC Full Questionnaire CSVs accepted by SmartVA-Analyze and smartva-rs.\n\n\
+         USAGE:\n  \
+           {prog} <INPUT_PHMRC_GS_CSV> <OUTPUT_ODK_CSV>\n  \
+           {prog} <COMMAND>\n\n\
+         COMMANDS:\n  \
+           help, -h, --help          Show this help message and exit\n  \
+           version, -V, --version    Show program's version number and exit\n\n\
+         ARGUMENTS:\n  \
+           <INPUT_PHMRC_GS_CSV>      Input GHDx PHMRC Gold Standard CSV file\n                            \
+                                     (Adult, Child, or Neonate module is auto-detected from headers/values)\n  \
+           <OUTPUT_ODK_CSV>          Output ODK PHMRC Full Instrument CSV file\n\n\
+         EXAMPLES:\n  \
+           {prog} IHME_PHMRC_VA_DATA_ADULT_Y2013M09D11_0.csv adult_odk.csv\n  \
+           {prog} IHME_PHMRC_VA_DATA_CHILD_Y2013M09D11_0.csv child_odk.csv\n  \
+           {prog} IHME_PHMRC_VA_DATA_NEONATE_Y2013M09D11_0.csv neonate_odk.csv"
+    );
+}
+
 fn main() {
     let args: Vec<String> = env::args().collect();
-    if args.len() != 3 || args[1] == "-h" || args[1] == "--help" {
-        eprintln!(
-            "Usage: phmrc-source-prep <INPUT_PHMRC_GS_CSV> <OUTPUT_ODK_CSV>\n\n\
-             Converts a GHDx PHMRC Gold Standard validation CSV\n\
-             (e.g. IHME_PHMRC_VA_DATA_ADULT_Y2013M09D11_0.csv) into an ODK PHMRC Full\n\
-             Questionnaire CSV accepted by both upstream Python SmartVA-Analyze and smartva-rs."
-        );
-        process::exit(if args.len() == 2 { 0 } else { 2 });
+    let prog = args
+        .first()
+        .map(|s| s.as_str())
+        .unwrap_or("phmrc-source-prep");
+
+    if args.len() == 1
+        || args[1] == "-h"
+        || args[1] == "--help"
+        || args[1].eq_ignore_ascii_case("help")
+    {
+        print_help(prog);
+        process::exit(0);
+    }
+    if args[1] == "-V"
+        || args[1] == "-v"
+        || args[1] == "--version"
+        || args[1].eq_ignore_ascii_case("version")
+    {
+        println!("{VERSION_STR}");
+        process::exit(0);
+    }
+    if args.len() != 3 {
+        print_help(prog);
+        process::exit(2);
     }
     let input_path = Path::new(&args[1]);
     let output_path = Path::new(&args[2]);

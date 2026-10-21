@@ -88,11 +88,10 @@ fn encode_prediction(p: &SmartVaPrediction) -> Vec<u8> {
     write_string_field(&mut buf, 13, &p.cause34);
     write_string_field(&mut buf, 14, &p.cause_list_number);
     write_string_field(&mut buf, 15, &p.icd10);
-    if let Some(age) = p.age {
-        if age.is_finite() {
+    if let Some(age) = p.age
+        && age.is_finite() {
             write_double_field(&mut buf, 16, age);
         }
-    }
     if let Some(sex) = p.sex {
         write_int32_field(&mut buf, 17, sex);
     }

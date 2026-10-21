@@ -864,11 +864,10 @@ pub fn convert_phmrc_gold_standard_csv(
     {
         let list = recode_lookup.entry(write_h).or_default();
         for &(code, target) in entries {
-            if let RecodeTarget::Column(col) = target {
-                if !list.iter().any(|&(c, _)| c == code) {
+            if let RecodeTarget::Column(col) = target
+                && !list.iter().any(|&(c, _)| c == code) {
                     list.push((code, col));
                 }
-            }
         }
     }
 
@@ -1244,15 +1243,13 @@ pub fn convert_phmrc_gold_standard_csv(
             let c1_25_raw = get_raw("c1_25");
             if out_row.get("gen_5_4c").map(|s| s.is_empty()).unwrap_or(true)
                 && c1_25_raw.parse::<i32>().map(|v| v > 0).unwrap_or(false)
-            {
-                if out_row.get("gen_5_4a").map(|s| s.as_str()) == Some(c1_25_raw.as_str())
-                    || out_row.get("gen_5_4b").map(|s| s.as_str()) == Some(c1_25_raw.as_str())
+                && (out_row.get("gen_5_4a").map(|s| s.as_str()) == Some(c1_25_raw.as_str())
+                    || out_row.get("gen_5_4b").map(|s| s.as_str()) == Some(c1_25_raw.as_str()))
                 {
                     out_row.insert("gen_5_4c".to_string(), c1_25_raw);
                     out_row.remove("gen_5_4a");
                     out_row.remove("gen_5_4b");
                 }
-            }
             let c1_09_raw = get_raw("c1_09").to_ascii_lowercase();
             if c1_09_raw == "female" {
                 out_row.insert("c1_09".to_string(), "1.0".to_string());
@@ -1437,11 +1434,10 @@ pub fn convert_phmrc_gold_standard_csv(
             let wcol = format!("word_{}", stem);
             if in_header_idx.contains_key(wcol.as_str()) {
                 let v = get_dec(&wcol);
-                if let Ok(fv) = v.parse::<f64>() {
-                    if fv >= 1.0 {
+                if let Ok(fv) = v.parse::<f64>()
+                    && fv >= 1.0 {
                         trigger_words.push(trigger);
                     }
-                }
             }
         }
         trigger_words.sort_unstable();

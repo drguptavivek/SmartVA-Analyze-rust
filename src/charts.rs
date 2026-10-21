@@ -107,7 +107,7 @@ pub fn generate_all_smartva_charts(output_dir: &Path, include_module_figures: bo
         // 0: cause34, 1: cause list #, 2: icd10, 3: all, 4: male, 5: female
         let both_pairs = read_csmf_column(&mod_csv, 0, 3)?;
         if !both_pairs.is_empty() {
-            let title = format!("{}{} CSMF", &module[..1].to_uppercase(), &module[1..]);
+            let title = format!("{}{} CSMF", module[..1].to_uppercase(), &module[1..]);
             render_csmf_bar_chart(
                 &title,
                 &both_pairs,
