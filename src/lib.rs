@@ -399,6 +399,17 @@ pub extern "C" fn smartva_warm_cache() -> c_int {
     }
 }
 
+/// Pre-warm the models one input type uses, via C-ABI: `short_form = 1` for WHO 2016/2022
+/// input, `0` for PHMRC full. [`smartva_warm_cache`] is the PHMRC-full case (hce, free text).
+/// Returns `0` on success, `-1` on error or panic.
+#[unsafe(no_mangle)]
+pub extern "C" fn smartva_warm_cache_for(hce: c_int, free_text: c_int, short_form: c_int) -> c_int {
+    let warmed = guard(|| {
+        engine::warm_models(hce != 0, free_text != 0, short_form != 0).map_err(|e| e.to_string())
+    });
+    if warmed.is_ok() { 0 } else { -1 }
+}
+
 /// Run the full SmartVA-Analyze pipeline on `input_csv_path` and write all output files
 /// into `output_dir_path` via C-ABI.
 ///

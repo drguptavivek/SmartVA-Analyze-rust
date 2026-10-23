@@ -3747,12 +3747,28 @@ pub fn resolve_country_iso3(country: &str) -> Result<Option<String>, SmartVaErro
     )))
 }
 
-/// Pre-warm all 3 age-group tariff & validation models (`adult`, `child`, `neonate`) in memory.
+/// Pre-warm the PHMRC full-instrument models (hce, free text) for all 3 age groups.
+/// WHO 2016/2022 input runs on the short-form models: warm those with [`warm_models`].
 pub fn warm_all_models() -> Result<(), SmartVaError> {
+    warm_models(true, true, false)
+}
+
+/// Pre-warm the trained models for all 3 age groups (`adult`, `child`, `neonate`) under one
+/// cache key. Country, HIV and malaria are applied per run, so they are not part of the key.
+/// `short_form` is what the input selects: true for WHO 2016/2022, false for PHMRC full.
+pub fn warm_models(hce: bool, free_text: bool, short_form: bool) -> Result<(), SmartVaError> {
     for module in MODULES {
-        let _ = get_or_build_trained_model(module, true, true, false)?;
+        let _ = get_or_build_trained_model(module, hce, free_text, short_form)?;
     }
     Ok(())
+}
+
+/// Number of trained models held in the process-wide cache (for tests and diagnostics).
+#[doc(hidden)]
+pub fn training_cache_len() -> usize {
+    TRAINING_CACHE
+        .get()
+        .map_or(0, |c| c.lock().unwrap_or_else(std::sync::PoisonError::into_inner).len())
 }
 
 fn build_endorsement_rates_rows(

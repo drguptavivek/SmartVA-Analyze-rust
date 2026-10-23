@@ -22,10 +22,20 @@ extern "C" {
 const char *smartva_version(void);
 
 /**
- * Pre-warm the in-process Tariff 2.0 validation matrices (Adult, Child, Neonate).
+ * Pre-warm the in-process Tariff 2.0 validation matrices (Adult, Child, Neonate) for the
+ * PHMRC full instrument with HCE and free text. WHO 2016/2022 input uses the short-form
+ * models: warm those with smartva_warm_cache_for(1, 1, 1).
  * Returns 0 on success, -1 on failure.
  */
 int smartva_warm_cache(void);
+
+/**
+ * Pre-warm the models (Adult, Child, Neonate) one input type uses: short_form = 1 for
+ * WHO 2016/2022 input, 0 for PHMRC full; hce and free_text as passed when scoring.
+ * Country, HIV and malaria are applied per run and need no warming.
+ * Returns 0 on success, -1 on failure.
+ */
+int smartva_warm_cache_for(int hce, int free_text, int short_form);
 
 /**
  * Run the full SmartVA-Analyze pipeline on `input_csv_path` and write the 4-folder
