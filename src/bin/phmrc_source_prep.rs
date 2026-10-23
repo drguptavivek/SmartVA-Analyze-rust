@@ -8,17 +8,18 @@ use std::process;
 
 use smartva_rust::phmrc_source_prep::convert_phmrc_gold_standard_csv;
 
-const VERSION_STR: &str = concat!(
-    "phmrc-source-prep ",
-    env!("CARGO_PKG_VERSION"),
-    " (SmartVA-Analyze ",
-    env!("CARGO_PKG_VERSION"),
-    "-rust)"
-);
+fn version_str() -> String {
+    format!(
+        "phmrc-source-prep {} (SmartVA-Analyze {}-rust)",
+        env!("CARGO_PKG_VERSION"),
+        smartva_rust::SMARTVA_UPSTREAM_VERSION
+    )
+}
 
 fn print_help(prog: &str) {
+    let version = version_str();
     println!(
-        "{VERSION_STR}\n\
+        "{version}\n\
          Converts GHDx PHMRC Gold Standard Verbal Autopsy validation CSVs into\n\
          standard ODK PHMRC Full Questionnaire CSVs accepted by SmartVA-Analyze and smartva-rs.\n\n\
          USAGE:\n  \
@@ -58,7 +59,7 @@ fn main() {
         || args[1] == "--version"
         || args[1].eq_ignore_ascii_case("version")
     {
-        println!("{VERSION_STR}");
+        println!("{}", version_str());
         process::exit(0);
     }
     if args.len() != 3 {

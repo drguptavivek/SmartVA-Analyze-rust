@@ -334,14 +334,66 @@ impl SmartVaEngine {
 }
 
 // ============================================================================
+// Version
+// ============================================================================
+
+// Macros (not consts) so `concat!` can splice them; the upstream version is written once here.
+macro_rules! upstream_version {
+    () => {
+        "3.0.1"
+    };
+}
+macro_rules! version_text {
+    () => {
+        concat!(
+            "SmartVA-Analyze ",
+            upstream_version!(),
+            "-rust (smartva-rust ",
+            env!("CARGO_PKG_VERSION"),
+            ")"
+        )
+    };
+}
+
+/// Upstream SmartVA-Analyze release whose algorithm this crate mirrors.
+pub const SMARTVA_UPSTREAM_VERSION: &str = upstream_version!();
+
+/// Full version banner, e.g. `SmartVA-Analyze 3.0.1-rust (smartva-rust 3.0.2)`.
+/// Printed by `smartva-rs --version` and returned by [`smartva_version`].
+pub const VERSION: &str = version_text!();
+
+/// NUL-terminated copy of [`VERSION`] for [`smartva_version`].
+static VERSION_C: &str = concat!(version_text!(), "\0");
+
+// ============================================================================
 // C-ABI FFI Exports for external callers (C, C++, Swift, Python ctypes, R, etc.)
 // ============================================================================
 
+/// Run `f`, converting a panic into `Err("smartva-rust panicked: ...")`. A panic must never
+/// unwind across an `extern "C"` boundary (it would abort the host process).
+fn guard<T>(f: impl FnOnce() -> Result<T, String>) -> Result<T, String> {
+    std::panic::catch_unwind(std::panic::AssertUnwindSafe(f)).unwrap_or_else(|payload| {
+        let msg = payload
+            .downcast_ref::<&str>()
+            .map(|s| s.to_string())
+            .or_else(|| payload.downcast_ref::<String>().cloned())
+            .unwrap_or_else(|| "unknown panic".to_string());
+        Err(format!("smartva-rust panicked: {msg}"))
+    })
+}
+
+/// Static, NUL-terminated version banner (same text as `smartva-rs --version`).
+/// Do not free the returned pointer.
+#[unsafe(no_mangle)]
+pub extern "C" fn smartva_version() -> *const c_char {
+    VERSION_C.as_ptr() as *const c_char
+}
+
 /// Pre-warm the in-process Tariff 2.0 validation matrices via C-ABI.
-/// Returns `0` on success, `-1` on error.
+/// Returns `0` on success, `-1` on error or panic.
 #[unsafe(no_mangle)]
 pub extern "C" fn smartva_warm_cache() -> c_int {
-    match engine::warm_all_models() {
+    match guard(|| engine::warm_all_models().map_err(|e| e.to_string())) {
         Ok(()) => 0,
         Err(_) => -1,
     }
@@ -350,8 +402,9 @@ pub extern "C" fn smartva_warm_cache() -> c_int {
 /// Run the full SmartVA-Analyze pipeline on `input_csv_path` and write all output files
 /// into `output_dir_path` via C-ABI.
 ///
-/// Returns `0` on success, non-zero on error. If `error_out` is non-null, writes a newly
-/// allocated error string on failure (free with [`smartva_free_string`]).
+/// Returns `0` on success, non-zero on error (including a caught panic, reported as code `2`).
+/// If `error_out` is non-null, writes a newly allocated error string on failure
+/// (free with [`smartva_free_string`]).
 ///
 /// # Safety
 /// `input_csv_path`, `output_dir_path`, and `country` must be valid null-terminated UTF-8 C strings.
@@ -379,7 +432,7 @@ pub unsafe extern "C" fn smartva_run_directory(
             .map(|s| s.to_string())
             .map_err(|e| e.to_string())
     };
-    let res = (|| -> Result<(), String> {
+    let res = guard(|| -> Result<(), String> {
         let in_str = parse_str(input_csv_path)?;
         let out_str = parse_str(output_dir_path)?;
         let country_str = parse_str(country)?;
@@ -398,7 +451,7 @@ pub unsafe extern "C" fn smartva_run_directory(
         engine::run_smartva_pipeline_directory(Path::new(&in_str), Path::new(&out_str), &opts)
             .map(|_| ())
             .map_err(|e| e.to_string())
-    })();
+    });
 
     match res {
         Ok(()) => 0,
@@ -450,7 +503,7 @@ pub unsafe extern "C" fn smartva_score_json(
             .map(|s| s.to_string())
             .map_err(|e| e.to_string())
     };
-    let res = (|| -> Result<String, String> {
+    let res = guard(|| -> Result<String, String> {
         let payload_str = parse_str(json_payload)?;
         let country_str = parse_str(country)?;
         let opts = SmartVaRunOptions {
@@ -468,7 +521,7 @@ pub unsafe extern "C" fn smartva_score_json(
         SmartVaEngine::new()
             .score_json(&payload_str, &opts)
             .map_err(|e| e.to_string())
-    })();
+    });
 
     match res {
         Ok(json_out) => {
@@ -508,24 +561,31 @@ pub unsafe extern "C" fn smartva_score_json_simple(
     freetext: c_int,
     extended: c_int,
 ) -> *mut c_char {
-    let mut out_ptr: *mut c_char = ptr::null_mut();
-    let mut err_ptr: *mut c_char = ptr::null_mut();
-    let rc = unsafe {
-        smartva_score_json(
-            json_payload,
-            country,
-            hiv,
-            malaria,
-            hce,
-            freetext,
-            extended,
-            &mut out_ptr,
-            &mut err_ptr,
-        )
+    let error_json = |msg: &str| -> *mut c_char {
+        let escaped = msg.replace('\\', "\\\\").replace('"', "\\\"");
+        CString::new(format!("{{\"error\":\"{escaped}\"}}"))
+            .unwrap_or_default()
+            .into_raw()
     };
-    if rc == 0 && !out_ptr.is_null() {
-        out_ptr
-    } else {
+    let res = guard(|| {
+        let mut out_ptr: *mut c_char = ptr::null_mut();
+        let mut err_ptr: *mut c_char = ptr::null_mut();
+        let rc = unsafe {
+            smartva_score_json(
+                json_payload,
+                country,
+                hiv,
+                malaria,
+                hce,
+                freetext,
+                extended,
+                &mut out_ptr,
+                &mut err_ptr,
+            )
+        };
+        if rc == 0 && !out_ptr.is_null() {
+            return Ok(out_ptr);
+        }
         let err_msg = if !err_ptr.is_null() {
             let s = unsafe { CStr::from_ptr(err_ptr) }
                 .to_string_lossy()
@@ -535,11 +595,9 @@ pub unsafe extern "C" fn smartva_score_json_simple(
         } else {
             "Unknown error in smartva_score_json_simple".to_string()
         };
-        let escaped = err_msg.replace('\\', "\\\\").replace('"', "\\\"");
-        CString::new(format!("{{\"error\":\"{escaped}\"}}"))
-            .unwrap_or_default()
-            .into_raw()
-    }
+        Ok(error_json(&err_msg))
+    });
+    res.unwrap_or_else(|msg| error_json(&msg))
 }
 
 /// Score a JSON payload via C-ABI and return the analysis result as a newly allocated Protobuf
@@ -579,7 +637,7 @@ pub unsafe extern "C" fn smartva_score_protobuf(
             .map(|s| s.to_string())
             .map_err(|e| e.to_string())
     };
-    let res = (|| -> Result<Vec<u8>, String> {
+    let res = guard(|| -> Result<Vec<u8>, String> {
         let payload_str = parse_str(json_payload)?;
         let country_str = parse_str(country)?;
         let opts = SmartVaRunOptions {
@@ -597,7 +655,7 @@ pub unsafe extern "C" fn smartva_score_protobuf(
         SmartVaEngine::new()
             .score_json_to_protobuf(&payload_str, &opts)
             .map_err(|e| e.to_string())
-    })();
+    });
 
     match res {
         Ok(bytes) => {
@@ -653,6 +711,24 @@ pub unsafe extern "C" fn smartva_free_bytes(ptr: *mut u8, len: usize) {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_guard_turns_panics_into_errors() {
+        assert_eq!(guard(|| Ok::<_, String>(7)), Ok(7));
+        let err = guard(|| -> Result<(), String> { panic!("boom") }).unwrap_err();
+        assert!(err.starts_with("smartva-rust panicked:") && err.contains("boom"), "{err}");
+        let err = guard(|| -> Result<(), String> { panic!("{}", String::from("owned boom")) })
+            .unwrap_err();
+        assert!(err.contains("owned boom"), "{err}");
+    }
+
+    #[test]
+    fn test_smartva_version_matches_const() {
+        let c = unsafe { CStr::from_ptr(smartva_version()) }.to_str().unwrap();
+        assert_eq!(c, VERSION);
+        assert!(c.contains("smartva-rust 3.0.2"), "{c}");
+        assert!(c.starts_with(&format!("SmartVA-Analyze {SMARTVA_UPSTREAM_VERSION}-rust")));
+    }
 
     #[test]
     fn test_pure_rust_country_list_and_warm_cache() {

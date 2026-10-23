@@ -2032,7 +2032,7 @@ fn get_or_build_trained_model(
         free_text,
         short_form,
     };
-    if let Some(cached) = cache.lock().unwrap().get(&key).cloned() {
+    if let Some(cached) = cache.lock().unwrap_or_else(std::sync::PoisonError::into_inner).get(&key).cloned() {
         return Ok(cached);
     }
 
@@ -2257,7 +2257,7 @@ fn get_or_build_trained_model(
         cutoffs,
         likelihoods,
     });
-    cache.lock().unwrap().insert(key, Arc::clone(&model));
+    cache.lock().unwrap_or_else(std::sync::PoisonError::into_inner).insert(key, Arc::clone(&model));
     Ok(model)
 }
 

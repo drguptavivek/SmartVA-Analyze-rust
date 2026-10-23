@@ -59,7 +59,7 @@ fn test_phmrc_source_prep_cli_and_neonate_conversion() {
         let out = Command::new(bin).arg(flag).output().expect("Failed to run phmrc-source-prep");
         assert!(out.status.success());
         let stdout = String::from_utf8_lossy(&out.stdout);
-        assert!(stdout.contains("phmrc-source-prep 3.0.1"));
+        assert!(stdout.contains("phmrc-source-prep 3.0.2 (SmartVA-Analyze 3.0.1-rust)"));
     }
 
     for args in [vec!["--help"], vec!["-h"], vec!["help"], vec![]] {

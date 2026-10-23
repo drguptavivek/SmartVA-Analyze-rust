@@ -1,6 +1,6 @@
-# `smartva-rust` (`smartva-rs` `v3.0.1`) — 100% Pure Native Rust SmartVA-Analyze Engine
+# `smartva-rust` (`smartva-rs` `v3.0.2`) — 100% Pure Native Rust SmartVA-Analyze Engine
 
-`smartva-rust` (`v3.0.1`, mirroring upstream `SmartVA-Analyze` `v3.0.1`) is a **100% pure native Rust** implementation of the [IHME SmartVA-Analyze (Tariff 2.0)](https://github.com/ihmeuw/SmartVA-Analyze) Verbal Autopsy cause-of-death assignment pipeline.
+`smartva-rust` (`v3.0.2`, mirroring upstream `SmartVA-Analyze` `v3.0.1`) is a **100% pure native Rust** implementation of the [IHME SmartVA-Analyze (Tariff 2.0)](https://github.com/ihmeuw/SmartVA-Analyze) Verbal Autopsy cause-of-death assignment pipeline.
 
 It provides:
 1. **Drop-In Native CLI (`smartva-rs`)** — 100% CLI-flag compatible with upstream Python `smartva` (`va_cli.py`), writing the identical 4-folder output hierarchy (`1-individual-cause-of-death/`, `2-csmf/`, `3-graphs-and-tables/`, `4-monitoring-and-quality/`) plus optional in-memory JSON and Protocol Buffers v3 output (`--format json`, `--format protobuf`), built-in `help` / `--help`, `version` / `--version`, and `countries` / `--list-countries` commands.
@@ -12,9 +12,9 @@ It provides:
 
 ## Build, Prebuilt Binaries & Deployment Guide
 
-### 1. Download Prebuilt Multi-Platform Binaries (GitHub Releases — `v3.0.1`)
+### 1. Download Prebuilt Multi-Platform Binaries (GitHub Releases — `v3.0.2`)
 
-`smartva-rust` mirrors upstream `SmartVA-Analyze` semantic versioning (`v3.0.1`). Every `v*` tag pushed to [`drguptavivek/SmartVA-Analyze-rust`](https://github.com/drguptavivek/SmartVA-Analyze-rust) triggers the [`.github/workflows/release.yml`](./.github/workflows/release.yml) GitHub Actions pipeline, which compiles, tests, packages, and publishes prebuilt release archives for all five primary OS/CPU targets:
+`smartva-rust` mirrors the algorithm of upstream `SmartVA-Analyze` `v3.0.1` (crate releases carry their own patch number). Every `v*` tag pushed to [`drguptavivek/SmartVA-Analyze-rust`](https://github.com/drguptavivek/SmartVA-Analyze-rust) triggers the [`.github/workflows/release.yml`](./.github/workflows/release.yml) GitHub Actions pipeline, which compiles, tests, packages, and publishes prebuilt release archives for all five primary OS/CPU targets:
 
 | Platform / OS | CPU Architecture | Rust Target Triple | Release Archive | Included Binaries & Shared Library |
 |---|---|---|---|---|
@@ -29,7 +29,7 @@ It provides:
 ```bash
 # Example: macOS Apple Silicon (replace with smartva-rs-linux-x86_64 or smartva-rs-linux-arm64 on Linux)
 ARCHIVE="smartva-rs-macos-arm64"
-curl -fsSL -O "https://github.com/drguptavivek/SmartVA-Analyze-rust/releases/download/v3.0.1/${ARCHIVE}.tar.gz"
+curl -fsSL -O "https://github.com/drguptavivek/SmartVA-Analyze-rust/releases/download/v3.0.2/${ARCHIVE}.tar.gz"
 tar -xzf "${ARCHIVE}.tar.gz"
 
 # Verify CLI help & version
@@ -219,7 +219,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ### 5. Multi-Language FFI & Subprocess Integration Guide (Swift, Kotlin, Flutter/Dart, JavaScript/TypeScript, Python)
 
-All release archives ship with [`include/smartva_rust.h`](./include/smartva_rust.h) and `libsmartva_rust.{dylib,so,dll}`, exposing a zero-dependency C-ABI (`smartva_warm_cache`, `smartva_score_json_simple`, `smartva_score_json`, `smartva_score_protobuf`, `smartva_run_directory`, `smartva_free_string`). Calling `smartva_warm_cache()` once at app startup keeps the 30,000-draw Tariff 2.0 validation matrices resident in memory so subsequent VAs score in **`~4–12 ms`**.
+All release archives ship with [`include/smartva_rust.h`](./include/smartva_rust.h) and `libsmartva_rust.{dylib,so,dll}`, exposing a zero-dependency C-ABI (`smartva_warm_cache`, `smartva_score_json_simple`, `smartva_score_json`, `smartva_score_protobuf`, `smartva_run_directory`, `smartva_free_string`, `smartva_version`). `smartva_version()` returns a static string (same text as `smartva-rs --version`; do not free it). A Rust panic never aborts the host process: it comes back as a non-zero return code with a `smartva-rust panicked: ...` message in `error_out` (see the header for details). Calling `smartva_warm_cache()` once at app startup keeps the 30,000-draw Tariff 2.0 validation matrices resident in memory so subsequent VAs score in **`~4–12 ms`**.
 
 #### 5.1 Swift (iOS & macOS)
 

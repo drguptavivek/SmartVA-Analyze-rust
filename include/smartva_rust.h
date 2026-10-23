@@ -8,6 +8,19 @@
 extern "C" {
 #endif
 
+/*
+ * Panic safety: every function below catches Rust panics instead of aborting the
+ * calling process. Int-returning functions then return non-zero (smartva_warm_cache: -1;
+ * the others: 2) and, where an `error_out` parameter exists, set `*error_out` to a message
+ * starting with "smartva-rust panicked:". smartva_score_json_simple returns {"error":"..."}.
+ */
+
+/**
+ * Version banner, e.g. "SmartVA-Analyze 3.0.1-rust (smartva-rust 3.0.2)".
+ * Static NUL-terminated string, same text as `smartva-rs --version`. Do NOT free.
+ */
+const char *smartva_version(void);
+
 /**
  * Pre-warm the in-process Tariff 2.0 validation matrices (Adult, Child, Neonate).
  * Returns 0 on success, -1 on failure.

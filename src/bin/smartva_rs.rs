@@ -32,7 +32,7 @@ use std::process;
 
 use smartva_rust::{SmartVaEngine, SmartVaRunOptions};
 
-const VERSION_STR: &str = concat!("SmartVA-Analyze ", env!("CARGO_PKG_VERSION"), "-rust (smartva-rust ", env!("CARGO_PKG_VERSION"), ")");
+const VERSION_STR: &str = smartva_rust::VERSION;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum OutputFormat {
